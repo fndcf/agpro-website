@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgPro - Mockup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .mockup-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .mockup-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #CCAA77;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .page-mockup {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .page-label {
+            background: linear-gradient(135deg, #CCAA77, #B8956A);
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* HEADER GLOBAL */
+        .header {
+            background: linear-gradient(135deg, #30D158, #34C759);
+            color: white;
+            position: relative;
+        }
+
+        .contact-bar {
+            background: rgba(0,0,0,0.1);
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .contact-info {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .social-link {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            color: white;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .lang-flag {
+            width: 24px;
+            height: 16px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            border-radius: 2px;
+        }
+
+        .lang-flag:hover {
+            opacity: 0.8;
+        }
+
+        .lang-flag.active {
+            box-shadow: 0 0 0 2px white;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .contact-bar {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .contact-actions {
+                gap: 15px;
+            }
+            
+            .social-links {
+                gap: 10px;
+            }
+        }
+
+        .main-nav {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.6rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        .logo-overlay {
+            position: absolute;
+            left: 30px;
+            top: 53%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .logo-img {
+            height: 100px; /* Bem maior agora! */
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo-overlay {
+                position: static;
+                transform: none;
+                text-align: center;
+                padding: 15px 0;
+            }
+            
+            .logo-img {
+                height: 60px;
+            }
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1.8rem;
+            position: relative;
+            transition: opacity 0.3s;
+        }
+
+        .nav a:hover {
+            opacity: 0.8;
+        }
+
+        .nav a.active {
+            border-bottom: 2px solid white;
+        }
+
+        /* HERO SECTIONS */
+        .hero {
+            background: linear-gradient(rgba(48, 209, 88, 0.8), rgba(52, 199, 89, 0.8)), 
+                url('sua-imagem-hero.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(48, 209, 88, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 200;
+            margin-bottom: 20px;
+            margin-top: 25px;
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            margin-left: 270px;
+            max-width: 800px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: #34C759;
+            color: white;
+            margin-bottom: 20px;
+            padding: 18px 50px;
+            border: 2px solid white;
+            border-radius: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .cta-button:hover {
+            background: white;
+            background: #30D158;
+        }
+
+        /* CONTENT SECTIONS */
+        .content-section {
+            padding: 10px 30px;
+            background: white;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 5.5rem;
+            color: #CCAA77;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 2rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* STATISTICS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 40px;
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat .number {
+            font-size: 3.5rem;
+            color: #CCAA77;
+            font-weight: 300;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .stat .label {
+            color: #666;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }        
+
+        .service-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            color: #CCAA77;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .service-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .service-list li:before {
+            content: "✓";
+            color: #CCAA77;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* TWO COLUMN LAYOUT */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .content-text h3 {
+            font-size: 2.5rem;
+            color: #CCAA77;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .content-text p {
+            color: #666;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .content-image {
+            height: 510px;
+            max-width: 100%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* CONTACT FORM */
+        .contact-form {
+            background: #f8f9fa;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: #CCAA77;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e8e8e8;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Segoe UI', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #CCAA77;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-submit {
+            background: #34C759;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: #30D158;
+        }
+
+        /* CONTACT INFO */
+        .contact-info {
+            padding: 50px 0;
+        }
+
+        .contact-info h3 {
+            color: #CCAA77;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .contact-info p {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .contact-info strong {
+            color: #333;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #28A745;
+            color: white;
+            padding: 40px 30px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 400;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'Segoe UI', sans-serif;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #CCAA77;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+
+        .services-container2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+            align-items: start;
+        }
+
+        .service-section2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card2 {
+            background: white;
+            border: 1px solid #eee;
+            padding: 50px 40px;
+            transition: all 0.3s;
+            flex-grow: 1;
+        }
+
+        .service-gif {
+            width: 100%;
+            max-width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tabs-container {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 20px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .tabs-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .tab-item {
+            padding: 12px 20px;
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+        }
+
+        .tab-item:hover {
+            color: white;
+            background: #CCAA77;
+            border-color: #CCAA77;
+        }
+
+        .tab-item.active {
+            color: white;
+            background: #30D158;
+            border-color: #30D158;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .tabs-container {
+                padding: 15px 20px;
+            }
+            
+            .tab-item {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+                flex: 1 1 auto;
+                min-width: 120px;
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .services-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .stats,
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mockup-container">
+        <!-- HOME PAGE -->
+        <div class="page-mockup">
+            
+            <div class="header">
+                <div class="contact-bar">                    
+                    <div class="contact-actions">
+                        <!-- Social Media -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="Facebook">📘</a>
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Instagram">📸</a>
+                        </div>
+                        
+                        <!-- Language selector -->
+                        <div class="language-selector">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjUuMzMzMzciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjRkNEQzAwIi8+CjxyZWN0IHk9IjEwLjY2NjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjQjIyMjM0Ci8+Cjwvc3ZnPgo=" 
+                                alt="Español" 
+                                class="lang-flag" 
+                                title="Español"
+                                onclick="changeLanguage('es')">
+                            
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjEuMjMwNzciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB5PSIzLjY5MjMxIiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0iI0IyMjIzNCIvPgo8cmVjdCB5PSI2LjE1Mzg1IiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeT0iOC42MTUzOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IiNCMjIyMzQiLz4KPHJlY3QgeT0iMTEuMDc2OSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEzLjUzODUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHdpZHRoPSI5LjIzMDc3IiBoZWlnaHQ9IjguNjE1MzgiIGZpbGw9IiMzQzNDOUQiLz4KPC9zdmc+Cg==" 
+                                alt="English" 
+                                class="lang-flag active" 
+                                title="English"
+                                onclick="changeLanguage('en')">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logo que atravessa as duas áreas -->
+                <div class="logo-overlay">
+                    <img src="logo2.png" alt="AgPro Inc" class="logo-img">
+                </div>
+                
+                <div class="main-nav">
+                    <nav class="nav">
+                        <a href="#" class="active">Home</a>
+                        <a href="#">Our Mission</a>
+                        <a href="#">Products and Services</a>
+                        <a href="#">Projects</a>
+                        <a href="#">Contacts</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Excellence in Livestock housing and equipment</h1>
+                    <p>For decades, AgPro Inc has delivered premium solutions to the world’s most demanding agribusiness projects.</p>
+                    <button class="cta-button">Products and Services</button>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="section-content">
+                    <h2 class="section-title">Our Experience</h2>
+                    <p class="section-subtitle">Decades of excellence in developing large-scale projects for international agribusiness.</p>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="number">30+</span>
+                            <span class="label">Years of Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">500+</span>
+                            <span class="label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">25+</span>
+                            <span class="label">Countries Served</span>
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Swine</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>                            
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Poultry</h2>
+                            <p>Poultry project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, nest systems, plastic slats,  celulose insulation, foamular, fiberglass insulation, 
+                                plastic drop ceilings, electrical installations, hidraulic installations, pre-fabricated water storage tanks with liners and covers, 
+                                high pressure water pumps, wash down and fogging systems.
+                            </p>                            
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Grain Storage</h2>
+                            <p>Grain storage project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of Grain Silos, Hopper Tanks, bucket elevators, chain conveyors, belt conveyors, screw conveyors, 
+                                distributors, square bins, aeration systems, temperature detection systems, grain sweeps, turn key or semi-turn key installations, 
+                                automatic control systems and electrical installations.
+                            </p>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OUR MISSION -->
+        <div class="page-mockup">
+            
+            <div class="header">
+                <div class="contact-bar">                    
+                    <div class="contact-actions">
+                        <!-- Social Media -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="Facebook">📘</a>
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Instagram">📸</a>
+                        </div>
+                        
+                        <!-- Language selector -->
+                        <div class="language-selector">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjUuMzMzMzciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjRkNEQzAwIi8+CjxyZWN0IHk9IjEwLjY2NjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjQjIyMjM0Ci8+Cjwvc3ZnPgo=" 
+                                alt="Español" 
+                                class="lang-flag" 
+                                title="Español"
+                                onclick="changeLanguage('es')">
+                            
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjEuMjMwNzciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB5PSIzLjY5MjMxIiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0iI0IyMjIzNCIvPgo8cmVjdCB5PSI2LjE1Mzg1IiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeT0iOC42MTUzOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IiNCMjIyMzQiLz4KPHJlY3QgeT0iMTEuMDc2OSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEzLjUzODUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHdpZHRoPSI5LjIzMDc3IiBoZWlnaHQ9IjguNjE1MzgiIGZpbGw9IiMzQzNDOUQiLz4KPC9zdmc+Cg==" 
+                                alt="English" 
+                                class="lang-flag active" 
+                                title="English"
+                                onclick="changeLanguage('en')">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logo que atravessa as duas áreas -->
+                <div class="logo-overlay">
+                    <img src="logo2.png" alt="AgPro Inc" class="logo-img">
+                </div>
+                
+                <div class="main-nav">
+                    <nav class="nav">
+                        <a href="#" class="active">Home</a>
+                        <a href="#">Our Mission</a>
+                        <a href="#">Products and Services</a>
+                        <a href="#">Projects</a>
+                        <a href="#">Contacts</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Our mission</h1>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="section-content">
+                    <div class="two-column">
+                        <div class="content-text">
+                            <h3>Specialized Consulting</h3>
+                            <p>To utilize our experience in order to provide our 
+                                customers with excellent products service and price,
+                                contributing to the improvement of their bottom line in
+                                the knowledge that their success will become our success
+                            </p>                            
+                        </div>
+                        <div class="content-image">
+                            <img src="colageagpro.gif" alt="Colageagpro">
+                        </div>
+                    </div>                    
+                    
+                </div>
+            </div>
+        </div>        
+
+
+        <!-- Products and Services -->
+        <div class="page-mockup">
+            
+            <div class="header">
+                <div class="contact-bar">                    
+                    <div class="contact-actions">
+                        <!-- Social Media -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="Facebook">📘</a>
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Instagram">📸</a>
+                        </div>
+                        
+                        <!-- Language selector -->
+                        <div class="language-selector">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjUuMzMzMzciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjRkNEQzAwIi8+CjxyZWN0IHk9IjEwLjY2NjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjQjIyMjM0Ci8+Cjwvc3ZnPgo=" 
+                                alt="Español" 
+                                class="lang-flag" 
+                                title="Español"
+                                onclick="changeLanguage('es')">
+                            
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjEuMjMwNzciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB5PSIzLjY5MjMxIiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0iI0IyMjIzNCIvPgo8cmVjdCB5PSI2LjE1Mzg1IiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeT0iOC42MTUzOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IiNCMjIyMzQiLz4KPHJlY3QgeT0iMTEuMDc2OSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEzLjUzODUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHdpZHRoPSI5LjIzMDc3IiBoZWlnaHQ9IjguNjE1MzgiIGZpbGw9IiMzQzNDOUQiLz4KPC9zdmc+Cg==" 
+                                alt="English" 
+                                class="lang-flag active" 
+                                title="English"
+                                onclick="changeLanguage('en')">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logo que atravessa as duas áreas -->
+                <div class="logo-overlay">
+                    <img src="logo2.png" alt="AgPro Inc" class="logo-img">
+                </div>
+                
+                <div class="main-nav">
+                    <nav class="nav">
+                        <a href="#" class="active">Home</a>
+                        <a href="#">Our Mission</a>
+                        <a href="#">Products and Services</a>
+                        <a href="#">Projects</a>
+                        <a href="#">Contacts</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Products and Services</h1>
+                    <p>For decades, AgPro Inc has delivered premium solutions to the world’s most demanding agribusiness projects.</p>
+                </div>
+            </div>
+
+            <div class="tabs-container">
+                <nav class="tabs-nav">
+                    <a href="#buildings" class="tab-item active">Buildings</a>
+                    <a href="#equipments" class="tab-item">Equipments</a>
+                    <a href="#grain-storage" class="tab-item">Grain Storage & Handling</a>
+                    <a href="#feed-transport" class="tab-item">Feed Transportation</a>
+                    <a href="#ventilation" class="tab-item">Ventilation Equipment</a>
+                    <a href="#confinement" class="tab-item">Confinement</a>
+                    <a href="#flooring" class="tab-item">Flooring</a>
+                    <a href="#blueprints" class="tab-item">Blue Prints</a>
+                </nav>
+            </div>
+
+            <div class="content-section">
+                <div class="services-container2">
+                    <div class="services-section2">
+                        <div class="service-card2">
+                            <h2 class="section-title">Buildings</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                           
+                        </div>
+                    </div>
+
+                    <div class="services-section2">
+                        <div class="service-card2">
+                            <h2 class="section-title">Equipment</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                           
+                        </div>
+                    </div>
+
+                    <div class="services-section2">
+                        <div class="service-card2">
+                            <h2 class="section-title">Grain Storage and Handling</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                           
+                        </div>
+                    </div>
+
+                    <div class="services-section2">
+                        <div class="service-card2">
+                            <h2 class="section-title">Feed Transportation Systems</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                           
+                        </div>
+                    </div>     
+                    
+                    <div class="services-section2">
+                        <div class="service-card2">
+                            <h2 class="section-title">Ventilation Equipment</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                           
+                        </div>
+                    </div> 
+
+                    <div class="services-section2">
+                        <div class="service-card2">
+                            <h2 class="section-title">Confinement</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                           
+                        </div>
+                    </div> 
+
+                    <div class="services-section2">
+                        <div class="service-card2">
+                            <h2 class="section-title">Flooring</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                           
+                        </div>
+                    </div>
+
+                    <div class="services-section2">
+                        <div class="service-card2">
+                            <h2 class="section-title">Blue Prints</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p>
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Products and Services -->
+        <div class="page-mockup">
+            
+            <div class="header">
+                <div class="contact-bar">                    
+                    <div class="contact-actions">
+                        <!-- Social Media -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="Facebook">📘</a>
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Instagram">📸</a>
+                        </div>
+                        
+                        <!-- Language selector -->
+                        <div class="language-selector">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjUuMzMzMzciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjRkNEQzAwIi8+CjxyZWN0IHk9IjEwLjY2NjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjQjIyMjM0Ci8+Cjwvc3ZnPgo=" 
+                                alt="Español" 
+                                class="lang-flag" 
+                                title="Español"
+                                onclick="changeLanguage('es')">
+                            
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjEuMjMwNzciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB5PSIzLjY5MjMxIiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0iI0IyMjIzNCIvPgo8cmVjdCB5PSI2LjE1Mzg1IiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeT0iOC42MTUzOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IiNCMjIyMzQiLz4KPHJlY3QgeT0iMTEuMDc2OSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEzLjUzODUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHdpZHRoPSI5LjIzMDc3IiBoZWlnaHQ9IjguNjE1MzgiIGZpbGw9IiMzQzNDOUQiLz4KPC9zdmc+Cg==" 
+                                alt="English" 
+                                class="lang-flag active" 
+                                title="English"
+                                onclick="changeLanguage('en')">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logo que atravessa as duas áreas -->
+                <div class="logo-overlay">
+                    <img src="logo2.png" alt="AgPro Inc" class="logo-img">
+                </div>
+                
+                <div class="main-nav">
+                    <nav class="nav">
+                        <a href="#" class="active">Home</a>
+                        <a href="#">Our Mission</a>
+                        <a href="#">Products and Services</a>
+                        <a href="#">Projects</a>
+                        <a href="#">Contacts</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Products and Services</h1>
+                    <p>For decades, AgPro Inc has delivered premium solutions to the world’s most demanding agribusiness projects.</p>
+                </div>
+            </div>
+
+            <div class="tabs-container">
+                <nav class="tabs-nav">
+                    <a href="#buildings" class="tab-item active">Buildings</a>
+                    <a href="#equipments" class="tab-item">Equipments</a>
+                    <a href="#grain-storage" class="tab-item">Grain Storage & Handling</a>
+                    <a href="#feed-transport" class="tab-item">Feed Transportation</a>
+                    <a href="#ventilation" class="tab-item">Ventilation Equipment</a>
+                    <a href="#confinement" class="tab-item">Confinement</a>
+                    <a href="#flooring" class="tab-item">Flooring</a>
+                    <a href="#blueprints" class="tab-item">Blue Prints</a>
+                </nav>
+            </div>
+
+            <div class="content-section">
+                <div class="section-content">
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Buildings</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p> 
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                             
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Equipments</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p> 
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                             
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Grain Storage and Handling</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p> 
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                             
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Feed Transportation Systems</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p> 
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                             
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Ventilation Equipment</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p> 
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                             
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Confinement</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p> 
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                             
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Flooring</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p> 
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                             
+                        </div>
+                    </div>
+
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h2 class="section-title">Blue Prints</h2>
+                            <p>Swine project consulting, development and management, construction planing and supervision, 
+                                equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, 
+                                sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, 
+                                concrete slats, plastic flooring for nurseries and farrowing crates, 
+                                pre-fabricated swine housing in either kiln dryed lumber or all galvanized steel or painted steel and kiln dryed lumber combinations, 
+                                celulose insulation, foamular, fiberglass insulation, plastic drop ceilings, electrical installations, hidraulic installations, 
+                                pre-fabricated water storage tanks with liners and covers, high pressure water pumps, wash down and soaking systems, fogging systems, 
+                                drinkers, water reclaim systems and sewage lines.
+                            </p> 
+                            <img src="colageagpro.gif" alt="Colageagpro" class="service-gif">                             
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Contact page -->
+        <div class="page-mockup">
+            
+            <div class="header">
+                <div class="contact-bar">                    
+                    <div class="contact-actions">
+                        <!-- Social Media -->
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="Facebook">📘</a>
+                            <a href="#" class="social-link" title="LinkedIn">💼</a>
+                            <a href="#" class="social-link" title="Instagram">📸</a>
+                        </div>
+                        
+                        <!-- Language selector -->
+                        <div class="language-selector">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjUuMzMzMzciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjRkNEQzAwIi8+CjxyZWN0IHk9IjEwLjY2NjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjQjIyMjM0Ci8+Cjwvc3ZnPgo=" 
+                                alt="Español" 
+                                class="lang-flag" 
+                                title="Español"
+                                onclick="changeLanguage('es')">
+                            
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjEuMjMwNzciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB5PSIzLjY5MjMxIiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0iI0IyMjIzNCIvPgo8cmVjdCB5PSI2LjE1Mzg1IiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeT0iOC42MTUzOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IiNCMjIyMzQiLz4KPHJlY3QgeT0iMTEuMDc2OSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEzLjUzODUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHdpZHRoPSI5LjIzMDc3IiBoZWlnaHQ9IjguNjE1MzgiIGZpbGw9IiMzQzNDOUQiLz4KPC9zdmc+Cg==" 
+                                alt="English" 
+                                class="lang-flag active" 
+                                title="English"
+                                onclick="changeLanguage('en')">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logo que atravessa as duas áreas -->
+                <div class="logo-overlay">
+                    <img src="logo2.png" alt="AgPro Inc" class="logo-img">
+                </div>
+                
+                <div class="main-nav">
+                    <nav class="nav">
+                        <a href="#" class="active">Home</a>
+                        <a href="#">Our Mission</a>
+                        <a href="#">Products and Services</a>
+                        <a href="#">Projects</a>
+                        <a href="#">Contacts</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Contact Us</h1>
+                    <p>We’re ready to develop the ideal solution for your project. Speak with our experts.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="section-content">
+                    <div class="two-column">                        
+                        
+                        <div class="contact-form">
+                            <h3>Request a Custom Quote</h3>
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nome">Full Name *</label>
+                                        <input type="text" id="nome" name="nome" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="empresa">Company</label>
+                                        <input type="text" id="empresa" name="empresa">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefone">Phone</label>
+                                        <input type="tel" id="telefone" name="telefone">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="prazo">Urgency/Timeline</label>
+                                    <select id="prazo" name="prazo">
+                                        <option value="">Select desired timeline</option>
+                                        <option value="urgente">Urgent (within 30 days)</option>
+                                        <option value="curto">Short-term (1-3 months)</option>
+                                        <option value="medio">Medium-term (3-6 months)</option>
+                                        <option value="longo">Long-term (6+ months)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="localizacao">Country/Region</label>
+                                    <input type="text" id="localizacao" name="localizacao" placeholder="Country/Region">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descricao">Type of Service Needed /  Project Description*</label>
+                                    <textarea id="descricao" name="descricao" rows="5" placeholder="Please describe in detail your project goals and requirements" required></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="como-conheceu">How did you hear about us?</label>
+                                    <select id="como-conheceu" name="como-conheceu">
+                                        <option value="">Select an option</option>
+                                        <option value="google">Google search</option>
+                                        <option value="indicacao">Client referral</option>
+                                        <option value="feira">Industry trade show</option>
+                                        <option value="website">Company website</option>
+                                        <option value="redes-sociais">Social media</option>
+                                        <option value="publicidade">Advertisement</option>
+                                        <option value="outro">Other</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn-submit">Get Your Free Quote</button>
+                            </form>
+                        </div>
+
+                        <div class="contact-info">
+                            <h3 style="margin-top: 50px;">Employment</h3>
+                            <p>If interested in working with us, please send us your full C.V.
+                                <br> The key to AGPRO´S success is the people who work with us and who strive daily to reach our customer´s goals
+                                <br>It is our policy the bring the best professionals in the industry to our team
+                                <br>Each project is a new opportunity to show our customers the highly professional attitude we seek at AGPRO INC. we highly value our associates
+                                <br>If you have the following qualities, please click the link (Available Jobs) and fill the form:</p>
+                            <ul class="service-list" style="margin-top: 20px;">
+                                <li>Ability to work in a very demanding enviroment</li>
+                                <li>Capacity of overcome difficulties</li>
+                                <li>Efficiency</li>
+                                <li>Flexibility</li>
+                                <li>Desire to better yourself</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FOOTER GLOBAL -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="logo2.png" alt="AgPro Inc" class="logo-img">
+                    </div>
+                    <p>Decades of excellence in developing large-scale projects for international agribusiness.</p>
+                    <p style="margin-top: 20px;">📍 Springfield, IL - United States</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Products and Services</h4>
+                    <a href="#">Buildings</a>
+                    <a href="#">Equipments</a>
+                    <a href="#">Grain Storage</a>
+                    <a href="#">Feed Transportation</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#">Our Mission</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Contacts</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgPro Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

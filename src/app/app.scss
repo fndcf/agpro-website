@@ -1,0 +1,5 @@
+// 📁 src/app/app.component.scss
+// Estilos específicos do componente raiz se necessário
+main {
+  min-height: calc(100vh - 200px); // Ajustar conforme altura do header/footer
+}
