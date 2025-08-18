@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+// 📁 src/app/pages/projects/projects.ts (INTERNACIONALIZADO)
+import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { HeroComponent } from '../../components/hero/hero';
+import { I18nService } from '../../services/i18n.service';
 
 interface Project {
   id: string;
@@ -24,81 +26,67 @@ interface Project {
 })
 export class Projects {
   
-  constructor(private router: Router) {}
+  // Computed signal para traduções
+  translations = computed(() => this.i18nService.currentTranslations());
+
+  constructor(
+    private router: Router,
+    private i18nService: I18nService
+  ) {}
 
   // Imagem fallback caso alguma imagem específica não esteja disponível
   fallbackImage = 'assets/images/colageagpro.gif';
   
-  featuredProjects: Project[] = [
-    {
-      id: 'swine-facility-brazil',
-      title: 'Large Scale Swine Facility',
-      location: 'São Paulo, Brazil',
-      year: '2023',
-      category: 'Swine',
-      description: 'Complete swine production facility with 5,000 head capacity, featuring state-of-the-art ventilation systems, automated feeding, and advanced waste management.',
-      image: 'assets/images/projects/swine-facility-brazil.jpg',
-      imageAlt: 'Large Scale Swine Facility in São Paulo, Brazil',
-      features: [
-        '5,000 head capacity',
-        'Automated feeding systems',
-        'Climate-controlled environment',
-        'Waste management systems',
-        'Biosecurity protocols'
-      ]
-    },
-    {
-      id: 'poultry-complex-mexico',
-      title: 'Modern Poultry Complex',
-      location: 'Jalisco, Mexico',
-      year: '2023',
-      category: 'Poultry',
-      description: 'Integrated poultry production complex with multiple houses, featuring advanced environmental controls and automated egg collection systems.',
-      image: 'assets/images/projects/poultry-complex-mexico.jpg',
-      imageAlt: 'Modern Poultry Complex in Jalisco, Mexico',
-      features: [
-        '10 production houses',
-        'Automated egg collection',
-        'Environmental control systems',
-        'Biosecurity measures',
-        'Energy-efficient design'
-      ]
-    },
-    {
-      id: 'grain-storage-argentina',
-      title: 'Grain Storage Facility',
-      location: 'Buenos Aires, Argentina',
-      year: '2022',
-      category: 'Grain Storage',
-      description: 'High-capacity grain storage facility with advanced aeration and monitoring systems for optimal grain preservation.',
-      image: 'assets/images/projects/grain-storage-argentina.jpg',
-      imageAlt: 'Grain Storage Facility in Buenos Aires, Argentina',
-      features: [
-        '50,000 ton capacity',
-        'Advanced aeration systems',
-        'Temperature monitoring',
-        'Automated handling equipment',
-        'Quality preservation systems'
-      ]
-    },
-    {
-      id: 'integrated-farm-usa',
-      title: 'Integrated Livestock Farm',
-      location: 'Illinois, USA',
-      year: '2022',
-      category: 'Integrated',
-      description: 'Complete integrated livestock operation combining swine and poultry production with feed mill and grain storage.',
-      image: 'assets/images/projects/integrated-farm-usa.jpg',
-      imageAlt: 'Integrated Livestock Farm in Illinois, USA',
-      features: [
-        'Multi-species facility',
-        'On-site feed mill',
-        'Integrated waste management',
-        'Renewable energy systems',
-        'Comprehensive automation'
-      ]
-    }
-  ];
+  // Featured projects agora são computed baseados nas traduções
+  featuredProjects = computed((): Project[] => {
+    const t = this.translations().projects.projectsData;
+    return [
+      {
+        id: 'swine-facility-brazil',
+        title: t.swineProject.title,
+        location: 'São Paulo, Brazil',
+        year: '2023',
+        category: 'Swine',
+        description: t.swineProject.description,
+        image: 'assets/images/projects/swine-facility-brazil.jpg',
+        imageAlt: t.swineProject.title + ' in São Paulo, Brazil',
+        features: t.swineProject.features
+      },
+      {
+        id: 'poultry-complex-mexico',
+        title: t.poultryProject.title,
+        location: 'Jalisco, Mexico',
+        year: '2023',
+        category: 'Poultry',
+        description: t.poultryProject.description,
+        image: 'assets/images/projects/poultry-complex-mexico.jpg',
+        imageAlt: t.poultryProject.title + ' in Jalisco, Mexico',
+        features: t.poultryProject.features
+      },
+      {
+        id: 'grain-storage-argentina',
+        title: t.grainProject.title,
+        location: 'Buenos Aires, Argentina',
+        year: '2022',
+        category: 'Grain Storage',
+        description: t.grainProject.description,
+        image: 'assets/images/projects/grain-storage-argentina.jpg',
+        imageAlt: t.grainProject.title + ' in Buenos Aires, Argentina',
+        features: t.grainProject.features
+      },
+      {
+        id: 'integrated-farm-usa',
+        title: t.integratedProject.title,
+        location: 'Illinois, USA',
+        year: '2022',
+        category: 'Integrated',
+        description: t.integratedProject.description,
+        image: 'assets/images/projects/integrated-farm-usa.jpg',
+        imageAlt: t.integratedProject.title + ' in Illinois, USA',
+        features: t.integratedProject.features
+      }
+    ];
+  });
 
   // Método para lidar com erro de carregamento de imagem
   onImageError(event: any, project: Project) {
@@ -107,24 +95,29 @@ export class Projects {
     event.target.alt = `${project.title} - AgPro International Project`;
   }
 
-  projectCategories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'swine', label: 'Swine' },
-    { id: 'poultry', label: 'Poultry' },
-    { id: 'grain', label: 'Grain Storage' },
-    { id: 'integrated', label: 'Integrated Solutions' }
-  ];
+  // Project categories agora são computed baseados nas traduções
+  projectCategories = computed(() => {
+    const t = this.translations().projects.tabs;
+    return [
+      { id: 'all', label: t.allProjects },
+      { id: 'swine', label: t.swine },
+      { id: 'poultry', label: t.poultry },
+      { id: 'grain', label: t.grainStorage },
+      { id: 'integrated', label: t.integratedSolutions }
+    ];
+  });
 
   selectedCategory = 'all';
 
-  get filteredProjects() {
+  // Filtered projects baseado na categoria selecionada
+  filteredProjects = computed(() => {
     if (this.selectedCategory === 'all') {
-      return this.featuredProjects;
+      return this.featuredProjects();
     }
-    return this.featuredProjects.filter(project => 
+    return this.featuredProjects().filter(project => 
       project.category.toLowerCase() === this.selectedCategory
     );
-  }
+  });
 
   // Método para navegar para a página de contatos
   navigateToContact() {
@@ -135,7 +128,7 @@ export class Projects {
     this.selectedCategory = category;
     
     // Se não for "all", faz scroll para o primeiro projeto da categoria
-    if (category !== 'all' && this.filteredProjects.length > 0) {
+    if (category !== 'all' && this.filteredProjects().length > 0) {
       // Pequeno delay para garantir que o DOM foi atualizado
       setTimeout(() => {
         this.scrollToFirstProject();
@@ -147,7 +140,7 @@ export class Projects {
   }
 
   private scrollToFirstProject() {
-    const firstProject = this.filteredProjects[0];
+    const firstProject = this.filteredProjects()[0];
     if (firstProject) {
       const element = document.getElementById('project-' + firstProject.id);
       if (element) {

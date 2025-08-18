@@ -349,6 +349,62 @@ export interface Translation {
       viewJobsButton: string;
     };
   };
+
+  // Projects translations
+  projects: {
+    hero: {
+      title: string;
+      subtitle: string;
+    };
+    tabs: {
+      allProjects: string;
+      swine: string;
+      poultry: string;
+      grainStorage: string;
+      integratedSolutions: string;
+    };
+    featuredProjects: {
+      title: string;
+      subtitle: string;
+    };
+    projectDetails: {
+      keyFeatures: string;
+      location: string;
+    };
+    noProjects: {
+      title: string;
+      message: string;
+      tryDifferent: string;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      buttonText: string;
+    };
+    // Project data
+    projectsData: {
+      swineProject: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      poultryProject: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      grainProject: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      integratedProject: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+    };
+  };
   
   // Footer translations
   footer: {
@@ -771,6 +827,83 @@ export class I18nService {
           viewJobsButton: 'View Available Jobs'
         }
       },
+      projects: {
+        hero: {
+          title: 'Our Projects',
+          subtitle: 'Showcasing decades of excellence in agribusiness solutions worldwide'
+        },
+        tabs: {
+          allProjects: 'All Projects',
+          swine: 'Swine',
+          poultry: 'Poultry',
+          grainStorage: 'Grain Storage',
+          integratedSolutions: 'Integrated Solutions'
+        },
+        featuredProjects: {
+          title: 'Featured Projects',
+          subtitle: 'From large-scale swine facilities to integrated agricultural complexes, our projects represent the pinnacle of agribusiness innovation.'
+        },
+        projectDetails: {
+          keyFeatures: 'Key Features:',
+          location: 'Location'
+        },
+        noProjects: {
+          title: 'No projects found',
+          message: 'No projects found for this category',
+          tryDifferent: 'Try selecting a different category'
+        },
+        cta: {
+          title: 'Ready to Start Your Next Project?',
+          subtitle: 'Let our experienced team help you develop the ideal solution for your agribusiness needs.',
+          buttonText: 'Contact Our Experts'
+        },
+        projectsData: {
+          swineProject: {
+            title: 'Large Scale Swine Facility',
+            description: 'Complete swine production facility with 5,000 head capacity, featuring state-of-the-art ventilation systems, automated feeding, and advanced waste management.',
+            features: [
+              '5,000 head capacity',
+              'Automated feeding systems',
+              'Climate-controlled environment',
+              'Waste management systems',
+              'Biosecurity protocols'
+            ]
+          },
+          poultryProject: {
+            title: 'Modern Poultry Complex',
+            description: 'Integrated poultry production complex with multiple houses, featuring advanced environmental controls and automated egg collection systems.',
+            features: [
+              '10 production houses',
+              'Automated egg collection',
+              'Environmental control systems',
+              'Biosecurity measures',
+              'Energy-efficient design'
+            ]
+          },
+          grainProject: {
+            title: 'Grain Storage Facility',
+            description: 'High-capacity grain storage facility with advanced aeration and monitoring systems for optimal grain preservation.',
+            features: [
+              '50,000 ton capacity',
+              'Advanced aeration systems',
+              'Temperature monitoring',
+              'Automated handling equipment',
+              'Quality preservation systems'
+            ]
+          },
+          integratedProject: {
+            title: 'Integrated Livestock Farm',
+            description: 'Complete integrated livestock operation combining swine and poultry production with feed mill and grain storage.',
+            features: [
+              'Multi-species facility',
+              'On-site feed mill',
+              'Integrated waste management',
+              'Renewable energy systems',
+              'Comprehensive automation'
+            ]
+          }
+        }
+      },
       footer: {
         productsServices: 'Products & Services',
         company: 'Company',
@@ -1177,6 +1310,83 @@ export class I18nService {
             'Desejo de se aperfeiçoar'
           ],
           viewJobsButton: 'Ver Vagas Disponíveis'
+        }
+      },
+      projects: {
+        hero: {
+          title: 'Nossos Projetos',
+          subtitle: 'Mostrando décadas de excelência em soluções de agronegócio mundialmente'
+        },
+        tabs: {
+          allProjects: 'Todos os Projetos',
+          swine: 'Suinocultura',
+          poultry: 'Avicultura',
+          grainStorage: 'Armazenamento de Grãos',
+          integratedSolutions: 'Soluções Integradas'
+        },
+        featuredProjects: {
+          title: 'Projetos em Destaque',
+          subtitle: 'Desde instalações suínas de grande escala até complexos agrícolas integrados, nossos projetos representam o ápice da inovação no agronegócio.'
+        },
+        projectDetails: {
+          keyFeatures: 'Características Principais:',
+          location: 'Localização'
+        },
+        noProjects: {
+          title: 'Nenhum projeto encontrado',
+          message: 'Nenhum projeto encontrado para esta categoria',
+          tryDifferent: 'Tente selecionar uma categoria diferente'
+        },
+        cta: {
+          title: 'Pronto para Iniciar Seu Próximo Projeto?',
+          subtitle: 'Deixe nossa equipe experiente ajudá-lo a desenvolver a solução ideal para suas necessidades de agronegócio.',
+          buttonText: 'Entre em Contato com Nossos Especialistas'
+        },
+        projectsData: {
+          swineProject: {
+            title: 'Instalação Suína de Grande Escala',
+            description: 'Instalação completa de produção suína com capacidade para 5.000 cabeças, com sistemas de ventilação de última geração, alimentação automatizada e gerenciamento avançado de resíduos.',
+            features: [
+              'Capacidade para 5.000 cabeças',
+              'Sistemas de alimentação automatizados',
+              'Ambiente com clima controlado',
+              'Sistemas de gerenciamento de resíduos',
+              'Protocolos de biossegurança'
+            ]
+          },
+          poultryProject: {
+            title: 'Complexo Avícola Moderno',
+            description: 'Complexo de produção avícola integrado com múltiplos galpões, com controles ambientais avançados e sistemas automatizados de coleta de ovos.',
+            features: [
+              '10 galpões de produção',
+              'Coleta automatizada de ovos',
+              'Sistemas de controle ambiental',
+              'Medidas de biossegurança',
+              'Design energeticamente eficiente'
+            ]
+          },
+          grainProject: {
+            title: 'Instalação de Armazenamento de Grãos',
+            description: 'Instalação de armazenamento de grãos de alta capacidade com sistemas avançados de aeração e monitoramento para preservação ideal dos grãos.',
+            features: [
+              'Capacidade de 50.000 toneladas',
+              'Sistemas avançados de aeração',
+              'Monitoramento de temperatura',
+              'Equipamentos automatizados de manuseio',
+              'Sistemas de preservação da qualidade'
+            ]
+          },
+          integratedProject: {
+            title: 'Fazenda Pecuária Integrada',
+            description: 'Operação pecuária integrada completa combinando produção suína e avícola com fábrica de ração e armazenamento de grãos.',
+            features: [
+              'Instalação multi-espécies',
+              'Fábrica de ração no local',
+              'Gerenciamento integrado de resíduos',
+              'Sistemas de energia renovável',
+              'Automação abrangente'
+            ]
+          }
         }
       },
       footer: {
@@ -1587,6 +1797,83 @@ export class I18nService {
           viewJobsButton: 'Ver Trabajos Disponibles'
         }
       },
+      projects: {
+        hero: {
+          title: 'Nuestros Proyectos',
+          subtitle: 'Mostrando décadas de excelencia en soluciones de agronegocios a nivel mundial'
+        },
+        tabs: {
+          allProjects: 'Todos los Proyectos',
+          swine: 'Porcinos',
+          poultry: 'Aves',
+          grainStorage: 'Almacenamiento de Granos',
+          integratedSolutions: 'Soluciones Integradas'
+        },
+        featuredProjects: {
+          title: 'Proyectos Destacados',
+          subtitle: 'Desde instalaciones porcinas a gran escala hasta complejos agrícolas integrados, nuestros proyectos representan la cúspide de la innovación en agronegocios.'
+        },
+        projectDetails: {
+          keyFeatures: 'Características Clave:',
+          location: 'Ubicación'
+        },
+        noProjects: {
+          title: 'No se encontraron proyectos',
+          message: 'No se encontraron proyectos para esta categoría',
+          tryDifferent: 'Intente seleccionar una categoría diferente'
+        },
+        cta: {
+          title: '¿Listo para Comenzar su Próximo Proyecto?',
+          subtitle: 'Permita que nuestro equipo experimentado le ayude a desarrollar la solución ideal para sus necesidades de agronegocios.',
+          buttonText: 'Contacte Nuestros Expertos'
+        },
+        projectsData: {
+          swineProject: {
+            title: 'Instalación Porcina a Gran Escala',
+            description: 'Instalación completa de producción porcina con capacidad para 5,000 cabezas, con sistemas de ventilación de última generación, alimentación automatizada y gestión avanzada de residuos.',
+            features: [
+              'Capacidad para 5,000 cabezas',
+              'Sistemas de alimentación automatizados',
+              'Ambiente con clima controlado',
+              'Sistemas de gestión de residuos',
+              'Protocolos de bioseguridad'
+            ]
+          },
+          poultryProject: {
+            title: 'Complejo Avícola Moderno',
+            description: 'Complejo de producción avícola integrado con múltiples naves, con controles ambientales avanzados y sistemas automatizados de recolección de huevos.',
+            features: [
+              '10 naves de producción',
+              'Recolección automatizada de huevos',
+              'Sistemas de control ambiental',
+              'Medidas de bioseguridad',
+              'Diseño energéticamente eficiente'
+            ]
+          },
+          grainProject: {
+            title: 'Instalación de Almacenamiento de Granos',
+            description: 'Instalación de almacenamiento de granos de alta capacidad con sistemas avanzados de aireación y monitoreo para la preservación óptima del grano.',
+            features: [
+              'Capacidad de 50,000 toneladas',
+              'Sistemas avanzados de aireación',
+              'Monitoreo de temperatura',
+              'Equipos automatizados de manejo',
+              'Sistemas de preservación de calidad'
+            ]
+          },
+          integratedProject: {
+            title: 'Granja Ganadera Integrada',
+            description: 'Operación ganadera integrada completa que combina producción porcina y avícola con fábrica de alimentos y almacenamiento de granos.',
+            features: [
+              'Instalación multi-especies',
+              'Fábrica de alimentos en el sitio',
+              'Gestión integrada de residuos',
+              'Sistemas de energía renovable',
+              'Automatización integral'
+            ]
+          }
+        }
+      },
       footer: {
         productsServices: 'Productos y Servicios',
         company: 'Empresa',
@@ -1687,6 +1974,11 @@ export class I18nService {
   // Método helper para acessar traduções do contact
   public get contact() {
     return this.currentTranslations().contact;
+  }
+
+  // Método helper para acessar traduções do projects
+  public get projects() {
+    return this.currentTranslations().projects;
   }
 
   // Método helper para acessar traduções do footer
