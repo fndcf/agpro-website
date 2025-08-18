@@ -25,10 +25,10 @@
           class="lang-flag cursor-pointer transition-all duration-300 hover:opacity-80 
                  hover:scale-110 rounded-sm border border-transparent hover:border-white hover:border-opacity-50
                  p-1"
-          [class.active]="currentLanguage === language.code"
-          [class.border-gold]="currentLanguage === language.code"
-          [class.bg-white]="currentLanguage === language.code"
-          [class.bg-opacity-20]="currentLanguage === language.code">
+          [class.active]="currentLanguage() === language.code"
+          [class.border-gold]="currentLanguage() === language.code"
+          [class.bg-white]="currentLanguage() === language.code"
+          [class.bg-opacity-20]="currentLanguage() === language.code">
           <img 
             [src]="language.flagUrl" 
             [alt]="language.title"
@@ -59,7 +59,7 @@
     <!-- Desktop Navigation (apenas xl+) -->
     <nav class="hidden xl:flex gap-8">
       <a 
-        *ngFor="let item of navItems"
+        *ngFor="let item of navItems()"
         [routerLink]="item.route" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: item.exact }"
@@ -85,7 +85,7 @@
     [class.hidden]="!isMenuOpen">
     <div class="flex flex-col space-y-2">
       <a 
-        *ngFor="let item of navItems"
+        *ngFor="let item of navItems()"
         [routerLink]="item.route" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: item.exact }"

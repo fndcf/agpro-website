@@ -1,7 +1,8 @@
 // 📁 src/app/components/footer/footer.ts
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,19 +14,53 @@ import { RouterLink } from '@angular/router';
 export class FooterComponent {
   currentYear = new Date().getFullYear();
   
-  footerLinks = {
+  // Computed signal para traduções
+  translations = computed(() => this.i18nService.currentTranslations());
+
+  constructor(private i18nService: I18nService) {}
+  
+  // Footer links agora usando computed para serem reativos
+  footerLinks = computed(() => ({
     products: [
-      { label: 'Buildings', route: '/products', fragment: 'buildings' },
-      { label: 'Equipments', route: '/products', fragment: 'equipments' },
-      { label: 'Grain Storage', route: '/products', fragment: 'grain-storage' },
-      { label: 'Feed Transportation', route: '/products', fragment: 'feed-transport' }
+      { 
+        label: this.translations().footer.buildings, 
+        route: '/products', 
+        fragment: 'buildings' 
+      },
+      { 
+        label: this.translations().footer.equipments, 
+        route: '/products', 
+        fragment: 'equipments' 
+      },
+      { 
+        label: this.translations().footer.grainStorage, 
+        route: '/products', 
+        fragment: 'grain-storage' 
+      },
+      { 
+        label: this.translations().footer.feedTransportation, 
+        route: '/products', 
+        fragment: 'feed-transport' 
+      }
     ],
     company: [
-      { label: 'Our Mission', route: '/mission', fragment: null },
-      { label: 'Projects', route: '/projects', fragment: null },
-      { label: 'Contacts', route: '/contact', fragment: null }
+      { 
+        label: this.translations().footer.ourMission, 
+        route: '/mission', 
+        fragment: null 
+      },
+      { 
+        label: this.translations().footer.projects, 
+        route: '/projects', 
+        fragment: null 
+      },
+      { 
+        label: this.translations().footer.contacts, 
+        route: '/contact', 
+        fragment: null 
+      }
     ]
-  };
+  }));
 
   socialLinks = [
     { 
@@ -48,5 +83,4 @@ export class FooterComponent {
       behavior: 'smooth'
     });
   }
-
 }

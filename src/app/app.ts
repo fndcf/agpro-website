@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { I18nService } from './services/i18n.service';
 
 @Component({
   selector: 'app-root',
@@ -27,10 +28,14 @@ export class AppComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private i18nService: I18nService
   ) {}
 
   ngOnInit() {
+    // Inicializa o idioma salvo
+    this.i18nService.initializeLanguage();
+    
     // Escuta mudanças de rota e gerencia scroll
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))

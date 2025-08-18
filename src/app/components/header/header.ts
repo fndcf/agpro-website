@@ -1,7 +1,8 @@
 // 📁 src/app/components/header/header.ts
-import { Component } from '@angular/core';
+import { Component, OnInit, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { I18nService, Language } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-header',
@@ -10,18 +11,26 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './header.html',
   styleUrls: ['./header.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isMenuOpen = false;
-  currentLanguage = 'en';
+
+  // Computed signal para traduções
+  translations = computed(() => this.i18nService.currentTranslations());
+  currentLanguage = computed(() => this.i18nService.currentLanguage());
+
+  constructor(private i18nService: I18nService) {}
+
+  ngOnInit() {
+    // Inicializa o idioma salvo no localStorage
+    this.i18nService.initializeLanguage();
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  changeLanguage(lang: string) {
-    this.currentLanguage = lang;
-    // Aqui você pode implementar a lógica de internacionalização
-    console.log('Language changed to:', lang);
+  changeLanguage(lang: Language) {
+    this.i18nService.setLanguage(lang);
   }
 
   // Links de redes sociais
@@ -38,31 +47,49 @@ export class HeaderComponent {
     }
   ];
 
-  
-
-  // Navigation items
-  navItems = [
-    { label: 'Home', route: '/', exact: true },
-    { label: 'Our Mission', route: '/mission', exact: false },
-    { label: 'Products and Services', route: '/products', exact: false },
-    { label: 'Projects', route: '/projects', exact: false },
-    { label: 'Contacts', route: '/contact', exact: false }
-  ];
+  // Navigation items - agora usando computed
+  navItems = computed(() => [
+    { 
+      label: this.translations().header.home, 
+      route: '/', 
+      exact: true 
+    },
+    { 
+      label: this.translations().header.mission, 
+      route: '/mission', 
+      exact: false 
+    },
+    { 
+      label: this.translations().header.products, 
+      route: '/products', 
+      exact: false 
+    },
+    { 
+      label: this.translations().header.projects, 
+      route: '/projects', 
+      exact: false 
+    },
+    { 
+      label: this.translations().header.contact, 
+      route: '/contact', 
+      exact: false 
+    }
+  ]);
 
   // Language flags - Usando emojis em vez de SVG complexo
   languages = [
     {
-      code: 'es',
+      code: 'es' as Language,
       title: 'Español',
       flagUrl: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1ea-1f1f8.svg'
     },
     {
-      code: 'en',
+      code: 'en' as Language,
       title: 'English', 
       flagUrl: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1fa-1f1f8.svg'
     },
     {
-      code: 'pt',
+      code: 'pt' as Language,
       title: 'Português',
       flagUrl: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1e7-1f1f7.svg'
     }
