@@ -1,40 +1,46 @@
 <!-- 📁 src/app/components/service-card/service-card.html -->
 <div class="service-card bg-white border border-gray-200 p-8 md:p-12 text-center 
-            transition-all duration-300 hover:-translate-y-3 hover:shadow-xl group">
+            transition-all duration-300 hover:-translate-y-3 hover:shadow-xl group 
+            min-h-[600px] flex flex-col"
+     [id]="service.id">
   
   <!-- Service Icon -->
   <div *ngIf="service.icon" 
        class="service-icon text-5xl mb-6 text-gold group-hover:scale-110 
-              transition-transform duration-300">
+              transition-transform duration-300 flex-shrink-0">
     {{ service.icon }}
   </div>
   
   <!-- Service Title -->
-  <h3 class="text-2xl md:text-3xl text-gold font-light mb-6">
+  <h3 class="text-2xl md:text-3xl text-gold font-light mb-6 flex-shrink-0">
     {{ service.title }}
   </h3>
   
-  <!-- Service Description with fixed min-height -->
-  <div class="service-description-container">
-    <p class="text-gray-600 text-base md:text-lg leading-relaxed font-sans">
+  <!-- Service Description - FIXED HEIGHT -->
+  <div class="service-description flex-grow flex items-start">
+    <p class="text-gray-600 text-base md:text-lg leading-relaxed font-sans w-full h-[140px] overflow-hidden">
       {{ service.description }}
     </p>
   </div>
   
   <!-- Service Features List -->
-  <ul *ngIf="service.features && service.features.length > 0" 
-      class="service-list text-left space-y-2 mb-6">
-    <li *ngFor="let feature of service.features" 
-        class="flex items-start gap-3 text-gray-600 font-sans">
-      <span class="text-gold font-bold text-sm mt-1">✓</span>
-      <span>{{ feature }}</span>
-    </li>
-  </ul>
+  <div *ngIf="service.features && service.features.length > 0" 
+       class="service-features flex-shrink-0 mt-6">
+    <ul class="service-list text-left space-y-2">
+      <li *ngFor="let feature of service.features" 
+          class="flex items-start gap-3 text-gray-600 font-sans">
+        <span class="text-gold font-bold text-sm mt-1">✓</span>
+        <span>{{ feature }}</span>
+      </li>
+    </ul>
+  </div>
   
   <!-- Service Image -->
-  <img *ngIf="showImage && imageUrl" 
-       [src]="imageUrl" 
-       [alt]="service.title"
-       class="service-image w-full h-64 object-cover rounded-lg mt-6 
-              shadow-md group-hover:shadow-lg transition-shadow duration-300">
+  <div *ngIf="showImage && imageUrl" 
+       class="service-image-container flex-shrink-0 mt-6">
+    <img [src]="imageUrl" 
+         [alt]="service.title"
+         class="service-image w-full h-64 object-cover rounded-lg 
+                shadow-md group-hover:shadow-lg transition-shadow duration-300">
+  </div>
 </div>

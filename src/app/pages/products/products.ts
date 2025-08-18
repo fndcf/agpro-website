@@ -70,7 +70,44 @@ export class Products {
 
   constructor(private dataService: DataService) {}
 
-  setActiveTab(tabId: string) {
-    this.dataService.updateTabActive(tabId);
+  setActiveTab(tabId: string) {    
+    // Faz scroll suave para a seção correspondente
+    this.scrollToService(tabId);
+  }
+
+  private scrollToService(serviceId: string) {
+    // Encontra o elemento com o ID correspondente
+    const element = document.getElementById(serviceId);
+    
+    if (element) {
+      // Calcula offset considerando apenas as tabs sticky
+      const tabsHeight = document.querySelector('.tabs-container')?.clientHeight || 80;
+      const extraOffset = 20; // Margem adicional para respirar
+      const headerOffset = tabsHeight + extraOffset;
+      
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Scroll suave até a posição
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Opcional: destacar temporariamente o card
+      this.highlightCard(element);
+    } else {
+      console.warn(`Service element with ID '${serviceId}' not found`);
+    }
+  }
+
+  private highlightCard(element: HTMLElement) {
+    // Adiciona uma classe de destaque temporariamente
+    element.classList.add('highlight-card');
+    
+    // Remove a classe após 2 segundos
+    setTimeout(() => {
+      element.classList.remove('highlight-card');
+    }, 2000);
   }
 }

@@ -3,13 +3,13 @@ import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero';
 import { StatsComponent } from '../../components/stats/stats';
-import { ServiceCardComponent } from '../../components/service-card/service-card';
+import { HomeCardComponent } from '../../components/home-card/home-card';
 import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeroComponent, StatsComponent, ServiceCardComponent],
+  imports: [CommonModule, HeroComponent, StatsComponent, HomeCardComponent],
   templateUrl: './home.html',
   styleUrls: ['./home.scss']
 })

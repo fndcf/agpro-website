@@ -1,26 +1,103 @@
+// 📁 src/app/components/service-card/service-card.scss
+
 .service-card {
+  // Força altura mínima uniforme para todos os cards (APENAS NO DESKTOP)
+  min-height: 600px;
+  
+  // Estrutura flexbox para distribuir conteúdo
   display: flex;
   flex-direction: column;
-  height: 100%;
   
-  .service-description-container {
-    min-height: 150px !important;
-    display: flex !important;
-    align-items: flex-start !important;
-    margin-bottom: 1.5rem;
-    
+  // Scroll target offset para melhor posicionamento
+  scroll-margin-top: 100px;
+  
+  .service-description {
+    // Área da descrição com altura fixa (APENAS NO DESKTOP)
     p {
-      width: 100%;
-      margin: 0;
+      height: 140px; // Altura FIXA baseada na análise (maior descrição = 120px + 20px margem)
+      overflow: hidden; // Esconde texto que ultrapassar
+      display: -webkit-box;
+      -webkit-line-clamp: 5; // Máximo 5 linhas
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
     }
   }
   
-  // Garante que features e imagem fiquem no final
-  .service-list {
+  .service-features {
+    // Features sempre na mesma posição
     margin-top: auto;
   }
   
-  .service-image {
+  .service-image-container {
+    // Imagem sempre no final
     margin-top: auto;
+  }
+}
+
+// Efeito de destaque quando clica na tab
+.service-card.highlight-card {
+  transform: scale(1.02) translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04),
+              0 0 0 3px rgba(52, 199, 89, 0.3); // Border verde
+  transition: all 0.5s ease;
+  z-index: 10;
+  
+  // Destaque no título
+  h3 {
+    color: #34C759; // Verde primary
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+}
+
+// RESPONSIVIDADE - Remove altura fixa no mobile
+@media (max-width: 1024px) {
+  .service-card {
+    // Remove altura mínima no mobile - cards ficam naturalmente
+    min-height: auto !important;
+    scroll-margin-top: 80px; // Menor offset no mobile
+    
+    .service-description p {
+      // Remove altura fixa da descrição no mobile
+      height: auto !important;
+      -webkit-line-clamp: none; // Remove limitação de linhas
+      overflow: visible; // Mostra todo o texto
+      display: block; // Volta ao display normal
+    }
+    
+    // Efeito de destaque menor no mobile
+    &.highlight-card {
+      transform: scale(1.01) translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                  0 0 0 2px rgba(52, 199, 89, 0.3);
+    }
+  }
+}
+
+// Tablet - ainda mantém alguma estrutura
+@media (min-width: 769px) and (max-width: 1024px) {
+  .service-card {
+    min-height: 500px; // Altura intermediária para tablet
+    
+    .service-description p {
+      height: 120px; // Altura menor para tablet
+      -webkit-line-clamp: 4; // Menos linhas
+    }
+  }
+}
+
+// Mobile - completamente natural
+@media (max-width: 768px) {
+  .service-card {
+    min-height: auto !important;
+    
+    .service-description p {
+      height: auto !important;
+      -webkit-line-clamp: none !important;
+      overflow: visible !important;
+      display: block !important;
+      text-overflow: initial !important;
+    }
   }
 }

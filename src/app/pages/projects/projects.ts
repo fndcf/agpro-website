@@ -107,5 +107,60 @@ export class Projects {
 
   filterByCategory(category: string) {
     this.selectedCategory = category;
+    
+    // Se não for "all", faz scroll para o primeiro projeto da categoria
+    if (category !== 'all' && this.filteredProjects.length > 0) {
+      // Pequeno delay para garantir que o DOM foi atualizado
+      setTimeout(() => {
+        this.scrollToFirstProject();
+      }, 100);
+    } else if (category === 'all') {
+      // Se for "all", volta para o início da grid
+      this.scrollToProjectsSection();
+    }
+  }
+
+  private scrollToFirstProject() {
+    const firstProject = this.filteredProjects[0];
+    if (firstProject) {
+      const element = document.getElementById('project-' + firstProject.id);
+      if (element) {
+        this.scrollToElement(element);
+        this.highlightProject(element);
+      }
+    }
+  }
+
+  private scrollToProjectsSection() {
+    const projectsSection = document.querySelector('.projects-section');
+    if (projectsSection) {
+      this.scrollToElement(projectsSection as HTMLElement);
+    }
+  }
+
+  private scrollToElement(element: HTMLElement) {
+    // Calcula offset considerando as tabs sticky
+    const tabsHeight = document.querySelector('.tabs-container')?.clientHeight || 80;
+    const extraOffset = 30; // Margem adicional
+    const headerOffset = tabsHeight + extraOffset;
+    
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    // Scroll suave até a posição
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
+  private highlightProject(element: HTMLElement) {
+    // Adiciona uma classe de destaque temporariamente
+    element.classList.add('highlight-project');
+    
+    // Remove a classe após 2 segundos
+    setTimeout(() => {
+      element.classList.remove('highlight-project');
+    }, 2500);
   }
 }

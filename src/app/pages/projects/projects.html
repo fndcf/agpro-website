@@ -5,8 +5,8 @@
   subtitle="Showcasing decades of excellence in agribusiness solutions worldwide">
 </app-hero>
 
-<!-- Tabs Navigation - Igual à página Products -->
-<div class="tabs-container bg-white border-b border-gray-200 py-5 px-6 shadow-sm">
+<!-- Tabs Navigation - Sticky -->
+<div class="tabs-container sticky top-0 z-40 bg-white border-b border-gray-200 py-4 px-6 shadow-md">
   <nav class="tabs-nav max-w-6xl mx-auto">
     <div class="flex flex-wrap justify-center gap-2">
       <a *ngFor="let category of projectCategories" 
@@ -43,7 +43,8 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div *ngFor="let project of filteredProjects" 
              class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden 
-                    shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+                    shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group"
+             [id]="'project-' + project.id">
           
           <!-- Project Image Placeholder -->
           <div class="project-image h-64 bg-gradient-to-br from-gray-100 to-gray-200 

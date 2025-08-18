@@ -1,6 +1,7 @@
 // 📁 src/app/services/data.service.ts
 import { Injectable, signal } from '@angular/core';
-import { Service, Stat, TabItem } from '../models/service.model';
+import { Stat, TabItem } from '../models/service.model';
+import { HomeService } from '../models/home.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class DataService {
     }
   ]);
 
-  private homeServicesSignal = signal<Service[]>([
+  private homeServicesSignal = signal<HomeService[]>([
     {
       id: 'swine',
       title: 'Swine',
@@ -69,15 +70,5 @@ export class DataService {
 
   get productTabs() {
     return this.productTabsSignal.asReadonly();
-  }
-
-  // Métodos para atualizar dados
-  updateTabActive(activeId: string) {
-    this.productTabsSignal.update(tabs => 
-      tabs.map(tab => ({
-        ...tab,
-        active: tab.id === activeId
-      }))
-    );
   }
 }

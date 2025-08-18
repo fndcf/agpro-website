@@ -1,12 +1,12 @@
 <!-- 📁 src/app/pages/products/products.html -->
-<!-- Hero Section -->
+<!-- Hero Section - Normal (não sticky) -->
 <app-hero 
   title="Products and Services"
   subtitle="For decades, AgPro Inc has delivered premium solutions to the world's most demanding agribusiness projects.">
 </app-hero>
 
-<!-- Tabs Navigation -->
-<div class="tabs-container bg-white border-b border-gray-200 py-5 px-6 shadow-sm">
+<!-- Tabs Navigation - Sticky -->
+<div class="tabs-container sticky top-0 z-40 bg-white border-b border-gray-200 py-4 px-6 shadow-md">
   <nav class="tabs-nav max-w-6xl mx-auto">
     <div class="flex flex-wrap justify-center gap-2">
       <a *ngFor="let tab of tabs()" 
@@ -42,16 +42,6 @@
         
       </div>
       
-    </div>
-    
-    <!-- Alternative Single Column Layout -->
-    <div class="services-grid-single hidden space-y-12 max-w-4xl mx-auto">
-      <app-service-card 
-        *ngFor="let service of productServices" 
-        [service]="service" 
-        [showImage]="true"
-        imageUrl="assets/images/colageagpro.gif">
-      </app-service-card>
     </div>
     
   </div>
