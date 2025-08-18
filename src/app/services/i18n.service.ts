@@ -1,4 +1,4 @@
-// 📁 src/app/services/i18n.service.ts (ATUALIZADO COM PRIVACY POLICY)
+// 📁 src/app/services/i18n.service.ts (COMPLETO COM PRIVACY POLICY E TERMS OF SERVICE)
 import { Injectable, signal, computed } from '@angular/core';
 
 export type Language = 'en' | 'pt' | 'es';
@@ -60,7 +60,7 @@ export interface Translation {
     };
   };
 
-  // NOVO: Privacy Policy translations
+  // Privacy Policy translations
   privacyPolicy: {
     pageTitle: string;
     lastUpdated: string;
@@ -107,6 +107,64 @@ export interface Translation {
       description: string;
     };
     policyUpdates: {
+      title: string;
+      description: string;
+    };
+  };
+
+  // Terms of Service translations
+  termsOfService: {
+    pageTitle: string;
+    lastUpdated: string;
+    agreementToTerms: {
+      title: string;
+      paragraph1: string;
+      paragraph2: string;
+    };
+    ourServices: {
+      title: string;
+      description: string;
+      servicesList: string[];
+    };
+    useOfWebsite: {
+      title: string;
+      permittedUse: {
+        title: string;
+        description: string;
+        prohibitions: string[];
+      };
+      intellectualProperty: {
+        title: string;
+        description: string;
+      };
+    };
+    informationAccuracy: {
+      title: string;
+      description: string;
+    };
+    userContent: {
+      title: string;
+      description: string;
+      purposes: string[];
+    };
+    privacy: {
+      title: string;
+      description: string;
+    };
+    disclaimers: {
+      title: string;
+      description: string;
+      warranties: string[];
+    };
+    limitationOfLiability: {
+      title: string;
+      description: string;
+    };
+    governingLaw: {
+      title: string;
+      description: string;
+    };
+    changesToTerms: {
       title: string;
       description: string;
     };
@@ -195,7 +253,6 @@ export class I18nService {
           imageAlt: 'AgPro International - Specialized Consulting'
         }
       },
-      // NOVO: Privacy Policy translations - ENGLISH
       privacyPolicy: {
         pageTitle: 'Privacy Policy',
         lastUpdated: 'Last updated: January 2025',
@@ -277,6 +334,84 @@ export class I18nService {
           description: 'We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this policy.'
         }
       },
+      termsOfService: {
+        pageTitle: 'Terms of Service',
+        lastUpdated: 'Last updated: January 2025',
+        agreementToTerms: {
+          title: 'Agreement to Terms',
+          paragraph1: 'These Terms of Service ("Terms") constitute a legally binding agreement between you and AgPro International ("we," "our," or "us") regarding your use of our website and services.',
+          paragraph2: 'By accessing or using our website, you agree to be bound by these Terms. If you do not agree with any part of these terms, you may not access our website or use our services.'
+        },
+        ourServices: {
+          title: 'Our Services',
+          description: 'AgPro International provides consulting, development, and management services for agribusiness projects, including but not limited to:',
+          servicesList: [
+            'Swine and poultry project consulting',
+            'Construction planning and supervision',
+            'Equipment supply and installation',
+            'Grain storage and handling systems',
+            'Architectural and engineering services'
+          ]
+        },
+        useOfWebsite: {
+          title: 'Use of Our Website',
+          permittedUse: {
+            title: 'Permitted Use',
+            description: 'You may use our website for lawful purposes only. You agree not to use the website:',
+            prohibitions: [
+              'In any way that violates applicable laws or regulations',
+              'To transmit unauthorized advertising or promotional material',
+              'To impersonate any person or entity',
+              'To collect information about others without consent',
+              'To interfere with the operation of our website'
+            ]
+          },
+          intellectualProperty: {
+            title: 'Intellectual Property',
+            description: 'All content on our website, including text, graphics, logos, images, and software, is the property of AgPro International and is protected by copyright and other intellectual property laws.'
+          }
+        },
+        informationAccuracy: {
+          title: 'Information Accuracy',
+          description: 'While we strive to provide accurate and up-to-date information on our website, we make no representations or warranties about the completeness, accuracy, or reliability of any information. Any reliance you place on such information is at your own risk.'
+        },
+        userContent: {
+          title: 'User Content',
+          description: 'When you submit information through our contact forms or other means, you grant us the right to use, store, and process that information for business purposes, including:',
+          purposes: [
+            'Responding to your inquiries',
+            'Providing requested services',
+            'Improving our services',
+            'Complying with legal requirements'
+          ]
+        },
+        privacy: {
+          title: 'Privacy',
+          description: 'Your privacy is important to us. Please review our Privacy Policy, which explains how we collect, use, and protect your information when you use our services.'
+        },
+        disclaimers: {
+          title: 'Disclaimers',
+          description: 'Our website and services are provided "as is" without warranties of any kind, either express or implied. We disclaim all warranties, including but not limited to:',
+          warranties: [
+            'Warranties of merchantability',
+            'Fitness for a particular purpose',
+            'Non-infringement',
+            'Accuracy or completeness of information'
+          ]
+        },
+        limitationOfLiability: {
+          title: 'Limitation of Liability',
+          description: 'To the fullest extent permitted by law, AgPro International shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities, arising from your use of our website or services.'
+        },
+        governingLaw: {
+          title: 'Governing Law',
+          description: 'These Terms shall be governed by and construed in accordance with the laws of the State of Illinois, United States, without regard to conflict of law principles.'
+        },
+        changesToTerms: {
+          title: 'Changes to Terms',
+          description: 'We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect. Your continued use of our website after such modifications constitutes acceptance of the updated Terms.'
+        }
+      },
       footer: {
         productsServices: 'Products & Services',
         company: 'Company',
@@ -347,7 +482,6 @@ export class I18nService {
           imageAlt: 'AgPro International - Consultoria Especializada'
         }
       },
-      // NOVO: Privacy Policy translations - PORTUGUÊS
       privacyPolicy: {
         pageTitle: 'Política de Privacidade',
         lastUpdated: 'Última atualização: Janeiro de 2025',
@@ -429,6 +563,84 @@ export class I18nService {
           description: 'Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre quaisquer mudanças publicando a nova Política de Privacidade nesta página e atualizando a data de "Última atualização" no topo desta política.'
         }
       },
+      termsOfService: {
+        pageTitle: 'Termos de Serviço',
+        lastUpdated: 'Última atualização: Janeiro de 2025',
+        agreementToTerms: {
+          title: 'Acordo com os Termos',
+          paragraph1: 'Estes Termos de Serviço ("Termos") constituem um acordo juridicamente vinculativo entre você e a AgPro International ("nós", "nossa", "nos") sobre o uso de nosso site e serviços.',
+          paragraph2: 'Ao acessar ou usar nosso site, você concorda em estar vinculado a estes Termos. Se você não concorda com qualquer parte destes termos, você não pode acessar nosso site ou usar nossos serviços.'
+        },
+        ourServices: {
+          title: 'Nossos Serviços',
+          description: 'A AgPro International fornece serviços de consultoria, desenvolvimento e gerenciamento para projetos de agronegócio, incluindo mas não limitado a:',
+          servicesList: [
+            'Consultoria em projetos suínos e avícolas',
+            'Planejamento e supervisão de construção',
+            'Fornecimento e instalação de equipamentos',
+            'Sistemas de armazenamento e manuseio de grãos',
+            'Serviços arquitetônicos e de engenharia'
+          ]
+        },
+        useOfWebsite: {
+          title: 'Uso do Nosso Site',
+          permittedUse: {
+            title: 'Uso Permitido',
+            description: 'Você pode usar nosso site apenas para fins legais. Você concorda em não usar o site:',
+            prohibitions: [
+              'De qualquer forma que viole leis ou regulamentos aplicáveis',
+              'Para transmitir publicidade ou material promocional não autorizado',
+              'Para se passar por qualquer pessoa ou entidade',
+              'Para coletar informações sobre outros sem consentimento',
+              'Para interferir na operação de nosso site'
+            ]
+          },
+          intellectualProperty: {
+            title: 'Propriedade Intelectual',
+            description: 'Todo o conteúdo em nosso site, incluindo texto, gráficos, logotipos, imagens e software, é propriedade da AgPro International e está protegido por direitos autorais e outras leis de propriedade intelectual.'
+          }
+        },
+        informationAccuracy: {
+          title: 'Precisão das Informações',
+          description: 'Embora nos esforcemos para fornecer informações precisas e atualizadas em nosso site, não fazemos representações ou garantias sobre a completude, precisão ou confiabilidade de qualquer informação. Qualquer dependência que você coloque em tais informações é por sua própria conta e risco.'
+        },
+        userContent: {
+          title: 'Conteúdo do Usuário',
+          description: 'Quando você envia informações através de nossos formulários de contato ou outros meios, você nos concede o direito de usar, armazenar e processar essas informações para fins comerciais, incluindo:',
+          purposes: [
+            'Responder às suas consultas',
+            'Fornecer serviços solicitados',
+            'Melhorar nossos serviços',
+            'Cumprir requisitos legais'
+          ]
+        },
+        privacy: {
+          title: 'Privacidade',
+          description: 'Sua privacidade é importante para nós. Por favor, revise nossa Política de Privacidade, que explica como coletamos, usamos e protegemos suas informações quando você usa nossos serviços.'
+        },
+        disclaimers: {
+          title: 'Isenções de Responsabilidade',
+          description: 'Nosso site e serviços são fornecidos "como estão" sem garantias de qualquer tipo, expressas ou implícitas. Isentamo-nos de todas as garantias, incluindo mas não limitado a:',
+          warranties: [
+            'Garantias de comercialização',
+            'Adequação para um propósito específico',
+            'Não violação',
+            'Precisão ou completude das informações'
+          ]
+        },
+        limitationOfLiability: {
+          title: 'Limitação de Responsabilidade',
+          description: 'Na máxima extensão permitida por lei, a AgPro International não será responsável por quaisquer danos indiretos, incidentais, especiais, consequenciais ou punitivos, incluindo mas não limitado à perda de lucros, dados ou oportunidades de negócios, decorrentes do uso de nosso site ou serviços.'
+        },
+        governingLaw: {
+          title: 'Lei Aplicável',
+          description: 'Estes Termos serão regidos e interpretados de acordo com as leis do Estado de Illinois, Estados Unidos, sem consideração aos princípios de conflito de leis.'
+        },
+        changesToTerms: {
+          title: 'Mudanças nos Termos',
+          description: 'Reservamo-nos o direito de modificar ou substituir estes Termos a qualquer momento. Se uma revisão for material, forneceremos pelo menos 30 dias de aviso antes que quaisquer novos termos entrem em vigor. Seu uso continuado de nosso site após tais modificações constitui aceitação dos Termos atualizados.'
+        }
+      },
       footer: {
         productsServices: 'Produtos e Serviços',
         company: 'Empresa',
@@ -499,7 +711,6 @@ export class I18nService {
           imageAlt: 'AgPro International - Consultoría Especializada'
         }
       },
-      // NOVO: Privacy Policy translations - ESPAÑOL
       privacyPolicy: {
         pageTitle: 'Política de Privacidad',
         lastUpdated: 'Última actualización: Enero de 2025',
@@ -581,6 +792,84 @@ export class I18nService {
           description: 'Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos sobre cualquier cambio publicando la nueva Política de Privacidad en esta página y actualizando la fecha de "Última actualización" en la parte superior de esta política.'
         }
       },
+      termsOfService: {
+        pageTitle: 'Términos de Servicio',
+        lastUpdated: 'Última actualización: Enero de 2025',
+        agreementToTerms: {
+          title: 'Acuerdo con los Términos',
+          paragraph1: 'Estos Términos de Servicio ("Términos") constituyen un acuerdo legalmente vinculante entre usted y AgPro International ("nosotros", "nuestra", "nos") con respecto al uso de nuestro sitio web y servicios.',
+          paragraph2: 'Al acceder o usar nuestro sitio web, usted acepta estar sujeto a estos Términos. Si no está de acuerdo con cualquier parte de estos términos, no puede acceder a nuestro sitio web o usar nuestros servicios.'
+        },
+        ourServices: {
+          title: 'Nuestros Servicios',
+          description: 'AgPro International proporciona servicios de consultoría, desarrollo y gestión para proyectos de agronegocios, incluyendo pero no limitado a:',
+          servicesList: [
+            'Consultoría en proyectos porcinos y avícolas',
+            'Planificación y supervisión de construcción',
+            'Suministro e instalación de equipos',
+            'Sistemas de almacenamiento y manejo de granos',
+            'Servicios arquitectónicos y de ingeniería'
+          ]
+        },
+        useOfWebsite: {
+          title: 'Uso de Nuestro Sitio Web',
+          permittedUse: {
+            title: 'Uso Permitido',
+            description: 'Puede usar nuestro sitio web solo para fines legales. Usted acepta no usar el sitio web:',
+            prohibitions: [
+              'De cualquier manera que viole las leyes o reglamentos aplicables',
+              'Para transmitir publicidad o material promocional no autorizado',
+              'Para hacerse pasar por cualquier persona o entidad',
+              'Para recopilar información sobre otros sin consentimiento',
+              'Para interferir con la operación de nuestro sitio web'
+            ]
+          },
+          intellectualProperty: {
+            title: 'Propiedad Intelectual',
+            description: 'Todo el contenido en nuestro sitio web, incluyendo texto, gráficos, logotipos, imágenes y software, es propiedad de AgPro International y está protegido por derechos de autor y otras leyes de propiedad intelectual.'
+          }
+        },
+        informationAccuracy: {
+          title: 'Precisión de la Información',
+          description: 'Aunque nos esforzamos por proporcionar información precisa y actualizada en nuestro sitio web, no hacemos representaciones o garantías sobre la integridad, precisión o confiabilidad de cualquier información. Cualquier dependencia que coloque en dicha información es bajo su propio riesgo.'
+        },
+        userContent: {
+          title: 'Contenido del Usuario',
+          description: 'Cuando envía información a través de nuestros formularios de contacto u otros medios, nos otorga el derecho de usar, almacenar y procesar esa información para fines comerciales, incluyendo:',
+          purposes: [
+            'Responder a sus consultas',
+            'Proporcionar servicios solicitados',
+            'Mejorar nuestros servicios',
+            'Cumplir con requisitos legales'
+          ]
+        },
+        privacy: {
+          title: 'Privacidad',
+          description: 'Su privacidad es importante para nosotros. Por favor revise nuestra Política de Privacidad, que explica cómo recopilamos, usamos y protegemos su información cuando usa nuestros servicios.'
+        },
+        disclaimers: {
+          title: 'Descargos de Responsabilidad',
+          description: 'Nuestro sitio web y servicios se proporcionan "tal como están" sin garantías de ningún tipo, ya sean expresas o implícitas. Renunciamos a todas las garantías, incluyendo pero no limitado a:',
+          warranties: [
+            'Garantías de comerciabilidad',
+            'Idoneidad para un propósito particular',
+            'No infracción',
+            'Precisión o integridad de la información'
+          ]
+        },
+        limitationOfLiability: {
+          title: 'Limitación de Responsabilidad',
+          description: 'En la máxima medida permitida por la ley, AgPro International no será responsable de ningún daño indirecto, incidental, especial, consecuencial o punitivo, incluyendo pero no limitado a la pérdida de ganancias, datos u oportunidades comerciales, que surjan del uso de nuestro sitio web o servicios.'
+        },
+        governingLaw: {
+          title: 'Ley Aplicable',
+          description: 'Estos Términos se regirán e interpretarán de acuerdo con las leyes del Estado de Illinois, Estados Unidos, sin consideración a los principios de conflicto de leyes.'
+        },
+        changesToTerms: {
+          title: 'Cambios en los Términos',
+          description: 'Nos reservamos el derecho de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, proporcionaremos al menos 30 días de aviso antes de que entren en vigor los nuevos términos. Su uso continuado de nuestro sitio web después de tales modificaciones constituye la aceptación de los Términos actualizados.'
+        }
+      },
       footer: {
         productsServices: 'Productos y Servicios',
         company: 'Empresa',
@@ -658,9 +947,14 @@ export class I18nService {
     return this.currentTranslations().mission;
   }
 
-  // NOVO: Método helper para acessar traduções da privacy policy
+  // Método helper para acessar traduções da privacy policy
   public get privacyPolicy() {
     return this.currentTranslations().privacyPolicy;
+  }
+
+  // Método helper para acessar traduções dos terms of service
+  public get termsOfService() {
+    return this.currentTranslations().termsOfService;
   }
 
   // Método helper para acessar traduções do footer

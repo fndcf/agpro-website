@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+// 📁 src/app/pages/terms-of-service/terms-of-service.ts (ATUALIZADO COM I18N)
+import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-terms-of-service',
@@ -9,5 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./terms-of-service.scss']
 })
 export class TermsOfService {
-  lastUpdated = 'January 2025';
+  // Computed signal para traduções
+  translations = computed(() => this.i18nService.currentTranslations());
+
+  constructor(private i18nService: I18nService) {}
 }
