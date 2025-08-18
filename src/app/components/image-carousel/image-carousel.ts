@@ -16,7 +16,7 @@ export interface CarouselImage {
 })
 export class ImageCarouselComponent implements OnInit, OnDestroy {
   @Input() images: CarouselImage[] = [];
-  @Input() autoPlayInterval: number = 4000; // 4 segundos
+  @Input() autoPlayInterval: number = 2000; // 2 segundos
   @Input() showDots: boolean = true;
   @Input() showArrows: boolean = false;
   @Input() pauseOnHover: boolean = true;
