@@ -46,23 +46,26 @@
                     shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group"
              [id]="'project-' + project.id">
           
-          <!-- Project Image Placeholder -->
-          <div class="project-image h-64 bg-gradient-to-br from-gray-100 to-gray-200 
-                      flex items-center justify-center relative overflow-hidden">
-            <div class="text-center text-gray-400">
-              <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-              </svg>
-              <p class="text-sm font-sans">Project Image</p>
-            </div>
+          <!-- Project Image -->
+          <div class="project-image h-64 relative overflow-hidden bg-gray-100">
+            <img 
+              [src]="project.image" 
+              [alt]="project.imageAlt"
+              (error)="onImageError($event, project)"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+            
+            <!-- Image Overlay for better badge visibility -->
+            <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             <!-- Category Badge -->
-            <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+            <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium 
+                        shadow-lg backdrop-blur-sm bg-opacity-90">
               {{ project.category }}
             </div>
             
             <!-- Year Badge -->
-            <div class="absolute top-4 right-4 bg-gold text-white px-3 py-1 rounded-full text-sm font-medium">
+            <div class="absolute top-4 right-4 bg-gold text-white px-3 py-1 rounded-full text-sm font-medium 
+                        shadow-lg backdrop-blur-sm bg-opacity-90">
               {{ project.year }}
             </div>
           </div>

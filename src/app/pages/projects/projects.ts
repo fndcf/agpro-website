@@ -10,7 +10,8 @@ interface Project {
   year: string;
   category: string;
   description: string;
-  image?: string;
+  image: string;
+  imageAlt: string;
   features?: string[];
 }
 
@@ -24,6 +25,9 @@ interface Project {
 export class Projects {
   
   constructor(private router: Router) {}
+
+  // Imagem fallback caso alguma imagem específica não esteja disponível
+  fallbackImage = 'assets/images/colageagpro.gif';
   
   featuredProjects: Project[] = [
     {
@@ -33,6 +37,8 @@ export class Projects {
       year: '2023',
       category: 'Swine',
       description: 'Complete swine production facility with 5,000 head capacity, featuring state-of-the-art ventilation systems, automated feeding, and advanced waste management.',
+      image: 'assets/images/projects/swine-facility-brazil.jpg',
+      imageAlt: 'Large Scale Swine Facility in São Paulo, Brazil',
       features: [
         '5,000 head capacity',
         'Automated feeding systems',
@@ -48,6 +54,8 @@ export class Projects {
       year: '2023',
       category: 'Poultry',
       description: 'Integrated poultry production complex with multiple houses, featuring advanced environmental controls and automated egg collection systems.',
+      image: 'assets/images/projects/poultry-complex-mexico.jpg',
+      imageAlt: 'Modern Poultry Complex in Jalisco, Mexico',
       features: [
         '10 production houses',
         'Automated egg collection',
@@ -63,6 +71,8 @@ export class Projects {
       year: '2022',
       category: 'Grain Storage',
       description: 'High-capacity grain storage facility with advanced aeration and monitoring systems for optimal grain preservation.',
+      image: 'assets/images/projects/grain-storage-argentina.jpg',
+      imageAlt: 'Grain Storage Facility in Buenos Aires, Argentina',
       features: [
         '50,000 ton capacity',
         'Advanced aeration systems',
@@ -78,6 +88,8 @@ export class Projects {
       year: '2022',
       category: 'Integrated',
       description: 'Complete integrated livestock operation combining swine and poultry production with feed mill and grain storage.',
+      image: 'assets/images/projects/integrated-farm-usa.jpg',
+      imageAlt: 'Integrated Livestock Farm in Illinois, USA',
       features: [
         'Multi-species facility',
         'On-site feed mill',
@@ -87,6 +99,13 @@ export class Projects {
       ]
     }
   ];
+
+  // Método para lidar com erro de carregamento de imagem
+  onImageError(event: any, project: Project) {
+    console.log(`Imagem não encontrada para ${project.title}, usando fallback`);
+    event.target.src = this.fallbackImage;
+    event.target.alt = `${project.title} - AgPro Inc Project`;
+  }
 
   projectCategories = [
     { id: 'all', label: 'All Projects' },
