@@ -1,6 +1,6 @@
-// 📁 src/app/pages/projects/projects.ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { HeroComponent } from '../../components/hero/hero';
 
 interface Project {
@@ -22,6 +22,8 @@ interface Project {
   styleUrls: ['./projects.scss']
 })
 export class Projects {
+  
+  constructor(private router: Router) {}
   
   featuredProjects: Project[] = [
     {
@@ -103,6 +105,11 @@ export class Projects {
     return this.featuredProjects.filter(project => 
       project.category.toLowerCase() === this.selectedCategory
     );
+  }
+
+  // Método para navegar para a página de contatos
+  navigateToContact() {
+    this.router.navigate(['/contact']);
   }
 
   filterByCategory(category: string) {

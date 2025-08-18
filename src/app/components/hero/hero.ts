@@ -1,6 +1,6 @@
-// 📁 src/app/components/hero/hero.ts
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
@@ -14,4 +14,16 @@ export class HeroComponent {
   @Input() subtitle: string = '';
   @Input() buttonText: string = 'Learn More';
   @Input() showButton: boolean = false;
+  @Input() buttonRoute: string = '';
+  @Output() buttonClick = new EventEmitter<void>();
+
+  constructor(private router: Router) {}
+
+  onButtonClick() {
+    if (this.buttonRoute) {
+      this.router.navigate([this.buttonRoute]);
+    } else {
+      this.buttonClick.emit();
+    }
+  }
 }
