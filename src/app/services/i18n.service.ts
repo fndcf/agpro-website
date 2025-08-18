@@ -1,4 +1,4 @@
-// 📁 src/app/services/i18n.service.ts
+// 📁 src/app/services/i18n.service.ts (ATUALIZADO)
 import { Injectable, signal, computed } from '@angular/core';
 
 export type Language = 'en' | 'pt' | 'es';
@@ -45,6 +45,18 @@ export interface Translation {
         title: string;
         description: string;
       };
+    };
+  };
+
+  // NOVO: Mission page translations
+  mission: {
+    hero: {
+      title: string;
+    };
+    content: {
+      title: string;
+      description: string;
+      imageAlt: string;
     };
   };
   
@@ -121,6 +133,17 @@ export class I18nService {
           }
         }
       },
+      // NOVO: Mission page translations
+      mission: {
+        hero: {
+          title: 'Our Mission'
+        },
+        content: {
+          title: 'Specialized Consulting',
+          description: 'To utilize our experience in order to provide our customers with excellent products, service and price, contributing to the improvement of their bottom line in the knowledge that their success will become our success.',
+          imageAlt: 'AgPro International - Specialized Consulting'
+        }
+      },
       footer: {
         productsServices: 'Products & Services',
         company: 'Company',
@@ -183,6 +206,17 @@ export class I18nService {
           }
         }
       },
+      // NOVO: Mission page translations - PORTUGUÊS
+      mission: {
+        hero: {
+          title: 'Nossa Missão'
+        },
+        content: {
+          title: 'Consultoria Especializada',
+          description: 'Utilizar nossa experiência para fornecer aos nossos clientes excelentes produtos, serviço e preço, contribuindo para a melhoria de seus resultados financeiros, sabendo que seu sucesso se tornará nosso sucesso.',
+          imageAlt: 'AgPro International - Consultoria Especializada'
+        }
+      },
       footer: {
         productsServices: 'Produtos e Serviços',
         company: 'Empresa',
@@ -243,6 +277,17 @@ export class I18nService {
             title: 'Almacenamiento de Granos',
             description: 'Consultoría, desarrollo y gestión de proyectos de almacenamiento de granos, planificación y supervisión de construcción, proveedores de equipos para Silos de Granos, Tanques de Descarga, elevadores de cangilones, transportadores de cadena, transportadores de correa, transportadores helicoidales, distribuidores.'
           }
+        }
+      },
+      // NOVO: Mission page translations - ESPAÑOL
+      mission: {
+        hero: {
+          title: 'Nuestra Misión'
+        },
+        content: {
+          title: 'Consultoría Especializada',
+          description: 'Utilizar nuestra experiencia para brindar a nuestros clientes excelentes productos, servicio y precio, contribuyendo a la mejora de sus resultados financieros, sabiendo que su éxito se convertirá en nuestro éxito.',
+          imageAlt: 'AgPro International - Consultoría Especializada'
         }
       },
       footer: {
@@ -317,6 +362,11 @@ export class I18nService {
   // Método helper para acessar traduções da homepage
   public get homepage() {
     return this.currentTranslations().homepage;
+  }
+
+  // NOVO: Método helper para acessar traduções da mission page
+  public get mission() {
+    return this.currentTranslations().mission;
   }
 
   // Método helper para acessar traduções do footer

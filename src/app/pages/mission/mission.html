@@ -1,6 +1,6 @@
-<!-- 📁 src/app/pages/mission/mission.html -->
+<!-- 📁 src/app/pages/mission/mission.html - INTERNACIONALIZADO -->
 <!-- Hero Section -->
-<app-hero title="Our Mission"></app-hero>
+<app-hero [title]="translations().mission.hero.title"></app-hero>
 
 <!-- Content Section -->
 <section class="content-section py-16 bg-white">
@@ -12,13 +12,11 @@
         <!-- Content Text -->
         <div class="content-text space-y-6">
           <h3 class="text-3xl md:text-4xl text-gold font-light mb-8">
-            Specialized Consulting
+            {{ translations().mission.content.title }}
           </h3>
           
           <p class="text-gray-600 text-lg leading-relaxed font-sans">
-            To utilize our experience in order to provide our customers with excellent products, 
-            service and price, contributing to the improvement of their bottom line in the knowledge 
-            that their success will become our success.
+            {{ translations().mission.content.description }}
           </p>
         </div>
         
@@ -26,7 +24,7 @@
         <div class="content-image flex items-center justify-center">
           <img 
             src="assets/images/colageagpro.gif" 
-            alt="AgPro International - Specialized Consulting"
+            [alt]="translations().mission.content.imageAlt"
             class="w-full h-96 object-cover rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
         </div>
       </div>
