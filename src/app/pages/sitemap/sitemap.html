@@ -1,3 +1,4 @@
+<!-- 📁 src/app/pages/sitemap/sitemap.html (COMPLETO - INTERNACIONALIZADO) -->
 <!-- Sitemap Page -->
 <div class="sitemap-page bg-white min-h-screen py-16">
   <div class="container mx-auto px-6 max-w-6xl">
@@ -5,32 +6,34 @@
     <!-- Header -->
     <div class="page-header text-center mb-12">
       <h1 class="text-4xl md:text-5xl font-light text-gold mb-4">
-        Sitemap
+        {{ translations().sitemap.pageTitle }}
       </h1>
       <p class="text-gray-600 text-lg mb-6">
-        Complete navigation guide to our website
+        {{ translations().sitemap.pageSubtitle }}
       </p>
       <div class="stats flex justify-center items-center gap-8 text-sm text-gray-500">
         <span class="flex items-center gap-2">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          {{ siteStructure.length }} sections
+          {{ siteStructure().length }} {{ translations().sitemap.sections }}
         </span>
         <span class="flex items-center gap-2">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-6a1 1 0 00-1-1H9a1 1 0 00-1 1v6a1 1 0 01-1 1H4a1 1 0 110-2V4z" clip-rule="evenodd"></path>
           </svg>
-          {{ totalPages }} total pages
+          {{ totalPages() }} {{ translations().sitemap.totalPages }}
         </span>
       </div>
     </div>
 
     <!-- Quick Navigation -->
     <div class="quick-nav mb-12">
-      <h2 class="text-2xl font-medium text-gray-900 mb-6 text-center">Quick Navigation</h2>
+      <h2 class="text-2xl font-medium text-gray-900 mb-6 text-center">
+        {{ translations().sitemap.quickNavigation }}
+      </h2>
       <div class="nav-buttons flex flex-wrap justify-center gap-3">
-        <button *ngFor="let section of siteStructure"
+        <button *ngFor="let section of siteStructure()"
                 (click)="scrollToSection(section.title)"
                 class="nav-btn bg-gray-100 hover:bg-primary hover:text-white text-gray-700 px-4 py-2 rounded-md 
                        text-sm font-medium transition-all duration-300 flex items-center gap-2">
@@ -42,7 +45,7 @@
     <!-- Site Structure -->
     <div class="site-structure space-y-10">
       
-      <div *ngFor="let section of siteStructure; let i = index"
+      <div *ngFor="let section of siteStructure(); let i = index"
            class="sitemap-section"
            [id]="getSectionId(section.title)">
         
@@ -103,10 +106,11 @@
 
     <!-- Footer Information -->
     <div class="sitemap-footer mt-16 pt-8 border-t border-gray-200 text-center">
-      <h3 class="text-xl font-medium text-gray-900 mb-4">Need Help Finding Something?</h3>
+      <h3 class="text-xl font-medium text-gray-900 mb-4">
+        {{ translations().sitemap.needHelp }}
+      </h3>
       <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-        If you can't find what you're looking for in our sitemap, please don't hesitate to contact us. 
-        Our team is here to help you navigate our services and find the perfect solution for your project.
+        {{ translations().sitemap.helpDescription }}
       </p>
       
       <a [routerLink]="['/contact']"
@@ -116,7 +120,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                 d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
-        Contact Our Team
+        {{ translations().sitemap.contactTeam }}
       </a>
     </div>
 

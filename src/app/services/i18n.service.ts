@@ -169,6 +169,122 @@ export interface Translation {
       description: string;
     };
   };
+
+  // Sitemap translations
+  sitemap: {
+    pageTitle: string;
+    pageSubtitle: string;
+    quickNavigation: string;
+    needHelp: string;
+    helpDescription: string;
+    contactTeam: string;
+    sections: string;
+    totalPages: string;
+    // Sections
+    mainPages: {
+      title: string;
+      homepage: {
+        label: string;
+        description: string;
+      };
+      mission: {
+        label: string;
+        description: string;
+      };
+      projects: {
+        label: string;
+        description: string;
+      };
+      contact: {
+        label: string;
+        description: string;
+      };
+    };
+    productsServices: {
+      title: string;
+      allProducts: {
+        label: string;
+        description: string;
+      };
+      buildings: {
+        label: string;
+        description: string;
+      };
+      equipments: {
+        label: string;
+        description: string;
+      };
+      grainStorage: {
+        label: string;
+        description: string;
+      };
+      feedTransportation: {
+        label: string;
+        description: string;
+      };
+      ventilation: {
+        label: string;
+        description: string;
+      };
+      confinement: {
+        label: string;
+        description: string;
+      };
+      flooring: {
+        label: string;
+        description: string;
+      };
+      blueprints: {
+        label: string;
+        description: string;
+      };
+    };
+    projectCategories: {
+      title: string;
+      allProjects: {
+        label: string;
+        description: string;
+      };
+      swineProjects: {
+        label: string;
+        description: string;
+      };
+      poultryProjects: {
+        label: string;
+        description: string;
+      };
+      grainProjects: {
+        label: string;
+        description: string;
+      };
+      integratedSolutions: {
+        label: string;
+        description: string;
+      };
+    };
+    legalInfo: {
+      title: string;
+      privacyPolicy: {
+        label: string;
+        description: string;
+      };
+      termsOfService: {
+        label: string;
+        description: string;
+      };
+      sitemap: {
+        label: string;
+        description: string;
+      };
+    };
+    utilityPages: {
+      title: string;
+      underConstruction: {
+        label: string;
+        description: string;
+      };
+    };
+  };
   
   // Footer translations
   footer: {
@@ -412,6 +528,119 @@ export class I18nService {
           description: 'We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days notice prior to any new terms taking effect. Your continued use of our website after such modifications constitutes acceptance of the updated Terms.'
         }
       },
+      sitemap: {
+        pageTitle: 'Sitemap',
+        pageSubtitle: 'Complete navigation guide to our website',
+        quickNavigation: 'Quick Navigation',
+        needHelp: 'Need Help Finding Something?',
+        helpDescription: 'If you can\'t find what you\'re looking for in our sitemap, please don\'t hesitate to contact us. Our team is here to help you navigate our services and find the perfect solution for your project.',
+        contactTeam: 'Contact Our Team',
+        sections: 'sections',
+        totalPages: 'total pages',
+        mainPages: {
+          title: 'Main Pages',
+          homepage: {
+            label: 'Homepage',
+            description: 'Welcome to AgPro International - Excellence in Livestock housing and equipment'
+          },
+          mission: {
+            label: 'Our Mission',
+            description: 'Learn about our specialized consulting and company values'
+          },
+          projects: {
+            label: 'Projects',
+            description: 'Showcasing decades of excellence in agribusiness solutions worldwide'
+          },
+          contact: {
+            label: 'Contact Us',
+            description: 'Get in touch with our experts for your next project'
+          }
+        },
+        productsServices: {
+          title: 'Products & Services',
+          allProducts: {
+            label: 'All Products & Services',
+            description: 'Complete overview of our agribusiness solutions'
+          },
+          buildings: {
+            label: 'Buildings',
+            description: 'Swine and poultry construction planning and supervision'
+          },
+          equipments: {
+            label: 'Equipments',
+            description: 'Complete range of agricultural equipment and systems'
+          },
+          grainStorage: {
+            label: 'Grain Storage & Handling',
+            description: 'Grain silos, elevators, and storage solutions'
+          },
+          feedTransportation: {
+            label: 'Feed Transportation',
+            description: 'Advanced feed distribution and conveyor systems'
+          },
+          ventilation: {
+            label: 'Ventilation Equipment',
+            description: 'Climate control and ventilation solutions'
+          },
+          confinement: {
+            label: 'Confinement Systems',
+            description: 'Livestock housing and confinement solutions'
+          },
+          flooring: {
+            label: 'Flooring Solutions',
+            description: 'Specialized flooring for livestock applications'
+          },
+          blueprints: {
+            label: 'Blue Prints & Design',
+            description: 'Professional architectural and engineering services'
+          }
+        },
+        projectCategories: {
+          title: 'Project Categories',
+          allProjects: {
+            label: 'All Projects',
+            description: 'Complete portfolio of our agribusiness projects'
+          },
+          swineProjects: {
+            label: 'Swine Projects',
+            description: 'Large-scale swine facility projects worldwide'
+          },
+          poultryProjects: {
+            label: 'Poultry Projects',
+            description: 'Modern poultry complex and housing solutions'
+          },
+          grainProjects: {
+            label: 'Grain Storage Projects',
+            description: 'High-capacity grain storage and handling facilities'
+          },
+          integratedSolutions: {
+            label: 'Integrated Solutions',
+            description: 'Complete integrated livestock operations'
+          }
+        },
+        legalInfo: {
+          title: 'Legal & Information',
+          privacyPolicy: {
+            label: 'Privacy Policy',
+            description: 'How we collect, use, and protect your information'
+          },
+          termsOfService: {
+            label: 'Terms of Service',
+            description: 'Terms and conditions for using our website and services'
+          },
+          sitemap: {
+            label: 'Sitemap',
+            description: 'Complete navigation guide to our website'
+          }
+        },
+        utilityPages: {
+          title: 'Utility Pages',
+          underConstruction: {
+            label: 'Under Construction',
+            description: 'Page template for sections in development'
+          }
+        }
+      },
       footer: {
         productsServices: 'Products & Services',
         company: 'Company',
@@ -639,6 +868,119 @@ export class I18nService {
         changesToTerms: {
           title: 'Mudanças nos Termos',
           description: 'Reservamo-nos o direito de modificar ou substituir estes Termos a qualquer momento. Se uma revisão for material, forneceremos pelo menos 30 dias de aviso antes que quaisquer novos termos entrem em vigor. Seu uso continuado de nosso site após tais modificações constitui aceitação dos Termos atualizados.'
+        }
+      },
+      sitemap: {
+        pageTitle: 'Mapa do Site',
+        pageSubtitle: 'Guia completo de navegação do nosso site',
+        quickNavigation: 'Navegação Rápida',
+        needHelp: 'Precisa de Ajuda para Encontrar Algo?',
+        helpDescription: 'Se você não conseguir encontrar o que procura em nosso mapa do site, não hesite em nos contatar. Nossa equipe está aqui para ajudá-lo a navegar pelos nossos serviços e encontrar a solução perfeita para seu projeto.',
+        contactTeam: 'Entre em Contato',
+        sections: 'seções',
+        totalPages: 'páginas totais',
+        mainPages: {
+          title: 'Páginas Principais',
+          homepage: {
+            label: 'Página Inicial',
+            description: 'Bem-vindo à AgPro International - Excelência em habitação e equipamentos para pecuária'
+          },
+          mission: {
+            label: 'Nossa Missão',
+            description: 'Conheça nossa consultoria especializada e valores da empresa'
+          },
+          projects: {
+            label: 'Projetos',
+            description: 'Mostrando décadas de excelência em soluções de agronegócio mundialmente'
+          },
+          contact: {
+            label: 'Entre em Contato',
+            description: 'Entre em contato com nossos especialistas para seu próximo projeto'
+          }
+        },
+        productsServices: {
+          title: 'Produtos e Serviços',
+          allProducts: {
+            label: 'Todos os Produtos e Serviços',
+            description: 'Visão geral completa de nossas soluções de agronegócio'
+          },
+          buildings: {
+            label: 'Construções',
+            description: 'Planejamento e supervisão de construções suínas e avícolas'
+          },
+          equipments: {
+            label: 'Equipamentos',
+            description: 'Gama completa de equipamentos e sistemas agrícolas'
+          },
+          grainStorage: {
+            label: 'Armazenamento e Manuseio de Grãos',
+            description: 'Silos de grãos, elevadores e soluções de armazenamento'
+          },
+          feedTransportation: {
+            label: 'Transporte de Ração',
+            description: 'Sistemas avançados de distribuição de ração e transportadores'
+          },
+          ventilation: {
+            label: 'Equipamentos de Ventilação',
+            description: 'Controle climático e soluções de ventilação'
+          },
+          confinement: {
+            label: 'Sistemas de Confinamento',
+            description: 'Habitação para animais e soluções de confinamento'
+          },
+          flooring: {
+            label: 'Soluções de Piso',
+            description: 'Pisos especializados para aplicações pecuárias'
+          },
+          blueprints: {
+            label: 'Plantas e Design',
+            description: 'Serviços profissionais de arquitetura e engenharia'
+          }
+        },
+        projectCategories: {
+          title: 'Categorias de Projetos',
+          allProjects: {
+            label: 'Todos os Projetos',
+            description: 'Portfólio completo de nossos projetos de agronegócio'
+          },
+          swineProjects: {
+            label: 'Projetos Suínos',
+            description: 'Projetos de instalações suínas de grande escala mundialmente'
+          },
+          poultryProjects: {
+            label: 'Projetos Avícolas',
+            description: 'Complexos avícolas modernos e soluções de habitação'
+          },
+          grainProjects: {
+            label: 'Projetos de Armazenamento de Grãos',
+            description: 'Instalações de armazenamento e manuseio de grãos de alta capacidade'
+          },
+          integratedSolutions: {
+            label: 'Soluções Integradas',
+            description: 'Operações pecuárias integradas completas'
+          }
+        },
+        legalInfo: {
+          title: 'Legal e Informações',
+          privacyPolicy: {
+            label: 'Política de Privacidade',
+            description: 'Como coletamos, usamos e protegemos suas informações'
+          },
+          termsOfService: {
+            label: 'Termos de Serviço',
+            description: 'Termos e condições para usar nosso site e serviços'
+          },
+          sitemap: {
+            label: 'Mapa do Site',
+            description: 'Guia completo de navegação do nosso site'
+          }
+        },
+        utilityPages: {
+          title: 'Páginas Utilitárias',
+          underConstruction: {
+            label: 'Em Construção',
+            description: 'Modelo de página para seções em desenvolvimento'
+          }
         }
       },
       footer: {
@@ -870,6 +1212,119 @@ export class I18nService {
           description: 'Nos reservamos el derecho de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, proporcionaremos al menos 30 días de aviso antes de que entren en vigor los nuevos términos. Su uso continuado de nuestro sitio web después de tales modificaciones constituye la aceptación de los Términos actualizados.'
         }
       },
+      sitemap: {
+        pageTitle: 'Mapa del Sitio',
+        pageSubtitle: 'Guía completa de navegación de nuestro sitio web',
+        quickNavigation: 'Navegación Rápida',
+        needHelp: '¿Necesita Ayuda para Encontrar Algo?',
+        helpDescription: 'Si no puede encontrar lo que busca en nuestro mapa del sitio, no dude en contactarnos. Nuestro equipo está aquí para ayudarle a navegar por nuestros servicios y encontrar la solución perfecta para su proyecto.',
+        contactTeam: 'Contacte Nuestro Equipo',
+        sections: 'secciones',
+        totalPages: 'páginas totales',
+        mainPages: {
+          title: 'Páginas Principales',
+          homepage: {
+            label: 'Página de Inicio',
+            description: 'Bienvenido a AgPro International - Excelencia en vivienda y equipos para ganado'
+          },
+          mission: {
+            label: 'Nuestra Misión',
+            description: 'Conozca nuestra consultoría especializada y valores de la empresa'
+          },
+          projects: {
+            label: 'Proyectos',
+            description: 'Mostrando décadas de excelencia en soluciones de agronegocios a nivel mundial'
+          },
+          contact: {
+            label: 'Contáctanos',
+            description: 'Póngase en contacto con nuestros expertos para su próximo proyecto'
+          }
+        },
+        productsServices: {
+          title: 'Productos y Servicios',
+          allProducts: {
+            label: 'Todos los Productos y Servicios',
+            description: 'Visión general completa de nuestras soluciones de agronegocios'
+          },
+          buildings: {
+            label: 'Construcciones',
+            description: 'Planificación y supervisión de construcciones porcinas y avícolas'
+          },
+          equipments: {
+            label: 'Equipos',
+            description: 'Gama completa de equipos y sistemas agrícolas'
+          },
+          grainStorage: {
+            label: 'Almacenamiento y Manejo de Granos',
+            description: 'Silos de granos, elevadores y soluciones de almacenamiento'
+          },
+          feedTransportation: {
+            label: 'Transporte de Alimentos',
+            description: 'Sistemas avanzados de distribución de alimentos y transportadores'
+          },
+          ventilation: {
+            label: 'Equipos de Ventilación',
+            description: 'Control climático y soluciones de ventilación'
+          },
+          confinement: {
+            label: 'Sistemas de Confinamiento',
+            description: 'Vivienda para animales y soluciones de confinamiento'
+          },
+          flooring: {
+            label: 'Soluciones de Pisos',
+            description: 'Pisos especializados para aplicaciones ganaderas'
+          },
+          blueprints: {
+            label: 'Planos y Diseño',
+            description: 'Servicios profesionales de arquitectura e ingeniería'
+          }
+        },
+        projectCategories: {
+          title: 'Categorías de Proyectos',
+          allProjects: {
+            label: 'Todos los Proyectos',
+            description: 'Portafolio completo de nuestros proyectos de agronegocios'
+          },
+          swineProjects: {
+            label: 'Proyectos Porcinos',
+            description: 'Proyectos de instalaciones porcinas a gran escala a nivel mundial'
+          },
+          poultryProjects: {
+            label: 'Proyectos Avícolas',
+            description: 'Complejos avícolas modernos y soluciones de vivienda'
+          },
+          grainProjects: {
+            label: 'Proyectos de Almacenamiento de Granos',
+            description: 'Instalaciones de almacenamiento y manejo de granos de alta capacidad'
+          },
+          integratedSolutions: {
+            label: 'Soluciones Integradas',
+            description: 'Operaciones ganaderas integradas completas'
+          }
+        },
+        legalInfo: {
+          title: 'Legal e Información',
+          privacyPolicy: {
+            label: 'Política de Privacidad',
+            description: 'Cómo recopilamos, usamos y protegemos su información'
+          },
+          termsOfService: {
+            label: 'Términos de Servicio',
+            description: 'Términos y condiciones para usar nuestro sitio web y servicios'
+          },
+          sitemap: {
+            label: 'Mapa del Sitio',
+            description: 'Guía completa de navegación de nuestro sitio web'
+          }
+        },
+        utilityPages: {
+          title: 'Páginas Utilitarias',
+          underConstruction: {
+            label: 'En Construcción',
+            description: 'Plantilla de página para secciones en desarrollo'
+          }
+        }
+      },
       footer: {
         productsServices: 'Productos y Servicios',
         company: 'Empresa',
@@ -955,6 +1410,11 @@ export class I18nService {
   // Método helper para acessar traduções dos terms of service
   public get termsOfService() {
     return this.currentTranslations().termsOfService;
+  }
+
+  // Método helper para acessar traduções do sitemap
+  public get sitemap() {
+    return this.currentTranslations().sitemap;
   }
 
   // Método helper para acessar traduções do footer
