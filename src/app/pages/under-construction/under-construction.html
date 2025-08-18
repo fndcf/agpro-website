@@ -1,3 +1,4 @@
+<!-- 📁 src/app/pages/under-construction/under-construction.html (INTERNACIONALIZADO) -->
 <!-- Under Construction Page -->
 <div class="under-construction-page min-h-screen bg-white 
             flex items-center justify-center px-4 py-8">
@@ -43,14 +44,12 @@
     
     <!-- Main Title -->
     <h1 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 animate-fade-in">
-      Under Construction
+      {{ translations().underConstruction.pageTitle }}
     </h1>
     
     <!-- Subtitle -->
     <p class="text-xl md:text-2xl text-gray-700 mb-8 font-light leading-relaxed max-w-2xl mx-auto animate-slide-up">
-      We're working hard to bring you something amazing. 
-      <br class="hidden md:block">
-      This page will be available soon!
+      {{ translations().underConstruction.subtitle }}
     </p>
     
     <!-- Progress Bar (Animated) -->
@@ -59,7 +58,9 @@
         <div class="progress-bar bg-primary rounded-full h-full transition-all duration-1000 ease-out animate-pulse"
              style="width: 75%;"></div>
       </div>
-      <p class="text-gray-600 text-sm font-medium">75% Complete</p>
+      <p class="text-gray-600 text-sm font-medium">
+        {{ translations().underConstruction.progressComplete }}
+      </p>
     </div>
     
     <!-- Action Buttons -->
@@ -73,7 +74,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
         </svg>
-        Go to Homepage
+        {{ translations().underConstruction.goHome }}
       </button>
       
       <button 
@@ -85,7 +86,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                 d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
-        Contact Us
+        {{ translations().underConstruction.contactUs }}
       </button>
     </div>
     

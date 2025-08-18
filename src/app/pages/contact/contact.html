@@ -1,8 +1,8 @@
-<!-- 📁 src/app/pages/contact/contact.html -->
+<!-- 📁 src/app/pages/contact/contact.html (INTERNACIONALIZADO) -->
 <!-- Hero Section -->
 <app-hero 
-  title="Contact Us"
-  subtitle="We're ready to develop the ideal solution for your project. Speak with our experts.">
+  [title]="translations().contact.hero.title"
+  [subtitle]="translations().contact.hero.subtitle">
 </app-hero>
 
 <!-- Content Section -->
@@ -16,7 +16,7 @@
         <!-- Contact Form -->
         <div class="contact-form bg-gray-50 p-8 md:p-12 rounded-lg shadow-lg">
           <h3 class="text-2xl md:text-3xl text-gold font-light mb-8">
-            Request a Custom Quote
+            {{ translations().contact.form.title }}
           </h3>
           
           <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="space-y-6">
@@ -25,7 +25,7 @@
             <div class="form-row grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="form-group">
                 <label for="fullName" class="block mb-2 text-gray-700 font-medium font-sans">
-                  Full Name *
+                  {{ translations().contact.form.fullNameRequired }}
                 </label>
                 <input 
                   type="text" 
@@ -39,7 +39,7 @@
               
               <div class="form-group">
                 <label for="company" class="block mb-2 text-gray-700 font-medium font-sans">
-                  Company
+                  {{ translations().contact.form.company }}
                 </label>
                 <input 
                   type="text" 
@@ -55,7 +55,7 @@
             <div class="form-row grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="form-group">
                 <label for="email" class="block mb-2 text-gray-700 font-medium font-sans">
-                  Email *
+                  {{ translations().contact.form.emailRequired }}
                 </label>
                 <input 
                   type="email" 
@@ -69,7 +69,7 @@
               
               <div class="form-group">
                 <label for="phone" class="block mb-2 text-gray-700 font-medium font-sans">
-                  Phone
+                  {{ translations().contact.form.phone }}
                 </label>
                 <input 
                   type="tel" 
@@ -84,7 +84,7 @@
             <!-- Timeline -->
             <div class="form-group">
               <label for="timeline" class="block mb-2 text-gray-700 font-medium font-sans">
-                Urgency/Timeline
+                {{ translations().contact.form.timeline }}
               </label>
               <select 
                 id="timeline" 
@@ -92,7 +92,7 @@
                 [(ngModel)]="contactForm.timeline"
                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
                        transition-colors duration-300 focus:outline-none focus:border-gold">
-                <option *ngFor="let option of timelineOptions" [value]="option.value">
+                <option *ngFor="let option of timelineOptions()" [value]="option.value">
                   {{ option.label }}
                 </option>
               </select>
@@ -101,14 +101,14 @@
             <!-- Location -->
             <div class="form-group">
               <label for="location" class="block mb-2 text-gray-700 font-medium font-sans">
-                Country/Region
+                {{ translations().contact.form.location }}
               </label>
               <input 
                 type="text" 
                 id="location" 
                 name="location"
                 [(ngModel)]="contactForm.location"
-                placeholder="Country/Region"
+                [placeholder]="translations().contact.form.locationPlaceholder"
                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
                        transition-colors duration-300 focus:outline-none focus:border-gold">
             </div>
@@ -116,7 +116,7 @@
             <!-- Description -->
             <div class="form-group">
               <label for="description" class="block mb-2 text-gray-700 font-medium font-sans">
-                Type of Service Needed / Project Description *
+                {{ translations().contact.form.descriptionRequired }}
               </label>
               <textarea 
                 id="description" 
@@ -124,7 +124,7 @@
                 [(ngModel)]="contactForm.description"
                 rows="5"
                 required
-                placeholder="Please describe in detail your project goals and requirements"
+                [placeholder]="translations().contact.form.descriptionPlaceholder"
                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
                        transition-colors duration-300 focus:outline-none focus:border-gold resize-vertical">
               </textarea>
@@ -133,7 +133,7 @@
             <!-- How did you hear about us -->
             <div class="form-group">
               <label for="source" class="block mb-2 text-gray-700 font-medium font-sans">
-                How did you hear about us?
+                {{ translations().contact.form.source }}
               </label>
               <select 
                 id="source" 
@@ -141,7 +141,7 @@
                 [(ngModel)]="contactForm.source"
                 class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
                        transition-colors duration-300 focus:outline-none focus:border-gold">
-                <option *ngFor="let option of sourceOptions" [value]="option.value">
+                <option *ngFor="let option of sourceOptions()" [value]="option.value">
                   {{ option.label }}
                 </option>
               </select>
@@ -153,7 +153,7 @@
               class="btn-submit bg-primary text-white px-8 py-4 rounded-md text-lg font-medium 
                      cursor-pointer transition-all duration-300 hover:bg-primary-dark hover:shadow-lg 
                      font-sans w-full md:w-auto">
-              Get Your Free Quote
+              {{ translations().contact.form.submitButton }}
             </button>
           </form>
         </div>
@@ -162,33 +162,20 @@
         <div class="contact-info space-y-8">
           <div class="mt-12 lg:mt-0">
             <h3 class="text-2xl md:text-3xl text-gold font-light mb-8">
-              Employment
+              {{ translations().contact.employment.title }}
             </h3>
             
             <div class="space-y-4 text-gray-600 font-sans leading-relaxed">
-              <p>
-                If interested in working with us, please send us your full C.V.
-              </p>
-              <p>
-                The key to AGPRO'S success is the people who work with us and who strive daily 
-                to reach our customer's goals.
-              </p>
-              <p>
-                It is our policy to bring the best professionals in the industry to our team.
-              </p>
-              <p>
-                Each project is a new opportunity to show our customers the highly professional 
-                attitude we seek at AGPRO INTERNATIONAL. We highly value our associates.
-              </p>
-              <p>
-                If you have the following qualities, please click the button bellow 
-                and fill the form:
-              </p>
+              <p>{{ translations().contact.employment.description }}</p>
+              <p>{{ translations().contact.employment.description2 }}</p>
+              <p>{{ translations().contact.employment.description3 }}</p>
+              <p>{{ translations().contact.employment.description4 }}</p>
+              <p>{{ translations().contact.employment.qualitiesTitle }}</p>
             </div>
             
             <!-- Employment Qualities List -->
             <ul class="service-list mt-6 space-y-3">
-              <li *ngFor="let quality of employmentQualities" 
+              <li *ngFor="let quality of employmentQualities()" 
                   class="flex items-start gap-3 text-gray-600 font-sans">
                 <span class="text-gold font-bold text-sm mt-1">✓</span>
                 <span>{{ quality }}</span>
@@ -196,14 +183,12 @@
             </ul>
             
             <!-- Employment CTA -->
-             <!-- classe para o botão quando houver funcionalidade 
-              class="bg-gold text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:bg-gold-dark hover:shadow-lg font-sans">-->
             <div class="mt-8">
               <button 
                 disabled
                 class="bg-gray-300 text-gray-500 px-6 py-3 rounded-md font-medium 
                        cursor-not-allowed font-sans relative">
-                  View Available Jobs
+                {{ translations().contact.employment.viewJobsButton }}
               </button>
             </div>
           </div>

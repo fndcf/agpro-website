@@ -1,9 +1,10 @@
-// 📁 src/app/pages/contact/contact.ts
-import { Component } from '@angular/core';
+// 📁 src/app/pages/contact/contact.ts (INTERNACIONALIZADO)
+import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeroComponent } from '../../components/hero/hero';
 import { ContactForm } from '../../models/service.model';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,6 +14,12 @@ import { ContactForm } from '../../models/service.model';
   styleUrls: ['./contact.scss']
 })
 export class Contact {
+  
+  // Computed signal para traduções
+  translations = computed(() => this.i18nService.currentTranslations());
+
+  constructor(private i18nService: I18nService) {}
+
   contactForm: ContactForm = {
     fullName: '',
     company: '',
@@ -24,41 +31,46 @@ export class Contact {
     source: ''
   };
 
-  timelineOptions = [
-    { value: '', label: 'Select desired timeline' },
-    { value: 'urgent', label: 'Urgent (within 30 days)' },
-    { value: 'short', label: 'Short-term (1-3 months)' },
-    { value: 'medium', label: 'Medium-term (3-6 months)' },
-    { value: 'long', label: 'Long-term (6+ months)' }
-  ];
+  // Timeline options agora são computed baseados nas traduções
+  timelineOptions = computed(() => {
+    const t = this.translations().contact.form.timelineOptions;
+    return [
+      { value: '', label: t.select },
+      { value: 'urgent', label: t.urgent },
+      { value: 'short', label: t.short },
+      { value: 'medium', label: t.medium },
+      { value: 'long', label: t.long }
+    ];
+  });
 
-  sourceOptions = [
-    { value: '', label: 'Select an option' },
-    { value: 'google', label: 'Google search' },
-    { value: 'referral', label: 'Client referral' },
-    { value: 'trade-show', label: 'Industry trade show' },
-    { value: 'website', label: 'Company website' },
-    { value: 'social-media', label: 'Social media' },
-    { value: 'advertisement', label: 'Advertisement' },
-    { value: 'other', label: 'Other' }
-  ];
+  // Source options agora são computed baseados nas traduções
+  sourceOptions = computed(() => {
+    const t = this.translations().contact.form.sourceOptions;
+    return [
+      { value: '', label: t.select },
+      { value: 'google', label: t.google },
+      { value: 'referral', label: t.referral },
+      { value: 'trade-show', label: t.tradeShow },
+      { value: 'website', label: t.website },
+      { value: 'social-media', label: t.socialMedia },
+      { value: 'advertisement', label: t.advertisement },
+      { value: 'other', label: t.other }
+    ];
+  });
 
-  employmentQualities = [
-    'Ability to work in a very demanding environment',
-    'Capacity to overcome difficulties',
-    'Efficiency',
-    'Flexibility',
-    'Desire to better yourself'
-  ];
+  // Employment qualities agora são computed baseados nas traduções
+  employmentQualities = computed(() => {
+    return this.translations().contact.employment.qualities;
+  });
 
   onSubmit() {
     if (this.isFormValid()) {
       console.log('Form submitted:', this.contactForm);
       // Here you would typically send the form data to your backend
-      alert('Thank you for your inquiry! We will contact you soon.');
+      alert(this.translations().contact.form.successMessage);
       this.resetForm();
     } else {
-      alert('Please fill in all required fields.');
+      alert(this.translations().contact.form.errorMessage);
     }
   }
 

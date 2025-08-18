@@ -285,6 +285,70 @@ export interface Translation {
       };
     };
   };
+
+  // Under Construction translations
+  underConstruction: {
+    pageTitle: string;
+    subtitle: string;
+    workingHard: string;
+    progressComplete: string;
+    goHome: string;
+    contactUs: string;
+  };
+
+  // Contact translations
+  contact: {
+    hero: {
+      title: string;
+      subtitle: string;
+    };
+    form: {
+      title: string;
+      fullName: string;
+      fullNameRequired: string;
+      company: string;
+      email: string;
+      emailRequired: string;
+      phone: string;
+      timeline: string;
+      location: string;
+      locationPlaceholder: string;
+      description: string;
+      descriptionRequired: string;
+      descriptionPlaceholder: string;
+      source: string;
+      submitButton: string;
+      successMessage: string;
+      errorMessage: string;
+      timelineOptions: {
+        select: string;
+        urgent: string;
+        short: string;
+        medium: string;
+        long: string;
+      };
+      sourceOptions: {
+        select: string;
+        google: string;
+        referral: string;
+        tradeShow: string;
+        website: string;
+        socialMedia: string;
+        advertisement: string;
+        other: string;
+      };
+    };
+    employment: {
+      title: string;
+      description: string;
+      description2: string;
+      description3: string;
+      description4: string;
+      qualitiesTitle: string;
+      qualities: string[];
+      viewJobsButton: string;
+    };
+  };
   
   // Footer translations
   footer: {
@@ -641,6 +705,72 @@ export class I18nService {
           }
         }
       },
+      underConstruction: {
+        pageTitle: 'Under Construction',
+        subtitle: 'We\'re working hard to bring you something amazing. This page will be available soon!',
+        workingHard: 'We\'re working hard to bring you something amazing.',
+        progressComplete: '75% Complete',
+        goHome: 'Go to Homepage',
+        contactUs: 'Contact Us'
+      },
+      contact: {
+        hero: {
+          title: 'Contact Us',
+          subtitle: 'We\'re ready to develop the ideal solution for your project. Speak with our experts.'
+        },
+        form: {
+          title: 'Request a Custom Quote',
+          fullName: 'Full Name',
+          fullNameRequired: 'Full Name *',
+          company: 'Company',
+          email: 'Email',
+          emailRequired: 'Email *',
+          phone: 'Phone',
+          timeline: 'Urgency/Timeline',
+          location: 'Country/Region',
+          locationPlaceholder: 'Country/Region',
+          description: 'Type of Service Needed / Project Description',
+          descriptionRequired: 'Type of Service Needed / Project Description *',
+          descriptionPlaceholder: 'Please describe in detail your project goals and requirements',
+          source: 'How did you hear about us?',
+          submitButton: 'Get Your Free Quote',
+          successMessage: 'Thank you for your inquiry! We will contact you soon.',
+          errorMessage: 'Please fill in all required fields.',
+          timelineOptions: {
+            select: 'Select desired timeline',
+            urgent: 'Urgent (within 30 days)',
+            short: 'Short-term (1-3 months)',
+            medium: 'Medium-term (3-6 months)',
+            long: 'Long-term (6+ months)'
+          },
+          sourceOptions: {
+            select: 'Select an option',
+            google: 'Google search',
+            referral: 'Client referral',
+            tradeShow: 'Industry trade show',
+            website: 'Company website',
+            socialMedia: 'Social media',
+            advertisement: 'Advertisement',
+            other: 'Other'
+          }
+        },
+        employment: {
+          title: 'Employment',
+          description: 'If interested in working with us, please send us your full C.V.',
+          description2: 'The key to AGPRO\'S success is the people who work with us and who strive daily to reach our customer\'s goals.',
+          description3: 'It is our policy to bring the best professionals in the industry to our team.',
+          description4: 'Each project is a new opportunity to show our customers the highly professional attitude we seek at AGPRO INTERNATIONAL. We highly value our associates.',
+          qualitiesTitle: 'If you have the following qualities, please click the button below and fill the form:',
+          qualities: [
+            'Ability to work in a very demanding environment',
+            'Capacity to overcome difficulties',
+            'Efficiency',
+            'Flexibility',
+            'Desire to better yourself'
+          ],
+          viewJobsButton: 'View Available Jobs'
+        }
+      },
       footer: {
         productsServices: 'Products & Services',
         company: 'Company',
@@ -981,6 +1111,72 @@ export class I18nService {
             label: 'Em Construção',
             description: 'Modelo de página para seções em desenvolvimento'
           }
+        }
+      },
+      underConstruction: {
+        pageTitle: 'Em Construção',
+        subtitle: 'Estamos trabalhando duro para trazer algo incrível. Esta página estará disponível em breve!',
+        workingHard: 'Estamos trabalhando duro para trazer algo incrível.',
+        progressComplete: '75% Concluído',
+        goHome: 'Ir para Página Inicial',
+        contactUs: 'Entre em Contato'
+      },
+      contact: {
+        hero: {
+          title: 'Entre em Contato',
+          subtitle: 'Estamos prontos para desenvolver a solução ideal para seu projeto. Fale com nossos especialistas.'
+        },
+        form: {
+          title: 'Solicite um Orçamento Personalizado',
+          fullName: 'Nome Completo',
+          fullNameRequired: 'Nome Completo *',
+          company: 'Empresa',
+          email: 'E-mail',
+          emailRequired: 'E-mail *',
+          phone: 'Telefone',
+          timeline: 'Urgência/Cronograma',
+          location: 'País/Região',
+          locationPlaceholder: 'País/Região',
+          description: 'Tipo de Serviço Necessário / Descrição do Projeto',
+          descriptionRequired: 'Tipo de Serviço Necessário / Descrição do Projeto *',
+          descriptionPlaceholder: 'Por favor, descreva detalhadamente os objetivos e requisitos do seu projeto',
+          source: 'Como você soube sobre nós?',
+          submitButton: 'Obter Seu Orçamento Gratuito',
+          successMessage: 'Obrigado por sua consulta! Entraremos em contato em breve.',
+          errorMessage: 'Por favor, preencha todos os campos obrigatórios.',
+          timelineOptions: {
+            select: 'Selecione o cronograma desejado',
+            urgent: 'Urgente (dentro de 30 dias)',
+            short: 'Curto prazo (1-3 meses)',
+            medium: 'Médio prazo (3-6 meses)',
+            long: 'Longo prazo (6+ meses)'
+          },
+          sourceOptions: {
+            select: 'Selecione uma opção',
+            google: 'Pesquisa no Google',
+            referral: 'Indicação de cliente',
+            tradeShow: 'Feira do setor',
+            website: 'Site da empresa',
+            socialMedia: 'Redes sociais',
+            advertisement: 'Publicidade',
+            other: 'Outro'
+          }
+        },
+        employment: {
+          title: 'Emprego',
+          description: 'Se estiver interessado em trabalhar conosco, por favor nos envie seu currículo completo.',
+          description2: 'A chave para o sucesso da AGPRO são as pessoas que trabalham conosco e que se esforçam diariamente para alcançar os objetivos de nossos clientes.',
+          description3: 'É nossa política trazer os melhores profissionais da indústria para nossa equipe.',
+          description4: 'Cada projeto é uma nova oportunidade de mostrar aos nossos clientes a atitude altamente profissional que buscamos na AGPRO INTERNATIONAL. Valorizamos muito nossos associados.',
+          qualitiesTitle: 'Se você possui as seguintes qualidades, clique no botão abaixo e preencha o formulário:',
+          qualities: [
+            'Capacidade de trabalhar em um ambiente muito exigente',
+            'Capacidade de superar dificuldades',
+            'Eficiência',
+            'Flexibilidade',
+            'Desejo de se aperfeiçoar'
+          ],
+          viewJobsButton: 'Ver Vagas Disponíveis'
         }
       },
       footer: {
@@ -1325,6 +1521,72 @@ export class I18nService {
           }
         }
       },
+      underConstruction: {
+        pageTitle: 'En Construcción',
+        subtitle: 'Estamos trabajando duro para traerte algo increíble. ¡Esta página estará disponible pronto!',
+        workingHard: 'Estamos trabajando duro para traerte algo increíble.',
+        progressComplete: '75% Completado',
+        goHome: 'Ir a Página Principal',
+        contactUs: 'Contáctanos'
+      },
+      contact: {
+        hero: {
+          title: 'Contáctanos',
+          subtitle: 'Estamos listos para desarrollar la solución ideal para su proyecto. Hable con nuestros expertos.'
+        },
+        form: {
+          title: 'Solicite una Cotización Personalizada',
+          fullName: 'Nombre Completo',
+          fullNameRequired: 'Nombre Completo *',
+          company: 'Empresa',
+          email: 'Correo Electrónico',
+          emailRequired: 'Correo Electrónico *',
+          phone: 'Teléfono',
+          timeline: 'Urgencia/Cronograma',
+          location: 'País/Región',
+          locationPlaceholder: 'País/Región',
+          description: 'Tipo de Servicio Necesario / Descripción del Proyecto',
+          descriptionRequired: 'Tipo de Servicio Necesario / Descripción del Proyecto *',
+          descriptionPlaceholder: 'Por favor, describa detalladamente los objetivos y requisitos de su proyecto',
+          source: '¿Cómo se enteró de nosotros?',
+          submitButton: 'Obtenga Su Cotización Gratuita',
+          successMessage: '¡Gracias por su consulta! Nos pondremos en contacto pronto.',
+          errorMessage: 'Por favor, complete todos los campos obligatorios.',
+          timelineOptions: {
+            select: 'Seleccione el cronograma deseado',
+            urgent: 'Urgente (dentro de 30 días)',
+            short: 'Corto plazo (1-3 meses)',
+            medium: 'Mediano plazo (3-6 meses)',
+            long: 'Largo plazo (6+ meses)'
+          },
+          sourceOptions: {
+            select: 'Seleccione una opción',
+            google: 'Búsqueda en Google',
+            referral: 'Referencia de cliente',
+            tradeShow: 'Feria de la industria',
+            website: 'Sitio web de la empresa',
+            socialMedia: 'Redes sociales',
+            advertisement: 'Publicidad',
+            other: 'Otro'
+          }
+        },
+        employment: {
+          title: 'Empleo',
+          description: 'Si está interesado en trabajar con nosotros, por favor envíenos su currículum completo.',
+          description2: 'La clave del éxito de AGPRO son las personas que trabajan con nosotros y que se esfuerzan diariamente para alcanzar los objetivos de nuestros clientes.',
+          description3: 'Es nuestra política traer a los mejores profesionales de la industria a nuestro equipo.',
+          description4: 'Cada proyecto es una nueva oportunidad de mostrar a nuestros clientes la actitud altamente profesional que buscamos en AGPRO INTERNATIONAL. Valoramos mucho a nuestros asociados.',
+          qualitiesTitle: 'Si tiene las siguientes cualidades, haga clic en el botón de abajo y complete el formulario:',
+          qualities: [
+            'Capacidad de trabajar en un entorno muy exigente',
+            'Capacidad para superar dificultades',
+            'Eficiencia',
+            'Flexibilidad',
+            'Deseo de superarse'
+          ],
+          viewJobsButton: 'Ver Trabajos Disponibles'
+        }
+      },
       footer: {
         productsServices: 'Productos y Servicios',
         company: 'Empresa',
@@ -1415,6 +1677,16 @@ export class I18nService {
   // Método helper para acessar traduções do sitemap
   public get sitemap() {
     return this.currentTranslations().sitemap;
+  }
+
+  // Método helper para acessar traduções do under construction
+  public get underConstruction() {
+    return this.currentTranslations().underConstruction;
+  }
+
+  // Método helper para acessar traduções do contact
+  public get contact() {
+    return this.currentTranslations().contact;
   }
 
   // Método helper para acessar traduções do footer
