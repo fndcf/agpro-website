@@ -1,0 +1,124 @@
+<!-- Sitemap Page -->
+<div class="sitemap-page bg-white min-h-screen py-16">
+  <div class="container mx-auto px-6 max-w-6xl">
+    
+    <!-- Header -->
+    <div class="page-header text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-light text-gold mb-4">
+        Sitemap
+      </h1>
+      <p class="text-gray-600 text-lg mb-6">
+        Complete navigation guide to our website
+      </p>
+      <div class="stats flex justify-center items-center gap-8 text-sm text-gray-500">
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          {{ siteStructure.length }} sections
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-6a1 1 0 00-1-1H9a1 1 0 00-1 1v6a1 1 0 01-1 1H4a1 1 0 110-2V4z" clip-rule="evenodd"></path>
+          </svg>
+          {{ totalPages }} total pages
+        </span>
+      </div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav mb-12">
+      <h2 class="text-2xl font-medium text-gray-900 mb-6 text-center">Quick Navigation</h2>
+      <div class="nav-buttons flex flex-wrap justify-center gap-3">
+        <button *ngFor="let section of siteStructure"
+                (click)="scrollToSection(section.title)"
+                class="nav-btn bg-gray-100 hover:bg-primary hover:text-white text-gray-700 px-4 py-2 rounded-md 
+                       text-sm font-medium transition-all duration-300 flex items-center gap-2">
+          {{ section.title }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Site Structure -->
+    <div class="site-structure space-y-10">
+      
+      <div *ngFor="let section of siteStructure; let i = index"
+           class="sitemap-section"
+           [id]="getSectionId(section.title)">
+        
+        <!-- Section Header -->
+        <div class="section-header flex items-center gap-3 mb-6 pb-3 border-b-2 border-gold">
+          <h2 class="text-2xl md:text-3xl font-medium text-gray-900">
+            {{ section.title }}
+          </h2>
+          <span class="section-count bg-gold text-white text-xs px-2 py-1 rounded-full">
+            {{ section.links.length }}
+          </span>
+        </div>
+
+        <!-- Section Links -->
+        <div class="section-links grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div *ngFor="let link of section.links; let j = index"
+               class="sitemap-link group">
+            
+            <a [routerLink]="link.route"
+               [fragment]="link.fragment"
+               class="link-card block bg-gray-50 hover:bg-gray-100 border border-gray-200 
+                      hover:border-primary rounded-lg p-4 transition-all duration-300 
+                      hover:shadow-md hover:-translate-y-1">
+              
+              <!-- Link Header -->
+              <div class="link-header flex items-center justify-between mb-2">
+                <h3 class="link-title text-lg font-medium text-gray-900 group-hover:text-primary 
+                          transition-colors duration-300">
+                  {{ link.label }}
+                </h3>
+                <svg class="link-arrow w-4 h-4 text-gray-400 group-hover:text-primary 
+                           transition-all duration-300 group-hover:translate-x-1" 
+                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M9 5l7 7-7 7"></path>
+                </svg>
+              </div>
+
+              <!-- Link Description -->
+              <p *ngIf="link.description" 
+                 class="link-description text-sm text-gray-600 leading-relaxed">
+                {{ link.description }}
+              </p>
+
+              <!-- Link Path -->
+              <div class="link-path mt-3 pt-2 border-t border-gray-200">
+                <code class="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded">
+                  {{ link.route }}{{ link.fragment ? '#' + link.fragment : '' }}
+                </code>
+              </div>
+
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer Information -->
+    <div class="sitemap-footer mt-16 pt-8 border-t border-gray-200 text-center">
+      <h3 class="text-xl font-medium text-gray-900 mb-4">Need Help Finding Something?</h3>
+      <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+        If you can't find what you're looking for in our sitemap, please don't hesitate to contact us. 
+        Our team is here to help you navigate our services and find the perfect solution for your project.
+      </p>
+      
+      <a [routerLink]="['/contact']"
+         class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-md 
+                font-medium transition-all duration-300 hover:bg-primary-dark hover:shadow-lg">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        Contact Our Team
+      </a>
+    </div>
+
+  </div>
+</div>

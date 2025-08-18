@@ -104,7 +104,7 @@ export class Projects {
   onImageError(event: any, project: Project) {
     console.log(`Imagem não encontrada para ${project.title}, usando fallback`);
     event.target.src = this.fallbackImage;
-    event.target.alt = `${project.title} - AgPro Inc Project`;
+    event.target.alt = `${project.title} - AgPro International Project`;
   }
 
   projectCategories = [

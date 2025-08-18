@@ -1,7 +1,7 @@
 <!-- Hero Section - Normal (não sticky) -->
 <app-hero 
   title="Products and Services"
-  subtitle="For decades, AgPro Inc has delivered premium solutions to the world's most demanding agribusiness projects.">
+  subtitle="For decades, AgPro International has delivered premium solutions to the world's most demanding agribusiness projects.">
 </app-hero>
 
 <!-- Tabs Navigation - Sticky -->
@@ -35,9 +35,8 @@
         <app-service-card 
           [service]="service" 
           [showImage]="true"
-          [imageUrl]="getServiceImage(service)"
-          [imageAlt]="getServiceImageAlt(service)"
-          (imageError)="onImageError($event, service)"
+          [carouselImages]="getServiceImages(service)"
+          [fallbackImage]="fallbackImage"
           class="flex-grow">
         </app-service-card>
         

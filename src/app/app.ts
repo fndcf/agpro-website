@@ -23,7 +23,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'AgPro Inc - Excellence in Agribusiness';
+  title = 'AgPro International';
 
   constructor(
     private router: Router,

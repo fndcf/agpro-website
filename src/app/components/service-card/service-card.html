@@ -1,3 +1,4 @@
+<!-- 📁 src/app/components/service-card/service-card.html - CORRIGIDO -->
 <div class="service-card bg-white border border-gray-200 p-8 md:p-12 text-center 
             transition-all duration-300 hover:-translate-y-3 hover:shadow-xl group 
             min-h-[600px] flex flex-col"
@@ -15,14 +16,26 @@
     </p>
   </div>
   
-  <!-- Service Image -->
-  <div *ngIf="showImage && imageUrl" 
+  <!-- Service Image Carousel -->
+  <div *ngIf="showImage && carouselImages.length > 0" 
+       class="service-image-container flex-shrink-0 mt-6">
+    <app-image-carousel
+      [images]="carouselImages"
+      [autoPlayInterval]="4000"
+      [showDots]="true"
+      [showArrows]="false"
+      [pauseOnHover]="true"
+      [fallbackImage]="fallbackImage">
+    </app-image-carousel>
+  </div>
+  
+  <!-- Fallback single image (caso não tenha carrossel) -->
+  <div *ngIf="showImage && carouselImages.length === 0 && service.image" 
        class="service-image-container flex-shrink-0 mt-6">
     <div class="service-image-wrapper relative overflow-hidden rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
       <img 
-        [src]="imageUrl" 
-        [alt]="imageAlt || service.title"
-        (error)="onImageError($event)"
+        [src]="service.image" 
+        [alt]="service.title"
         class="service-image w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
       
       <!-- Image overlay for better visual effect -->

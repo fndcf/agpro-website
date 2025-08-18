@@ -1,9 +1,14 @@
-// 📁 src/app/models/service.model.ts
+export interface CarouselImage {
+  src: string;
+  alt: string;
+}
+
 export interface Service {
   id: string;
   title: string;
   description: string;
   image?: string;
+  images?: CarouselImage[]; // Array de imagens para carrossel
   category: 'swine' | 'poultry' | 'grain' | 'equipment' | 'buildings';
 }
 

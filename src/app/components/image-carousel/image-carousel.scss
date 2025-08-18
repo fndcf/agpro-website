@@ -1,0 +1,130 @@
+// 📁 src/app/components/image-carousel/image-carousel.scss
+.image-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: #f3f4f6;
+  
+  .carousel-container {
+    position: relative;
+    height: 16rem; // h-64
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  // Loading overlay
+  .loading-overlay {
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  // Navigation arrows
+  .carousel-arrows {
+    .carousel-arrow {
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      
+      &:hover {
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      &:active {
+        transform: translateY(-50%) scale(0.95);
+      }
+    }
+  }
+  
+  // Dots indicator
+  .carousel-dots {
+    .carousel-dot {
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  
+  // Image counter
+  .image-counter {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    font-family: monospace;
+  }
+  
+  // Hover effects
+  &:hover {
+    .carousel-slide img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Animações para transições suaves
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.carousel-slide img {
+  animation: slideIn 0.5s ease-out;
+}
+
+// Mobile adjustments
+@media (max-width: 768px) {
+  .image-carousel {
+    .carousel-container {
+      height: 12rem; // h-48 no mobile
+    }
+    
+    .carousel-arrows {
+      .carousel-arrow {
+        padding: 0.5rem;
+        
+        svg {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
+    
+    .carousel-dots {
+      .carousel-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+    }
+    
+    .image-counter {
+      font-size: 0.625rem;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+}
