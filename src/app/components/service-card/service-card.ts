@@ -1,5 +1,4 @@
-// 📁 src/app/components/service-card/service-card.ts
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Service } from '../../models/service.model';
 
@@ -14,4 +13,10 @@ export class ServiceCardComponent {
   @Input() service!: Service;
   @Input() showImage: boolean = false;
   @Input() imageUrl: string = '';
+  @Input() imageAlt: string = '';
+  @Output() imageError = new EventEmitter<any>();
+
+  onImageError(event: any) {
+    this.imageError.emit(event);
+  }
 }
