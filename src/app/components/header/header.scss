@@ -38,9 +38,13 @@
     padding: 1rem 0;
     
     .logo-img {
-      height: 3rem; // 48px
+      height: 5rem; // 48px
     }
   }
+}
+
+.logo-img {
+  height: 6rem;
 }
 
 // Main navigation com padding melhorado
@@ -52,6 +56,10 @@
   }
 }
 
+.text-lg {
+    font-size: 1.5rem;
+}
+
 // Navegação ativa
 .nav-link {
   position: relative;
@@ -59,7 +67,7 @@
   transition: all 0.3s ease;
   
   &.active {
-    border-bottom: 2px solid #CCAA77;
+    border-bottom: 2px solid #ffffff;
   }
   
   &:hover:not(.active) {

@@ -13,12 +13,12 @@
                class="h-12 w-auto logo-img transition-transform duration-300 hover:scale-105">
         </div>
         
-        <p class="text-green-100 text-base leading-relaxed mb-3 font-sans">
+        <p class="text-green-100 text-lg leading-relaxed mb-3 font-sans">
           Decades of excellence in developing large-scale projects for international agribusiness.
         </p>
         
         <div class="contact-info mb-3">
-          <p class="flex items-center gap-2 text-green-100 text-sm">
+          <p class="flex items-center gap-2 text-green-100 text-base">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
             </svg>
@@ -40,14 +40,14 @@
       
       <!-- Products & Services -->
       <div class="footer-section">
-        <h4 class="text-lg font-medium mb-3 text-white">
+        <h4 class="text-3xl font-medium mb-3 text-white">
           Products & Services
         </h4>
         <div class="space-y-2">
           <a *ngFor="let link of footerLinks.products"
              [routerLink]="link.route"
              class="block text-green-100 hover:text-gold transition-colors duration-300 
-                    font-sans text-sm">
+                    font-sans text-lg">
             {{ link.label }}
           </a>
         </div>
@@ -55,14 +55,14 @@
       
       <!-- Company -->
       <div class="footer-section">
-        <h4 class="text-lg font-medium mb-3 text-white">
+        <h4 class="text-3xl font-medium mb-3 text-white">
           Company
         </h4>
         <div class="space-y-2">
           <a *ngFor="let link of footerLinks.company"
              [routerLink]="link.route"
              class="block text-green-100 hover:text-gold transition-colors duration-300 
-                    font-sans text-sm">
+                    font-sans text-lg">
             {{ link.label }}
           </a>
         </div>
@@ -73,7 +73,7 @@
     <!-- Footer Bottom - Área do Copyright compacta -->
     <div class="footer-bottom pt-2 border-t border-green-400 border-opacity-30">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-        <p class="text-green-200 font-sans text-sm">
+        <p class="text-green-200 font-sans text-base">
           &copy; {{ currentYear }} AgPro Inc. All Rights Reserved.
         </p>
         

@@ -54,7 +54,7 @@
     // Títulos com margin menor
     h4 {
       margin-bottom: 0.75rem; // mb-3 - reduzido
-      font-size: 1.125rem; // text-lg - tamanho mantido
+      font-size: 1.875rem; // text-lg - tamanho mantido
       text-align: left;
       
       @media (max-width: 768px) {
@@ -72,7 +72,7 @@
       margin-bottom: 0.75rem; // mb-3 - reduzido
       line-height: 1.5;
       text-align: left;
-      font-size: 1rem; // text-base - tamanho mantido
+      font-size: 1.125rem; // text-base - tamanho mantido
       
       @media (max-width: 768px) {
         margin-bottom: 0.5rem;
@@ -84,7 +84,7 @@
       margin-bottom: 0.75rem; // mb-3
       
       p {
-        font-size: 0.875rem; // text-sm - tamanho mantido
+        font-size: 1rem; // text-sm - tamanho mantido
         margin-bottom: 0;
       }
       
@@ -132,7 +132,7 @@
     
     // Copyright e links com tamanho normal
     p {
-      font-size: 0.875rem; // text-sm - mantido
+      font-size: 1rem; // text-sm - mantido
       margin: 0; // Remove qualquer margin
     }
     

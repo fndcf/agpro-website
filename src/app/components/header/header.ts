@@ -26,9 +26,8 @@ export class HeaderComponent {
 
   // Links de redes sociais
   socialLinks = [
-    { icon: '📘', title: 'Facebook', url: '#' },
-    { icon: '💼', title: 'LinkedIn', url: '#' },
-    { icon: '📸', title: 'Instagram', url: '#' }
+    { icon: '📘', title: 'Facebook', url: 'https://www.facebook.com/AgproInternational' },
+    { icon: '📸', title: 'Instagram', url: 'https://www.instagram.com/agpro_international' }
   ];
 
   // Navigation items

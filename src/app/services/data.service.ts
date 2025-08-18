@@ -12,20 +12,17 @@ export class DataService {
     {
       number: '30+',
       label: 'Years of Experience',
-      description: 'Decades serving the agribusiness industry',
-      icon: '🏆'
+      description: 'Decades serving the agribusiness industry'
     },
     {
       number: '500+',
       label: 'Projects Completed',
-      description: 'Successful implementations worldwide',
-      icon: '🚀'
+      description: 'Successful implementations worldwide'
     },
     {
       number: '25+',
       label: 'Countries Served',
-      description: 'International presence and expertise',
-      icon: '🌍'
+      description: 'International presence and expertise'
     }
   ]);
 
@@ -34,22 +31,19 @@ export class DataService {
       id: 'swine',
       title: 'Swine',
       description: 'Swine project consulting, development and management, construction planning and supervision, equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates.',
-      category: 'swine',
-      icon: '🐷'
+      category: 'swine'
     },
     {
       id: 'poultry',
       title: 'Poultry',
       description: 'Poultry project consulting, development and management, construction planning and supervision, equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating, drinkers, nest systems.',
-      category: 'poultry',
-      icon: '🐔'
+      category: 'poultry'
     },
     {
       id: 'grain',
       title: 'Grain Storage',
       description: 'Grain storage project consulting, development and management, construction planning and supervision, equipment suppliers of Grain Silos, Hopper Tanks, bucket elevators, chain conveyors, belt conveyors, screw conveyors, distributors.',
-      category: 'grain',
-      icon: '🌾'
+      category: 'grain'
     }
   ]);
 
