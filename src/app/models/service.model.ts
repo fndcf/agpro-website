@@ -3,9 +3,7 @@ export interface Service {
   id: string;
   title: string;
   description: string;
-  icon?: string;
   image?: string;
-  features?: string[];
   category: 'swine' | 'poultry' | 'grain' | 'equipment' | 'buildings';
 }
 
@@ -13,7 +11,6 @@ export interface Stat {
   number: string;
   label: string;
   description?: string;
-  icon?: string;
 }
 
 export interface TabItem {

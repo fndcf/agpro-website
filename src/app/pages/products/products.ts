@@ -1,10 +1,12 @@
 // 📁 src/app/pages/products/products.ts
-import { Component, computed } from '@angular/core';
+import { Component, computed, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero';
 import { ServiceCardComponent } from '../../components/service-card/service-card';
 import { DataService } from '../../services/data.service';
 import { Service } from '../../models/service.model';
+import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -13,8 +15,9 @@ import { Service } from '../../models/service.model';
   templateUrl: './products.html',
   styleUrls: ['./products.scss']
 })
-export class Products {
+export class Products implements OnInit, OnDestroy{
   tabs = computed(() => this.dataService.productTabs());
+  private fragmentSubscription?: Subscription;
   
   // Mock services data for products page
   productServices: Service[] = [
@@ -68,7 +71,27 @@ export class Products {
     }
   ];
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    // Escuta mudanças no fragment da URL
+    this.fragmentSubscription = this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        console.log('Fragment detectado:', fragment);
+        // Se há um fragment, ativa a tab correspondente
+        this.setActiveTab(fragment);
+        
+        // Delay para garantir que o DOM foi atualizado
+        setTimeout(() => {
+          this.scrollToService(fragment);
+        }, 300);
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.fragmentSubscription?.unsubscribe();
+  }
 
   setActiveTab(tabId: string) {    
     // Faz scroll suave para a seção correspondente
@@ -108,6 +131,6 @@ export class Products {
     // Remove a classe após 2 segundos
     setTimeout(() => {
       element.classList.remove('highlight-card');
-    }, 2000);
+    }, 500);
   }
 }

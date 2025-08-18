@@ -23,7 +23,7 @@
               <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
             </svg>
             Springfield, IL - United States
-          </p>
+          </p>          
         </div>
         
         <!-- Social Links -->
@@ -36,6 +36,19 @@
             {{ social.icon }}
           </a>
         </div>
+        <button 
+            (click)="scrollToTop()"
+            class="back-to-top-btn flex items-center gap-2 text-green-100 hover:text-white 
+                   transition-all duration-300 group cursor-pointer bg-transparent border-none 
+                   font-sans text-lg hover:transform hover:translate-y-[-2px]"
+            title="Back to Top">
+            <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-y-[-2px]" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+            </svg>
+            Back to Top
+          </button>
       </div>
       
       <!-- Products & Services -->
@@ -46,6 +59,7 @@
         <div class="space-y-2">
           <a *ngFor="let link of footerLinks.products"
              [routerLink]="link.route"
+             [fragment]="link.fragment"
              class="block text-green-100 hover:text-gold transition-colors duration-300 
                     font-sans text-lg">
             {{ link.label }}
@@ -67,6 +81,8 @@
           </a>
         </div>
       </div>
+
+      
       
     </div>
     

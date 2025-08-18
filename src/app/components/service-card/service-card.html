@@ -4,13 +4,6 @@
             min-h-[600px] flex flex-col"
      [id]="service.id">
   
-  <!-- Service Icon -->
-  <div *ngIf="service.icon" 
-       class="service-icon text-5xl mb-6 text-gold group-hover:scale-110 
-              transition-transform duration-300 flex-shrink-0">
-    {{ service.icon }}
-  </div>
-  
   <!-- Service Title -->
   <h3 class="text-2xl md:text-3xl text-gold font-light mb-6 flex-shrink-0">
     {{ service.title }}
@@ -21,18 +14,6 @@
     <p class="text-gray-600 text-base md:text-lg leading-relaxed font-sans w-full h-[140px] overflow-hidden">
       {{ service.description }}
     </p>
-  </div>
-  
-  <!-- Service Features List -->
-  <div *ngIf="service.features && service.features.length > 0" 
-       class="service-features flex-shrink-0 mt-6">
-    <ul class="service-list text-left space-y-2">
-      <li *ngFor="let feature of service.features" 
-          class="flex items-start gap-3 text-gray-600 font-sans">
-        <span class="text-gold font-bold text-sm mt-1">✓</span>
-        <span>{{ feature }}</span>
-      </li>
-    </ul>
   </div>
   
   <!-- Service Image -->

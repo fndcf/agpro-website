@@ -12,25 +12,4 @@
   <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6 font-sans">
     {{ homeservice.description }}
   </p>
-  
-  <!-- Service Features List -->
-  <div *ngIf="homeservice.features && homeservice.features.length > 0" 
-       class="service-features flex-shrink-0 mt-6">
-    <ul class="service-list text-left space-y-2">
-      <li *ngFor="let feature of homeservice.features" 
-          class="flex items-start gap-3 text-gray-600 font-sans">
-        <span class="text-gold font-bold text-sm mt-1">✓</span>
-        <span>{{ feature }}</span>
-      </li>
-    </ul>
-  </div>
-  
-  <!-- Service Image -->
-  <div *ngIf="showImage && imageUrl" 
-       class="service-image-container flex-shrink-0 mt-6">
-    <img [src]="imageUrl" 
-         [alt]="homeservice.title"
-         class="service-image w-full h-64 object-cover rounded-lg 
-                shadow-md group-hover:shadow-lg transition-shadow duration-300">
-  </div>
 </div>

@@ -11,6 +11,4 @@ import { HomeService } from '../../models/home.model';
 })
 export class HomeCardComponent {
   @Input() homeservice!: HomeService;
-  @Input() showImage: boolean = false;
-  @Input() imageUrl: string = '';
 }

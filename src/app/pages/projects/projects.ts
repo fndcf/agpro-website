@@ -161,6 +161,6 @@ export class Projects {
     // Remove a classe após 2 segundos
     setTimeout(() => {
       element.classList.remove('highlight-project');
-    }, 2500);
+    }, 2000);
   }
 }
