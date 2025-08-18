@@ -405,6 +405,59 @@ export interface Translation {
       };
     };
   };
+
+  // Products and Services translations
+  products: {
+    hero: {
+      title: string;
+      subtitle: string;
+    };
+    tabs: {
+      buildings: string;
+      equipments: string;
+      grainStorage: string;
+      feedTransportation: string;
+      ventilation: string;
+      confinement: string;
+      flooring: string;
+      blueprints: string;
+    };
+    services: {
+      buildings: {
+        title: string;
+        description: string;
+      };
+      equipments: {
+        title: string;
+        description: string;
+      };
+      grainStorage: {
+        title: string;
+        description: string;
+      };
+      feedTransportation: {
+        title: string;
+        description: string;
+      };
+      ventilation: {
+        title: string;
+        description: string;
+      };
+      confinement: {
+        title: string;
+        description: string;
+      };
+      flooring: {
+        title: string;
+        description: string;
+      };
+      blueprints: {
+        title: string;
+        description: string;
+      };
+    };
+  };
+
   
   // Footer translations
   footer: {
@@ -904,6 +957,56 @@ export class I18nService {
           }
         }
       },
+      products: {
+        hero: {
+          title: 'Products and Services',
+          subtitle: 'For decades, AgPro International has delivered premium solutions to the world\'s most demanding agribusiness projects.'
+        },
+        tabs: {
+          buildings: 'Buildings',
+          equipments: 'Equipments',
+          grainStorage: 'Grain Storage & Handling',
+          feedTransportation: 'Feed Transportation',
+          ventilation: 'Ventilation Equipment',
+          confinement: 'Confinement',
+          flooring: 'Flooring',
+          blueprints: 'Blue Prints'
+        },
+        services: {
+          buildings: {
+            title: 'Buildings',
+            description: 'Swine project consulting, development and management, construction planning and supervision, equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, concrete slats, plastic flooring for nurseries and farrowing crates.'
+          },
+          equipments: {
+            title: 'Equipments',
+            description: 'Complete range of agricultural equipment including feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating systems, water management systems, and specialized livestock housing equipment.'
+          },
+          grainStorage: {
+            title: 'Grain Storage and Handling',
+            description: 'Grain storage project consulting, development and management, equipment suppliers of Grain Silos, Hopper Tanks, bucket elevators, chain conveyors, belt conveyors, screw conveyors, distributors, automatic control systems and electrical installations.'
+          },
+          feedTransportation: {
+            title: 'Feed Transportation Systems',
+            description: 'Advanced feed transportation and distribution systems including automated feeding equipment, conveyor systems, feed mills, and complete turnkey feeding solutions for livestock operations.'
+          },
+          ventilation: {
+            title: 'Ventilation Equipment',
+            description: 'State-of-the-art ventilation systems including exhaust fans, inlet systems, environmental controls, cooling pads, heating systems, and complete climate control solutions.'
+          },
+          confinement: {
+            title: 'Confinement',
+            description: 'Specialized confinement systems including gestation stalls, farrowing crates, nursery penning, finishing pens, and complete housing solutions designed for optimal animal welfare and productivity.'
+          },
+          flooring: {
+            title: 'Flooring',
+            description: 'Comprehensive flooring solutions including concrete slats, plastic flooring for nurseries and farrowing crates, drainage systems, and specialized flooring for different livestock applications.'
+          },
+          blueprints: {
+            title: 'Blue Prints',
+            description: 'Professional architectural and engineering services including project design, blueprints, construction planning, technical drawings, and complete project documentation and supervision.'
+          }
+        }
+      },
       footer: {
         productsServices: 'Products & Services',
         company: 'Company',
@@ -1386,6 +1489,56 @@ export class I18nService {
               'Sistemas de energia renovável',
               'Automação abrangente'
             ]
+          }
+        }
+      },
+      products: {
+        hero: {
+          title: 'Produtos e Serviços',
+          subtitle: 'Por décadas, a AgPro International tem entregue soluções premium para os projetos de agronegócio mais exigentes do mundo.'
+        },
+        tabs: {
+          buildings: 'Construções',
+          equipments: 'Equipamentos',
+          grainStorage: 'Armazenamento e Manuseio de Grãos',
+          feedTransportation: 'Transporte de Ração',
+          ventilation: 'Equipamentos de Ventilação',
+          confinement: 'Confinamento',
+          flooring: 'Pisos',
+          blueprints: 'Plantas'
+        },
+        services: {
+          buildings: {
+            title: 'Construções',
+            description: 'Consultoria, desenvolvimento e gerenciamento de projetos suinícolas, planejamento e supervisão de construção, fornecedores de equipamentos para sistemas de alimentação, sistemas de ventilação, resfriamento evaporativo, controles ambientais, cortinas laterais, aquecimento, bebedouros, baias de terminação, baias de creche, celas de gestação, celas de maternidade, ripados de concreto, pisos plásticos para creches e celas de maternidade.'
+          },
+          equipments: {
+            title: 'Equipamentos',
+            description: 'Gama completa de equipamentos agrícolas incluindo sistemas de alimentação, sistemas de ventilação, resfriamento evaporativo, controles ambientais, cortinas laterais, sistemas de aquecimento, sistemas de gestão de água e equipamentos especializados para habitação de animais.'
+          },
+          grainStorage: {
+            title: 'Armazenamento e Manuseio de Grãos',
+            description: 'Consultoria, desenvolvimento e gerenciamento de projetos de armazenamento de grãos, fornecedores de equipamentos para Silos de Grãos, Tanques de Descarga, elevadores de canecas, transportadores de corrente, transportadores de correia, transportadores helicoidais, distribuidores, sistemas de controle automático e instalações elétricas.'
+          },
+          feedTransportation: {
+            title: 'Sistemas de Transporte de Ração',
+            description: 'Sistemas avançados de transporte e distribuição de ração incluindo equipamentos de alimentação automatizada, sistemas de transportadores, fábricas de ração e soluções completas de alimentação turnkey para operações pecuárias.'
+          },
+          ventilation: {
+            title: 'Equipamentos de Ventilação',
+            description: 'Sistemas de ventilação de última geração incluindo ventiladores de exaustão, sistemas de entrada, controles ambientais, almofadas de resfriamento, sistemas de aquecimento e soluções completas de controle climático.'
+          },
+          confinement: {
+            title: 'Confinamento',
+            description: 'Sistemas de confinamento especializados incluindo celas de gestação, celas de maternidade, baias de creche, baias de terminação e soluções completas de habitação projetadas para bem-estar animal ideal e produtividade.'
+          },
+          flooring: {
+            title: 'Pisos',
+            description: 'Soluções abrangentes de pisos incluindo ripados de concreto, pisos plásticos para creches e celas de maternidade, sistemas de drenagem e pisos especializados para diferentes aplicações pecuárias.'
+          },
+          blueprints: {
+            title: 'Plantas',
+            description: 'Serviços profissionais de arquitetura e engenharia incluindo design de projetos, plantas, planejamento de construção, desenhos técnicos e documentação completa de projetos e supervisão.'
           }
         }
       },
@@ -1874,6 +2027,56 @@ export class I18nService {
           }
         }
       },
+      products: {
+        hero: {
+          title: 'Productos y Servicios',
+          subtitle: 'Durante décadas, AgPro International ha entregado soluciones premium para los proyectos de agronegocios más exigentes del mundo.'
+        },
+        tabs: {
+          buildings: 'Construcciones',
+          equipments: 'Equipos',
+          grainStorage: 'Almacenamiento y Manejo de Granos',
+          feedTransportation: 'Transporte de Alimentos',
+          ventilation: 'Equipos de Ventilación',
+          confinement: 'Confinamiento',
+          flooring: 'Pisos',
+          blueprints: 'Planos'
+        },
+        services: {
+          buildings: {
+            title: 'Construcciones',
+            description: 'Consultoría, desarrollo y gestión de proyectos porcinos, planificación y supervisión de construcción, proveedores de equipos para sistemas de alimentación, sistemas de ventilación, enfriamiento evaporativo, controles ambientales, cortinas laterales, calefacción, bebederos, corrales de engorde, corrales de destete, celdas de gestación, celdas de maternidad, rejillas de concreto, pisos plásticos para destetes y celdas de maternidad.'
+          },
+          equipments: {
+            title: 'Equipos',
+            description: 'Gama completa de equipos agrícolas incluyendo sistemas de alimentación, sistemas de ventilación, enfriamiento evaporativo, controles ambientales, cortinas laterales, sistemas de calefacción, sistemas de gestión de agua y equipos especializados para alojamiento de animales.'
+          },
+          grainStorage: {
+            title: 'Almacenamiento y Manejo de Granos',
+            description: 'Consultoría, desarrollo y gestión de proyectos de almacenamiento de granos, proveedores de equipos para Silos de Granos, Tanques de Descarga, elevadores de cangilones, transportadores de cadena, transportadores de correa, transportadores helicoidales, distribuidores, sistemas de control automático e instalaciones eléctricas.'
+          },
+          feedTransportation: {
+            title: 'Sistemas de Transporte de Alimentos',
+            description: 'Sistemas avanzados de transporte y distribución de alimentos incluyendo equipos de alimentación automatizada, sistemas de transportadores, fábricas de alimentos y soluciones completas de alimentación llave en mano para operaciones ganaderas.'
+          },
+          ventilation: {
+            title: 'Equipos de Ventilación',
+            description: 'Sistemas de ventilación de última generación incluyendo ventiladores de extracción, sistemas de entrada, controles ambientales, almohadillas de enfriamiento, sistemas de calefacción y soluciones completas de control climático.'
+          },
+          confinement: {
+            title: 'Confinamiento',
+            description: 'Sistemas de confinamiento especializados incluyendo celdas de gestación, celdas de maternidad, corrales de destete, corrales de engorde y soluciones completas de alojamiento diseñadas para el bienestar animal óptimo y productividad.'
+          },
+          flooring: {
+            title: 'Pisos',
+            description: 'Soluciones integrales de pisos incluyendo rejillas de concreto, pisos plásticos para destetes y celdas de maternidad, sistemas de drenaje y pisos especializados para diferentes aplicaciones ganaderas.'
+          },
+          blueprints: {
+            title: 'Planos',
+            description: 'Servicios profesionales de arquitectura e ingeniería incluyendo diseño de proyectos, planos, planificación de construcción, dibujos técnicos y documentación completa de proyectos y supervisión.'
+          }
+        }
+      },
       footer: {
         productsServices: 'Productos y Servicios',
         company: 'Empresa',
@@ -1979,6 +2182,11 @@ export class I18nService {
   // Método helper para acessar traduções do projects
   public get projects() {
     return this.currentTranslations().projects;
+  }
+
+  // Método helper para acessar traduções do products
+  public get products() {
+    return this.currentTranslations().products;
   }
 
   // Método helper para acessar traduções do footer
