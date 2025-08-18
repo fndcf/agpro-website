@@ -13,6 +13,41 @@ export interface Translation {
     contact: string;
   };
   
+  // Homepage translations
+  homepage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      buttonText: string;
+    };
+    experience: {
+      title: string;
+      subtitle: string;
+    };
+    stats: {
+      yearsExperience: string;
+      yearsExperienceDesc: string;
+      projectsCompleted: string;
+      projectsCompletedDesc: string;
+      countriesServed: string;
+      countriesServedDesc: string;
+    };
+    services: {
+      swine: {
+        title: string;
+        description: string;
+      };
+      poultry: {
+        title: string;
+        description: string;
+      };
+      grainStorage: {
+        title: string;
+        description: string;
+      };
+    };
+  };
+  
   // Footer translations
   footer: {
     productsServices: string;
@@ -53,6 +88,39 @@ export class I18nService {
         projects: 'Projects',
         contact: 'Contacts'
       },
+      homepage: {
+        hero: {
+          title: 'Excellence in Livestock housing and equipment',
+          subtitle: 'For decades, AgPro International has delivered premium solutions to the world\'s most demanding agribusiness projects.',
+          buttonText: 'Products and Services'
+        },
+        experience: {
+          title: 'Our Experience',
+          subtitle: 'Decades of excellence in developing large-scale projects for international agribusiness.'
+        },
+        stats: {
+          yearsExperience: '30+ Years of Experience',
+          yearsExperienceDesc: 'Decades serving the agribusiness industry',
+          projectsCompleted: '500+ Projects Completed',
+          projectsCompletedDesc: 'Successful implementations worldwide',
+          countriesServed: '25+ Countries Served',
+          countriesServedDesc: 'International presence and expertise'
+        },
+        services: {
+          swine: {
+            title: 'Swine',
+            description: 'Swine project consulting, development and management, construction planning and supervision, equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates.'
+          },
+          poultry: {
+            title: 'Poultry',
+            description: 'Poultry project consulting, development and management, construction planning and supervision, equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating, drinkers, nest systems.'
+          },
+          grainStorage: {
+            title: 'Grain Storage',
+            description: 'Grain storage project consulting, development and management, construction planning and supervision, equipment suppliers of Grain Silos, Hopper Tanks, bucket elevators, chain conveyors, belt conveyors, screw conveyors, distributors.'
+          }
+        }
+      },
       footer: {
         productsServices: 'Products & Services',
         company: 'Company',
@@ -82,6 +150,39 @@ export class I18nService {
         projects: 'Projetos',
         contact: 'Contatos'
       },
+      homepage: {
+        hero: {
+          title: 'Excelência em habitação e equipamentos para pecuária',
+          subtitle: 'Por décadas, a AgPro International tem entregue soluções premium para os projetos de agronegócio mais exigentes do mundo.',
+          buttonText: 'Produtos e Serviços'
+        },
+        experience: {
+          title: 'Nossa Experiência',
+          subtitle: 'Décadas de excelência no desenvolvimento de projetos de grande escala para o agronegócio internacional.'
+        },
+        stats: {
+          yearsExperience: '30+ Anos de Experiência',
+          yearsExperienceDesc: 'Décadas servindo a indústria do agronegócio',
+          projectsCompleted: '500+ Projetos Concluídos',
+          projectsCompletedDesc: 'Implementações bem-sucedidas mundialmente',
+          countriesServed: '25+ Países Atendidos',
+          countriesServedDesc: 'Presença internacional e expertise'
+        },
+        services: {
+          swine: {
+            title: 'Suinocultura',
+            description: 'Consultoria, desenvolvimento e gerenciamento de projetos suinícolas, planejamento e supervisão de construção, fornecedores de equipamentos para sistemas de alimentação, sistemas de ventilação, resfriamento evaporativo, controles ambientais, cortinas laterais, aquecimento, bebedouros, baias de terminação, baias de creche, celas de gestação, celas de maternidade.'
+          },
+          poultry: {
+            title: 'Avicultura',
+            description: 'Consultoria, desenvolvimento e gerenciamento de projetos avícolas, planejamento e supervisão de construção, fornecedores de equipamentos para sistemas de alimentação, sistemas de ventilação, resfriamento evaporativo, controles ambientais, cortinas laterais, aquecimento, bebedouros, sistemas de ninhos.'
+          },
+          grainStorage: {
+            title: 'Armazenamento de Grãos',
+            description: 'Consultoria, desenvolvimento e gerenciamento de projetos de armazenamento de grãos, planejamento e supervisão de construção, fornecedores de equipamentos para Silos de Grãos, Tanques de Descarga, elevadores de canecas, transportadores de corrente, transportadores de correia, transportadores helicoidais, distribuidores.'
+          }
+        }
+      },
       footer: {
         productsServices: 'Produtos e Serviços',
         company: 'Empresa',
@@ -110,6 +211,39 @@ export class I18nService {
         products: 'Productos y Servicios',
         projects: 'Proyectos',
         contact: 'Contactos'
+      },
+      homepage: {
+        hero: {
+          title: 'Excelencia en vivienda y equipos para ganado',
+          subtitle: 'Durante décadas, AgPro International ha entregado soluciones premium para los proyectos de agronegocios más exigentes del mundo.',
+          buttonText: 'Productos y Servicios'
+        },
+        experience: {
+          title: 'Nuestra Experiencia',
+          subtitle: 'Décadas de excelencia en el desarrollo de proyectos a gran escala para el agronegocio internacional.'
+        },
+        stats: {
+          yearsExperience: '30+ Años de Experiencia',
+          yearsExperienceDesc: 'Décadas sirviendo a la industria del agronegocio',
+          projectsCompleted: '500+ Proyectos Completados',
+          projectsCompletedDesc: 'Implementaciones exitosas a nivel mundial',
+          countriesServed: '25+ Países Atendidos',
+          countriesServedDesc: 'Presencia internacional y experiencia'
+        },
+        services: {
+          swine: {
+            title: 'Porcinos',
+            description: 'Consultoría, desarrollo y gestión de proyectos porcinos, planificación y supervisión de construcción, proveedores de equipos para sistemas de alimentación, sistemas de ventilación, enfriamiento evaporativo, controles ambientales, cortinas laterales, calefacción, bebederos, corrales de engorde, corrales de destete, celdas de gestación, celdas de maternidad.'
+          },
+          poultry: {
+            title: 'Aves',
+            description: 'Consultoría, desarrollo y gestión de proyectos avícolas, planificación y supervisión de construcción, proveedores de equipos para sistemas de alimentación, sistemas de ventilación, enfriamiento evaporativo, controles ambientales, cortinas laterales, calefacción, bebederos, sistemas de nidos.'
+          },
+          grainStorage: {
+            title: 'Almacenamiento de Granos',
+            description: 'Consultoría, desarrollo y gestión de proyectos de almacenamiento de granos, planificación y supervisión de construcción, proveedores de equipos para Silos de Granos, Tanques de Descarga, elevadores de cangilones, transportadores de cadena, transportadores de correa, transportadores helicoidales, distribuidores.'
+          }
+        }
       },
       footer: {
         productsServices: 'Productos y Servicios',
@@ -147,7 +281,6 @@ export class I18nService {
   // Método para trocar idioma
   public setLanguage(language: Language): void {
     this.currentLanguageSignal.set(language);
-    // Aqui você pode adicionar lógica para salvar no localStorage
     localStorage.setItem('agpro-language', language);
     console.log(`Language changed to: ${language}`);
   }
@@ -179,6 +312,11 @@ export class I18nService {
   // Método helper para acessar traduções do header
   public get header() {
     return this.currentTranslations().header;
+  }
+
+  // Método helper para acessar traduções da homepage
+  public get homepage() {
+    return this.currentTranslations().homepage;
   }
 
   // Método helper para acessar traduções do footer
