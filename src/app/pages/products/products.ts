@@ -22,57 +22,49 @@ export class Products {
       id: 'buildings',
       title: 'Buildings',
       description: 'Swine project consulting, development and management, construction planning and supervision, equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, concrete slats, plastic flooring for nurseries and farrowing crates.',
-      category: 'buildings',
-      icon: '🏗️'
+      category: 'buildings'
     },
     {
       id: 'equipments',
       title: 'Equipments',
       description: 'Complete range of agricultural equipment including feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating systems, water management systems, and specialized livestock housing equipment.',
-      category: 'equipment',
-      icon: '⚙️'
+      category: 'equipment'
     },
     {
       id: 'grain-storage',
       title: 'Grain Storage and Handling',
       description: 'Grain storage project consulting, development and management, equipment suppliers of Grain Silos, Hopper Tanks, bucket elevators, chain conveyors, belt conveyors, screw conveyors, distributors, automatic control systems and electrical installations.',
-      category: 'grain',
-      icon: '🌾'
+      category: 'grain'
     },
     {
       id: 'feed-transport',
       title: 'Feed Transportation Systems',
       description: 'Advanced feed transportation and distribution systems including automated feeding equipment, conveyor systems, feed mills, and complete turnkey feeding solutions for livestock operations.',
-      category: 'equipment',
-      icon: '🚛'
+      category: 'equipment'
     },
     {
       id: 'ventilation',
       title: 'Ventilation Equipment',
       description: 'State-of-the-art ventilation systems including exhaust fans, inlet systems, environmental controls, cooling pads, heating systems, and complete climate control solutions.',
-      category: 'equipment',
-      icon: '💨'
+      category: 'equipment'
     },
     {
       id: 'confinement',
       title: 'Confinement',
       description: 'Specialized confinement systems including gestation stalls, farrowing crates, nursery penning, finishing pens, and complete housing solutions designed for optimal animal welfare and productivity.',
-      category: 'equipment',
-      icon: '🐷'
+      category: 'equipment'
     },
     {
       id: 'flooring',
       title: 'Flooring',
       description: 'Comprehensive flooring solutions including concrete slats, plastic flooring for nurseries and farrowing crates, drainage systems, and specialized flooring for different livestock applications.',
-      category: 'equipment',
-      icon: '🔲'
+      category: 'equipment'
     },
     {
       id: 'blueprints',
       title: 'Blue Prints',
       description: 'Professional architectural and engineering services including project design, blueprints, construction planning, technical drawings, and complete project documentation and supervision.',
-      category: 'equipment',
-      icon: '📐'
+      category: 'equipment'
     }
   ];
 

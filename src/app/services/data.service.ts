@@ -48,7 +48,7 @@ export class DataService {
   ]);
 
   private productTabsSignal = signal<TabItem[]>([
-    { id: 'buildings', label: 'Buildings', href: '#buildings', active: true },
+    { id: 'buildings', label: 'Buildings', href: '#buildings', active: false },
     { id: 'equipments', label: 'Equipments', href: '#equipments', active: false },
     { id: 'grain-storage', label: 'Grain Storage & Handling', href: '#grain-storage', active: false },
     { id: 'feed-transport', label: 'Feed Transportation', href: '#feed-transport', active: false },

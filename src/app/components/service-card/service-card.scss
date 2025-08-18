@@ -1,0 +1,26 @@
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+  .service-description-container {
+    min-height: 150px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    margin-bottom: 1.5rem;
+    
+    p {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  
+  // Garante que features e imagem fiquem no final
+  .service-list {
+    margin-top: auto;
+  }
+  
+  .service-image {
+    margin-top: auto;
+  }
+}
