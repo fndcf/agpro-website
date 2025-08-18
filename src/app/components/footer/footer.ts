@@ -28,8 +28,16 @@ export class FooterComponent {
   };
 
   socialLinks = [
-    { icon: '📘', title: 'Facebook', url: 'https://www.facebook.com/AgproInternational' },
-    { icon: '📸', title: 'Instagram', url: 'https://www.instagram.com/agpro_international' }
+    { 
+      icon: 'assets/icons/facebook.svg', 
+      title: 'Facebook', 
+      url: 'https://www.facebook.com/AgproInternational' 
+    },
+    { 
+      icon: 'assets/icons/instagram.svg', 
+      title: 'Instagram', 
+      url: 'https://www.instagram.com/agpro_international' 
+    }
   ];
 
   // Método para scroll suave para o topo

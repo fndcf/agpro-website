@@ -8,8 +8,11 @@
           *ngFor="let social of socialLinks"
           [href]="social.url" 
           [title]="social.title"
-          class="social-link text-white text-opacity-80 text-lg transition-colors duration-300 hover:text-white">
-          {{ social.icon }}
+          class="social-link text-white text-opacity-80 transition-colors duration-300 hover:text-white">
+          <img 
+            [src]="social.icon" 
+            [alt]="social.title"
+            class="social-icon w-5 h-5">
         </a>
       </div>
       
@@ -19,17 +22,24 @@
           *ngFor="let language of languages"
           [title]="language.title"
           (click)="changeLanguage(language.code)"
-          class="lang-flag w-6 h-4 cursor-pointer transition-all duration-300 hover:opacity-80 
-                 rounded-sm border border-transparent hover:border-white"
+          class="lang-flag cursor-pointer transition-all duration-300 hover:opacity-80 
+                 hover:scale-110 rounded-sm border border-transparent hover:border-white hover:border-opacity-50
+                 p-1"
           [class.active]="currentLanguage === language.code"
-          [innerHTML]="language.flag">
+          [class.border-gold]="currentLanguage === language.code"
+          [class.bg-white]="currentLanguage === language.code"
+          [class.bg-opacity-20]="currentLanguage === language.code">
+          <img 
+            [src]="language.flagUrl" 
+            [alt]="language.title"
+            class="flag-img w-6 h-4 object-cover rounded-sm">
         </button>
       </div>
     </div>
   </div>
   
   <!-- Logo atravessando as duas áreas -->
-  <div class="logo-overlay absolute left-8 top-1/2 transform -translate-y-1/2 z-20 md:block hidden">
+  <div class="logo-overlay absolute left-8 top-1/2 transform -translate-y-1/2 z-20 hidden xl:block">
     <img 
       src="assets/images/logo2.png" 
       alt="AgPro Inc" 
@@ -37,17 +47,17 @@
   </div>
   
   <!-- Main Navigation -->
-  <div class="main-nav px-6 py-4 flex justify-center items-center md:justify-center">
-    <!-- Mobile Logo (visível apenas no mobile) -->
-    <div class="md:hidden flex-1">
+  <div class="main-nav px-6 py-4 flex justify-center items-center xl:justify-center">
+    <!-- Mobile/Tablet Logo (visível até xl) -->
+    <div class="xl:hidden flex-1">
       <img 
         src="assets/images/logo2.png" 
         alt="AgPro Inc" 
         class="h-12 w-auto">
     </div>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex gap-8">
+    <!-- Desktop Navigation (apenas xl+) -->
+    <nav class="hidden xl:flex gap-8">
       <a 
         *ngFor="let item of navItems"
         [routerLink]="item.route" 
@@ -58,9 +68,9 @@
       </a>
     </nav>
 
-    <!-- Mobile Menu Button -->
+    <!-- Mobile/Tablet Menu Button -->
     <button 
-      class="md:hidden text-white"
+      class="xl:hidden text-white"
       (click)="toggleMenu()">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -69,9 +79,9 @@
     </button>
   </div>
 
-  <!-- Mobile Navigation -->
+  <!-- Mobile/Tablet Navigation -->
   <nav 
-    class="md:hidden mobile-nav px-6 pb-4"
+    class="xl:hidden mobile-nav px-6 pb-4"
     [class.hidden]="!isMenuOpen">
     <div class="flex flex-col space-y-2">
       <a 

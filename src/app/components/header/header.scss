@@ -1,4 +1,5 @@
 // 📁 src/app/components/header/header.scss
+// Header principal
 .header {
   position: relative;
   background: linear-gradient(135deg, #30D158, #34C759);
@@ -31,20 +32,13 @@
 
 // Logo que atravessa as duas áreas no desktop
 .logo-overlay {
-  @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    text-align: center;
-    padding: 1rem 0;
-    
-    .logo-img {
-      height: 5rem; // 48px
-    }
+  @media (max-width: 1280px) { // xl breakpoint - apenas esconde logo fixo
+    display: none;
   }
 }
 
 .logo-img {
-  height: 6rem;
+  height: 5rem; // h-20
 }
 
 // Main navigation com padding melhorado
@@ -57,7 +51,7 @@
 }
 
 .text-lg {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 // Navegação ativa
@@ -100,49 +94,93 @@
   border-radius: 0.375rem;
 }
 
-// Language selector melhorado
+// Language selector melhorado - Bandeiras SVG
 .language-selector {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.5rem; // gap-2
   align-items: center;
 }
 
 .lang-flag {
-  width: 24px;
-  height: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 2px;
+  border-radius: 4px;
   border: 1px solid transparent;
-  padding: 1px;
+  padding: 4px; // p-1
   background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
+  // Hover effect
   &:hover {
+    transform: scale(1.1);
     border-color: rgba(255, 255, 255, 0.5);
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
   }
   
+  // Estado ativo com destaque dourado
   &.active {
     border-color: #CCAA77;
-    box-shadow: 0 0 0 1px #CCAA77;
-    transform: scale(1.1);
+    background: rgba(204, 170, 119, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 0 1px rgba(204, 170, 119, 0.3);
   }
   
-  // SVG styling
-  :deep(svg) {
-    width: 100%;
-    height: 100%;
-    border-radius: 1px;
+  &:focus {
+    outline: 2px solid rgba(204, 170, 119, 0.5);
+    outline-offset: 2px;
+  }
+  
+  // Imagem da bandeira
+  .flag-img {
+    width: 24px;  // w-6
+    height: 16px; // h-4
+    object-fit: cover;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    
+    // Efeito hover na imagem
+    .lang-flag:hover & {
+      filter: brightness(1.1);
+    }
+    
+    // Garante que a imagem carregue corretamente
+    &:not([src]), &[src=""], &[src*="data:image/svg+xml,%3Csvg"] {
+      // Fallback para quando a imagem não carregar
+      &::before {
+        content: '🏳️';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 16px;
+        font-size: 12px;
+      }
+    }
   }
 }
 
-// Hover nos links sociais
+// Hover nos links sociais - Imagens SVG com cores originais
 .social-link {
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .social-icon {
+    width: 20px;  // w-5
+    height: 20px; // h-5
+    transition: all 0.3s ease;
+    // Removido os filtros para manter cores originais
+  }
   
   &:hover {
     transform: scale(1.1);
-    filter: brightness(1.2);
+    
+    .social-icon {
+      filter: brightness(1.1); // Leve aumento de brilho no hover
+    }
   }
 }
 
@@ -164,7 +202,7 @@
   }
 }
 
-// Responsividade adicional
+// Responsividade adicional - mantendo original
 @media (max-width: 768px) {
   .contact-bar {
     flex-direction: column;
@@ -182,11 +220,15 @@
   }
   
   .language-selector {
-    gap: 0.375rem;
+    gap: 0.25rem; // gap menor no mobile
   }
   
   .lang-flag {
-    width: 20px;
-    height: 14px;
+    padding: 2px; // Menor no mobile
+    
+    .flag-img {
+      width: 20px;  // Menor no mobile
+      height: 14px;
+    }
   }
 }

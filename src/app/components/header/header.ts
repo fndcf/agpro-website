@@ -26,9 +26,19 @@ export class HeaderComponent {
 
   // Links de redes sociais
   socialLinks = [
-    { icon: '📘', title: 'Facebook', url: 'https://www.facebook.com/AgproInternational' },
-    { icon: '📸', title: 'Instagram', url: 'https://www.instagram.com/agpro_international' }
+    { 
+      icon: 'assets/icons/facebook.svg', 
+      title: 'Facebook', 
+      url: 'https://www.facebook.com/AgproInternational' 
+    },
+    { 
+      icon: 'assets/icons/instagram.svg', 
+      title: 'Instagram', 
+      url: 'https://www.instagram.com/agpro_international' 
+    }
   ];
+
+  
 
   // Navigation items
   navItems = [
@@ -39,35 +49,22 @@ export class HeaderComponent {
     { label: 'Contacts', route: '/contact', exact: false }
   ];
 
-  // Language flags with proper SVG data
+  // Language flags - Usando emojis em vez de SVG complexo
   languages = [
     {
       code: 'es',
       title: 'Español',
-      flag: `<svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="16" fill="#C60B1E"/>
-        <rect y="5.33" width="24" height="5.33" fill="#FFC400"/>
-        <rect y="10.67" width="24" height="5.33" fill="#C60B1E"/>
-      </svg>`
+      flagUrl: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1ea-1f1f8.svg'
     },
     {
       code: 'en',
-      title: 'English',
-      flag: `<svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="16" fill="#012169"/>
-        <path d="M0 0L24 16M24 0L0 16" stroke="#FFFFFF" stroke-width="1.5"/>
-        <path d="M12 0V16M0 8H24" stroke="#FFFFFF" stroke-width="2.5"/>
-        <path d="M12 0V16M0 8H24" stroke="#C8102E" stroke-width="1.5"/>
-      </svg>`
+      title: 'English', 
+      flagUrl: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1fa-1f1f8.svg'
     },
     {
       code: 'pt',
       title: 'Português',
-      flag: `<svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="16" fill="#009739"/>
-        <path d="M0 8L12 2L24 8L12 14L0 8Z" fill="#FEDD00"/>
-        <circle cx="12" cy="8" r="3" fill="#012169"/>
-      </svg>`
+      flagUrl: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1e7-1f1f7.svg'
     }
   ];
 }
