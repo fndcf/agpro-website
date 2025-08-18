@@ -1,4 +1,4 @@
-// 📁 src/app/app.component.ts
+// 📁 src/app/app.ts
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header';
@@ -9,11 +9,13 @@ import { FooterComponent } from './components/footer/footer';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent],
   template: `
-    <app-header></app-header>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-    <app-footer></app-footer>
+    <div class="app-container min-h-screen flex flex-col">
+      <app-header class="header-fixed"></app-header>
+      <main class="main-content flex-grow">
+        <router-outlet></router-outlet>
+      </main>
+      <app-footer></app-footer>
+    </div>
   `,
   styleUrls: ['./app.scss']
 })

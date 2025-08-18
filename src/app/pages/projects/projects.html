@@ -1,1 +1,149 @@
-<p>projects works!</p>
+<!-- 📁 src/app/pages/projects/projects.html -->
+<!-- Hero Section -->
+<app-hero 
+  title="Our Projects"
+  subtitle="Showcasing decades of excellence in agribusiness solutions worldwide">
+</app-hero>
+
+<!-- Tabs Navigation - Igual à página Products -->
+<div class="tabs-container bg-white border-b border-gray-200 py-5 px-6 shadow-sm">
+  <nav class="tabs-nav max-w-6xl mx-auto">
+    <div class="flex flex-wrap justify-center gap-2">
+      <a *ngFor="let category of projectCategories" 
+         href="#"
+         (click)="filterByCategory(category.id); $event.preventDefault()"
+         class="tab-item px-4 py-3 text-gray-600 font-medium text-sm transition-all duration-300 
+                cursor-pointer text-center hover:text-white hover:bg-gold rounded-md"
+         [class.active]="selectedCategory === category.id"
+         [class.text-white]="selectedCategory === category.id"
+         [class.bg-primary]="selectedCategory === category.id">
+        {{ category.label }}
+      </a>
+    </div>
+  </nav>
+</div>
+
+<!-- Projects Grid -->
+<section class="projects-section py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="section-title text-4xl md:text-5xl text-gold font-light mb-4">
+          Featured Projects
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          From large-scale swine facilities to integrated agricultural complexes, 
+          our projects represent the pinnacle of agribusiness innovation.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div *ngFor="let project of filteredProjects" 
+             class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden 
+                    shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
+          
+          <!-- Project Image Placeholder -->
+          <div class="project-image h-64 bg-gradient-to-br from-gray-100 to-gray-200 
+                      flex items-center justify-center relative overflow-hidden">
+            <div class="text-center text-gray-400">
+              <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+              </svg>
+              <p class="text-sm font-sans">Project Image</p>
+            </div>
+            
+            <!-- Category Badge -->
+            <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+              {{ project.category }}
+            </div>
+            
+            <!-- Year Badge -->
+            <div class="absolute top-4 right-4 bg-gold text-white px-3 py-1 rounded-full text-sm font-medium">
+              {{ project.year }}
+            </div>
+          </div>
+          
+          <!-- Project Content -->
+          <div class="p-8">
+            <!-- Project Header -->
+            <div class="mb-6">
+              <h3 class="text-2xl font-light text-gray-900 mb-2 group-hover:text-gold transition-colors duration-300">
+                {{ project.title }}
+              </h3>
+              <p class="text-gold font-medium flex items-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                {{ project.location }}
+              </p>
+            </div>
+            
+            <!-- Project Description -->
+            <p class="text-gray-600 leading-relaxed mb-6 font-sans">
+              {{ project.description }}
+            </p>
+            
+            <!-- Project Features -->
+            <div *ngIf="project.features && project.features.length > 0" class="mb-6">
+              <h4 class="text-lg font-medium text-gray-800 mb-3">Key Features:</h4>
+              <ul class="space-y-2">
+                <li *ngFor="let feature of project.features" 
+                    class="flex items-start gap-3 text-gray-600 font-sans">
+                  <span class="text-gold font-bold text-sm mt-1">✓</span>
+                  <span class="text-sm">{{ feature }}</span>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- Project CTA -->
+            <div class="pt-4 border-t border-gray-100">
+              <button class="text-primary font-medium hover:text-primary-dark transition-colors duration-300 
+                           flex items-center gap-2 group-hover:gap-3">
+                Learn More
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" 
+                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- No Projects Message -->
+      <div *ngIf="filteredProjects.length === 0" 
+           class="text-center py-16">
+        <div class="text-gray-400 mb-4">
+          <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h12v8H4V6z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl text-gray-500 mb-2">No projects found</h3>
+        <p class="text-gray-400">Try selecting a different category</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section com gap real igual header/main -->
+<section class="cta-section bg-gradient-to-r from-primary to-primary-dark text-white">
+  <div class="container mx-auto px-6 py-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-3xl md:text-4xl font-light mb-6">
+        Ready to Start Your Next Project?
+      </h3>
+      <p class="text-xl mb-8 text-green-100">
+        Let our experienced team help you develop the ideal solution for your agribusiness needs.
+      </p>
+      <button class="bg-white text-primary px-8 py-4 rounded-md font-medium text-lg 
+                   transition-all duration-300 hover:bg-gray-100 hover:shadow-lg">
+        Contact Our Experts
+      </button>
+    </div>
+  </div>
+</section>

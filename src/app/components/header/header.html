@@ -15,19 +15,15 @@
       
       <!-- Language Selector -->
       <div class="language-selector flex gap-2 items-center">
-        <img 
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ii8+CjxyZWN0IHk9IjUuMzMzMzciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjRkNEQzAwIi8+CjxyZWN0IHk9IjEwLjY2NjciIHdpZHRoPSIyNCIgaGVpZ2h0PSI1LjMzMzMzIiBmaWxsPSIjQjIyMjM0Ci8+Cjwvc3ZnPgo="
-          alt="Español" 
-          class="lang-flag w-6 h-4 cursor-pointer transition-opacity duration-300 hover:opacity-80 rounded-sm"
-          [class.active]="currentLanguage === 'es'"
-          (click)="changeLanguage('es')">
-        
-        <img 
-          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHk9IjEuMjMwNzciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB5PSIzLjY5MjMxIiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0iI0IyMjIzNCIvPgo8cmVjdCB5PSI2LjE1Mzg1IiB3aWR0aD0iMjQiIGhlaWdodD0iMS4yMzA3NyIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeT0iOC42MTUzOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IiNCMjIyMzQiLz4KPHJlY3QgeT0iMTEuMDc2OSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjEuMjMwNzciIGZpbGw9IndoaXRlIi8+CjxyZWN0IHk9IjEzLjUzODUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIxLjIzMDc3IiBmaWxsPSIjQjIyMjM0Ci8+CjxyZWN0IHdpZHRoPSI5LjIzMDc3IiBoZWlnaHQ9IjguNjE1MzgiIGZpbGw9IiMzQzNDOUQiLz4KPC9zdmc+Cg=="
-          alt="English" 
-          class="lang-flag w-6 h-4 cursor-pointer transition-opacity duration-300 hover:opacity-80 rounded-sm"
-          [class.active]="currentLanguage === 'en'"
-          (click)="changeLanguage('en')">
+        <button 
+          *ngFor="let language of languages"
+          [title]="language.title"
+          (click)="changeLanguage(language.code)"
+          class="lang-flag w-6 h-4 cursor-pointer transition-all duration-300 hover:opacity-80 
+                 rounded-sm border border-transparent hover:border-white"
+          [class.active]="currentLanguage === language.code"
+          [innerHTML]="language.flag">
+        </button>
       </div>
     </div>
   </div>

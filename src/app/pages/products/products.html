@@ -1,1 +1,58 @@
-<p>products works!</p>
+<!-- 📁 src/app/pages/products/products.html -->
+<!-- Hero Section -->
+<app-hero 
+  title="Products and Services"
+  subtitle="For decades, AgPro Inc has delivered premium solutions to the world's most demanding agribusiness projects.">
+</app-hero>
+
+<!-- Tabs Navigation -->
+<div class="tabs-container bg-white border-b border-gray-200 py-5 px-6 shadow-sm">
+  <nav class="tabs-nav max-w-6xl mx-auto">
+    <div class="flex flex-wrap justify-center gap-2">
+      <a *ngFor="let tab of tabs()" 
+         [href]="tab.href"
+         (click)="setActiveTab(tab.id); $event.preventDefault()"
+         class="tab-item px-4 py-3 text-gray-600 font-medium text-sm transition-all duration-300 
+                cursor-pointer text-center hover:text-white hover:bg-gold rounded-md"
+         [class.active]="tab.active"
+         [class.text-white]="tab.active"
+         [class.bg-primary]="tab.active">
+        {{ tab.label }}
+      </a>
+    </div>
+  </nav>
+</div>
+
+<!-- Products Content -->
+<section class="content-section py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    
+    <!-- Two Column Layout for larger screens -->
+    <div class="services-container grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+      
+      <div *ngFor="let service of productServices; let i = index" 
+           class="services-section flex flex-col">
+        
+        <app-service-card 
+          [service]="service" 
+          [showImage]="true"
+          imageUrl="assets/images/colageagpro.gif"
+          class="flex-grow">
+        </app-service-card>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Alternative Single Column Layout -->
+    <div class="services-grid-single hidden space-y-12 max-w-4xl mx-auto">
+      <app-service-card 
+        *ngFor="let service of productServices" 
+        [service]="service" 
+        [showImage]="true"
+        imageUrl="assets/images/colageagpro.gif">
+      </app-service-card>
+    </div>
+    
+  </div>
+</section>

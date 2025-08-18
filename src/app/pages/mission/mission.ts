@@ -1,11 +1,13 @@
+// 📁 src/app/pages/mission/mission.ts
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HeroComponent } from '../../components/hero/hero';
 
 @Component({
   selector: 'app-mission',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, HeroComponent],
   templateUrl: './mission.html',
-  styleUrl: './mission.scss'
+  styleUrls: ['./mission.scss']
 })
-export class Mission {
-
-}
+export class Mission {}

@@ -1,1 +1,95 @@
-<p>footer works!</p>
+<!-- 📁 src/app/components/footer/footer.html -->
+<footer class="footer bg-gradient-to-r from-primary to-primary-dark text-white w-full">
+  <div class="footer-content w-full px-6 py-4">
+    
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-3">
+      
+      <!-- Company Info -->
+      <div class="footer-section">
+        <div class="logo mb-3">
+          <img src="assets/images/logo2.png" 
+               alt="AgPro Inc" 
+               class="h-12 w-auto logo-img transition-transform duration-300 hover:scale-105">
+        </div>
+        
+        <p class="text-green-100 text-base leading-relaxed mb-3 font-sans">
+          Decades of excellence in developing large-scale projects for international agribusiness.
+        </p>
+        
+        <div class="contact-info mb-3">
+          <p class="flex items-center gap-2 text-green-100 text-sm">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+            </svg>
+            Springfield, IL - United States
+          </p>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="social-links flex gap-3">
+          <a *ngFor="let social of socialLinks"
+             [href]="social.url" 
+             [title]="social.title"
+             class="social-link text-green-100 text-xl hover:text-white hover:scale-110 
+                    transition-all duration-300">
+            {{ social.icon }}
+          </a>
+        </div>
+      </div>
+      
+      <!-- Products & Services -->
+      <div class="footer-section">
+        <h4 class="text-lg font-medium mb-3 text-white">
+          Products & Services
+        </h4>
+        <div class="space-y-2">
+          <a *ngFor="let link of footerLinks.products"
+             [routerLink]="link.route"
+             class="block text-green-100 hover:text-gold transition-colors duration-300 
+                    font-sans text-sm">
+            {{ link.label }}
+          </a>
+        </div>
+      </div>
+      
+      <!-- Company -->
+      <div class="footer-section">
+        <h4 class="text-lg font-medium mb-3 text-white">
+          Company
+        </h4>
+        <div class="space-y-2">
+          <a *ngFor="let link of footerLinks.company"
+             [routerLink]="link.route"
+             class="block text-green-100 hover:text-gold transition-colors duration-300 
+                    font-sans text-sm">
+            {{ link.label }}
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Footer Bottom - Área do Copyright compacta -->
+    <div class="footer-bottom pt-2 border-t border-green-400 border-opacity-30">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <p class="text-green-200 font-sans text-sm">
+          &copy; {{ currentYear }} AgPro Inc. All Rights Reserved.
+        </p>
+        
+        <div class="flex gap-4 text-sm mt-1 md:mt-0">
+          <a href="#" class="text-green-200 hover:text-white transition-colors duration-300">
+            Privacy Policy
+          </a>
+          <a href="#" class="text-green-200 hover:text-white transition-colors duration-300">
+            Terms of Service
+          </a>
+          <a href="#" class="text-green-200 hover:text-white transition-colors duration-300">
+            Sitemap
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</footer>

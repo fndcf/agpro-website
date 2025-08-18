@@ -1,1 +1,38 @@
-<p>service-card works!</p>
+<!-- 📁 src/app/components/service-card/service-card.html -->
+<div class="service-card bg-white border border-gray-200 p-8 md:p-12 text-center 
+            transition-all duration-300 hover:-translate-y-3 hover:shadow-xl group">
+  
+  <!-- Service Icon -->
+  <div *ngIf="service.icon" 
+       class="service-icon text-5xl mb-6 text-gold group-hover:scale-110 
+              transition-transform duration-300">
+    {{ service.icon }}
+  </div>
+  
+  <!-- Service Title -->
+  <h3 class="text-2xl md:text-3xl text-gold font-light mb-6">
+    {{ service.title }}
+  </h3>
+  
+  <!-- Service Description -->
+  <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6 font-sans">
+    {{ service.description }}
+  </p>
+  
+  <!-- Service Features List -->
+  <ul *ngIf="service.features && service.features.length > 0" 
+      class="service-list text-left space-y-2">
+    <li *ngFor="let feature of service.features" 
+        class="flex items-start gap-3 text-gray-600 font-sans">
+      <span class="text-gold font-bold text-sm mt-1">✓</span>
+      <span>{{ feature }}</span>
+    </li>
+  </ul>
+  
+  <!-- Service Image -->
+  <img *ngIf="showImage && imageUrl" 
+       [src]="imageUrl" 
+       [alt]="service.title"
+       class="service-image w-full h-64 object-cover rounded-lg mt-6 
+              shadow-md group-hover:shadow-lg transition-shadow duration-300">
+</div>

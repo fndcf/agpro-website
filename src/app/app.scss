@@ -1,5 +1,74 @@
-// 📁 src/app/app.component.scss
-// Estilos específicos do componente raiz se necessário
-main {
-  min-height: calc(100vh - 200px); // Ajustar conforme altura do header/footer
+// 📁 src/app/app.scss
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header-fixed {
+  position: relative;
+  z-index: 50;
+  
+  // Adiciona sombra sutil para separar do conteúdo
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  // Garante que o header fique acima do conteúdo
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(204, 170, 119, 0.3) 50%, 
+      transparent 100%);
+  }
+}
+
+.main-content {
+  // Adiciona espaçamento superior para separar do header
+  padding-top: 0;
+  position: relative;
+  
+  // Adiciona um subtle gradient no topo para transição suave
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(180deg, 
+      rgba(52, 199, 89, 0.1) 0%, 
+      transparent 100%);
+    pointer-events: none;
+  }
+}
+
+// Para páginas que não usam Hero (que já tem background verde)
+.main-content:not(.has-hero) {
+  padding-top: 2rem;
+  
+  &::before {
+    background: linear-gradient(180deg, 
+      rgba(248, 249, 250, 1) 0%, 
+      rgba(248, 249, 250, 0.8) 50%,
+      transparent 100%);
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .main-content {
+    &::before {
+      height: 4px;
+    }
+  }
+  
+  .main-content:not(.has-hero) {
+    padding-top: 1rem;
+  }
 }

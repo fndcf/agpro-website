@@ -1,11 +1,84 @@
-import { Component } from '@angular/core';
+// 📁 src/app/pages/products/products.ts
+import { Component, computed } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HeroComponent } from '../../components/hero/hero';
+import { ServiceCardComponent } from '../../components/service-card/service-card';
+import { DataService } from '../../services/data.service';
+import { Service } from '../../models/service.model';
 
 @Component({
   selector: 'app-products',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, HeroComponent, ServiceCardComponent],
   templateUrl: './products.html',
-  styleUrl: './products.scss'
+  styleUrls: ['./products.scss']
 })
 export class Products {
+  tabs = computed(() => this.dataService.productTabs());
+  
+  // Mock services data for products page
+  productServices: Service[] = [
+    {
+      id: 'buildings',
+      title: 'Buildings',
+      description: 'Swine project consulting, development and management, construction planning and supervision, equipment suppliers of feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating, drinkers, finishing penning, nursery penning, gestation stalls, farrowing crates, concrete slats, plastic flooring for nurseries and farrowing crates.',
+      category: 'buildings',
+      icon: '🏗️'
+    },
+    {
+      id: 'equipments',
+      title: 'Equipments',
+      description: 'Complete range of agricultural equipment including feeding systems, ventilation systems, evaporative cooling, environmental controls, sidewall curtains, heating systems, water management systems, and specialized livestock housing equipment.',
+      category: 'equipment',
+      icon: '⚙️'
+    },
+    {
+      id: 'grain-storage',
+      title: 'Grain Storage and Handling',
+      description: 'Grain storage project consulting, development and management, equipment suppliers of Grain Silos, Hopper Tanks, bucket elevators, chain conveyors, belt conveyors, screw conveyors, distributors, automatic control systems and electrical installations.',
+      category: 'grain',
+      icon: '🌾'
+    },
+    {
+      id: 'feed-transport',
+      title: 'Feed Transportation Systems',
+      description: 'Advanced feed transportation and distribution systems including automated feeding equipment, conveyor systems, feed mills, and complete turnkey feeding solutions for livestock operations.',
+      category: 'equipment',
+      icon: '🚛'
+    },
+    {
+      id: 'ventilation',
+      title: 'Ventilation Equipment',
+      description: 'State-of-the-art ventilation systems including exhaust fans, inlet systems, environmental controls, cooling pads, heating systems, and complete climate control solutions.',
+      category: 'equipment',
+      icon: '💨'
+    },
+    {
+      id: 'confinement',
+      title: 'Confinement',
+      description: 'Specialized confinement systems including gestation stalls, farrowing crates, nursery penning, finishing pens, and complete housing solutions designed for optimal animal welfare and productivity.',
+      category: 'equipment',
+      icon: '🐷'
+    },
+    {
+      id: 'flooring',
+      title: 'Flooring',
+      description: 'Comprehensive flooring solutions including concrete slats, plastic flooring for nurseries and farrowing crates, drainage systems, and specialized flooring for different livestock applications.',
+      category: 'equipment',
+      icon: '🔲'
+    },
+    {
+      id: 'blueprints',
+      title: 'Blue Prints',
+      description: 'Professional architectural and engineering services including project design, blueprints, construction planning, technical drawings, and complete project documentation and supervision.',
+      category: 'equipment',
+      icon: '📐'
+    }
+  ];
 
+  constructor(private dataService: DataService) {}
+
+  setActiveTab(tabId: string) {
+    this.dataService.updateTabActive(tabId);
+  }
 }

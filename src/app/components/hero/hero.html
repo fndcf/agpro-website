@@ -1,1 +1,31 @@
-<p>hero works!</p>
+<!-- 📁 src/app/components/hero/hero.html -->
+<section class="hero relative bg-hero-gradient text-white text-center overflow-hidden">
+  <!-- Background overlay -->
+  <div class="absolute inset-0 bg-hero-overlay"></div>
+  
+  <!-- Smooth transition from header -->
+  <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-primary via-primary-dark to-transparent opacity-50"></div>
+  
+  <!-- Hero content -->
+  <div class="hero-content relative z-10 container mx-auto px-6 py-16 md:py-24">
+    <h1 class="text-4xl md:text-6xl font-light mb-6 animate-fade-in text-center">
+      {{ title }}
+    </h1>
+    
+    <p *ngIf="subtitle" 
+       class="text-lg md:text-2xl mb-8 font-light leading-relaxed max-w-4xl mx-auto animate-slide-up text-center">
+      {{ subtitle }}
+    </p>
+    
+    <button *ngIf="showButton" 
+            class="cta-button bg-primary text-white px-12 py-4 border-2 border-white 
+                   text-lg font-medium uppercase tracking-wider transition-all duration-300 
+                   hover:bg-primary-dark hover:shadow-lg animate-slide-up hover:scale-105
+                   focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+      {{ buttonText }}
+    </button>
+  </div>
+  
+  <!-- Bottom separator for pages without hero continuing -->
+  <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
+</section>

@@ -1,1 +1,41 @@
-<p>home works!</p>
+<!-- 📁 src/app/pages/home/home.html -->
+<!-- Hero Section -->
+<app-hero 
+  title="Excellence in Livestock housing and equipment"
+  subtitle="For decades, AgPro Inc has delivered premium solutions to the world's most demanding agribusiness projects."
+  buttonText="Products and Services"
+  [showButton]="true">
+</app-hero>
+
+<!-- Main Content Section -->
+<section class="content-section py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <!-- Section Header -->
+    <div class="section-content max-w-6xl mx-auto">
+      <h2 class="section-title text-4xl md:text-5xl text-gold font-light text-center mb-8">
+        Our Experience
+      </h2>
+      <p class="section-subtitle text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+        Decades of excellence in developing large-scale projects for international agribusiness.
+      </p>
+      
+      <!-- Section Separator -->
+      <div class="page-separator my-16"></div>
+      
+      <!-- Stats Section -->
+      <app-stats></app-stats>
+
+      <!-- Page Separator -->
+      <div class="page-separator my-16"></div>
+
+      <!-- Services Grid -->
+      <div class="services-grid space-y-16 mt-16">
+        <app-service-card 
+          *ngFor="let service of services(); let i = index" 
+          [service]="service"
+          [class]="i % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'">
+        </app-service-card>
+      </div>
+    </div>
+  </div>
+</section>

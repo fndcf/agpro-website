@@ -1,0 +1,49 @@
+// CTA Section com separação REAL igual ao padrão header/main
+.cta-section {
+  position: relative;
+  
+  // Sombra igual ao header
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  // GAP REAL de espaçamento após a seção (igual header/main)
+  margin-bottom: 2rem; // Gap físico real
+  
+  // Linha dourada igual ao header (na parte inferior agora)
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; // Posicionado no gap
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(204, 170, 119, 0.4) 20%,
+      rgba(204, 170, 119, 0.6) 50%,
+      rgba(204, 170, 119, 0.4) 80%,
+      transparent 100%);
+  }
+  
+  // Linha adicional no topo para separar do conteúdo anterior
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(204, 170, 119, 0.3) 50%,
+      transparent 100%);
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .cta-section {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem; // Gap menor no mobile
+  }
+}
