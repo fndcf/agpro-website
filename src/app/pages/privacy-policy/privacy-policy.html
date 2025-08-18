@@ -1,3 +1,4 @@
+<!-- 📁 src/app/pages/privacy-policy/privacy-policy.html (INTERNACIONALIZADO) -->
 <!-- Privacy Policy Page -->
 <div class="legal-page bg-white min-h-screen py-16">
   <div class="container mx-auto px-6 max-w-4xl">
@@ -5,10 +6,10 @@
     <!-- Header -->
     <div class="page-header text-center mb-12">
       <h1 class="text-4xl md:text-5xl font-light text-gold mb-4">
-        Privacy Policy
+        {{ translations().privacyPolicy.pageTitle }}
       </h1>
       <p class="text-gray-600 text-lg">
-        Last updated: {{ lastUpdated }}
+        {{ translations().privacyPolicy.lastUpdated }}
       </p>
     </div>
 
@@ -17,115 +18,124 @@
       
       <!-- Introduction -->
       <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">Introduction</h2>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">
+          {{ translations().privacyPolicy.introduction.title }}
+        </h2>
         <p class="text-gray-700 leading-relaxed mb-4">
-          AgPro International ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+          {{ translations().privacyPolicy.introduction.paragraph1 }}
         </p>
         <p class="text-gray-700 leading-relaxed">
-          Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access our website or use our services.
+          {{ translations().privacyPolicy.introduction.paragraph2 }}
         </p>
       </section>
 
       <!-- Information We Collect -->
       <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">Information We Collect</h2>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">
+          {{ translations().privacyPolicy.informationWeCollect.title }}
+        </h2>
         
-        <h3 class="text-xl font-medium text-gray-800 mb-3">Personal Information</h3>
+        <h3 class="text-xl font-medium text-gray-800 mb-3">
+          {{ translations().privacyPolicy.informationWeCollect.personalInfo.title }}
+        </h3>
         <p class="text-gray-700 leading-relaxed mb-4">
-          We may collect personal information that you voluntarily provide to us when you:
+          {{ translations().privacyPolicy.informationWeCollect.personalInfo.description }}
         </p>
         <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li>Contact us through our contact forms</li>
-          <li>Request information about our services</li>
-          <li>Subscribe to our communications</li>
-          <li>Apply for employment with us</li>
+          <li *ngFor="let situation of translations().privacyPolicy.informationWeCollect.personalInfo.situations">
+            {{ situation }}
+          </li>
         </ul>
 
         <p class="text-gray-700 leading-relaxed mb-4">
-          This information may include:
+          {{ translations().privacyPolicy.informationWeCollect.personalInfo.dataTypesIntro }}
         </p>
         <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
-          <li>Full name</li>
-          <li>Email address</li>
-          <li>Phone number</li>
-          <li>Company name</li>
-          <li>Job title</li>
-          <li>Project details and requirements</li>
+          <li *ngFor="let dataType of translations().privacyPolicy.informationWeCollect.personalInfo.dataTypes">
+            {{ dataType }}
+          </li>
         </ul>
 
-        <h3 class="text-xl font-medium text-gray-800 mb-3">Automatic Information</h3>
+        <h3 class="text-xl font-medium text-gray-800 mb-3">
+          {{ translations().privacyPolicy.informationWeCollect.automaticInfo.title }}
+        </h3>
         <p class="text-gray-700 leading-relaxed">
-          When you visit our website, we may automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device.
+          {{ translations().privacyPolicy.informationWeCollect.automaticInfo.description }}
         </p>
       </section>
 
       <!-- How We Use Information -->
       <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">How We Use Your Information</h2>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">
+          {{ translations().privacyPolicy.howWeUseInfo.title }}
+        </h2>
         <p class="text-gray-700 leading-relaxed mb-4">
-          We use the information we collect to:
+          {{ translations().privacyPolicy.howWeUseInfo.description }}
         </p>
         <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li>Respond to your inquiries and provide customer service</li>
-          <li>Process your requests for information or quotes</li>
-          <li>Communicate with you about our services</li>
-          <li>Improve our website and services</li>
-          <li>Comply with legal obligations</li>
-          <li>Protect our rights and interests</li>
+          <li *ngFor="let purpose of translations().privacyPolicy.howWeUseInfo.purposes">
+            {{ purpose }}
+          </li>
         </ul>
       </section>
 
       <!-- Information Sharing -->
       <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">Information Sharing</h2>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">
+          {{ translations().privacyPolicy.informationSharing.title }}
+        </h2>
         <p class="text-gray-700 leading-relaxed mb-4">
-          We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:
+          {{ translations().privacyPolicy.informationSharing.description }}
         </p>
         <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li>To comply with legal requirements</li>
-          <li>To protect our rights, property, or safety</li>
-          <li>To trusted third parties who assist us in operating our website or conducting our business</li>
-          <li>In connection with a merger, acquisition, or sale of assets</li>
+          <li *ngFor="let circumstance of translations().privacyPolicy.informationSharing.circumstances">
+            {{ circumstance }}
+          </li>
         </ul>
       </section>
 
       <!-- Data Security -->
       <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">Data Security</h2>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">
+          {{ translations().privacyPolicy.dataSecurity.title }}
+        </h2>
         <p class="text-gray-700 leading-relaxed">
-          We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, please note that no method of transmission over the internet or electronic storage is 100% secure.
+          {{ translations().privacyPolicy.dataSecurity.description }}
         </p>
       </section>
 
       <!-- Your Rights -->
       <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">Your Rights</h2>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">
+          {{ translations().privacyPolicy.yourRights.title }}
+        </h2>
         <p class="text-gray-700 leading-relaxed mb-4">
-          Depending on your location, you may have the following rights regarding your personal information:
+          {{ translations().privacyPolicy.yourRights.description }}
         </p>
         <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li>The right to access your personal information</li>
-          <li>The right to rectify inaccurate information</li>
-          <li>The right to erase your personal information</li>
-          <li>The right to restrict processing</li>
-          <li>The right to data portability</li>
-          <li>The right to object to processing</li>
+          <li *ngFor="let right of translations().privacyPolicy.yourRights.rights">
+            {{ right }}
+          </li>
         </ul>
       </section>
 
       <!-- Cookies -->
       <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">Cookies</h2>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">
+          {{ translations().privacyPolicy.cookies.title }}
+        </h2>
         <p class="text-gray-700 leading-relaxed">
-          Our website may use cookies to enhance your browsing experience. Cookies are small text files stored on your device that help us analyze web traffic and remember your preferences. You can choose to accept or decline cookies through your browser settings.
+          {{ translations().privacyPolicy.cookies.description }}
         </p>
       </section>
 
       <!-- Updates -->
       <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">Policy Updates</h2>
+        <h2 class="text-2xl font-medium text-gray-900 mb-4">
+          {{ translations().privacyPolicy.policyUpdates.title }}
+        </h2>
         <p class="text-gray-700 leading-relaxed">
-          We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this policy.
+          {{ translations().privacyPolicy.policyUpdates.description }}
         </p>
       </section>
 
