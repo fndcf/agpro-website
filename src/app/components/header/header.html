@@ -6,6 +6,7 @@
       <div class="social-links flex gap-3 items-center">
         <a 
           *ngFor="let social of socialLinks"
+          target="_blank"
           [href]="social.url" 
           [title]="social.title"
           class="social-link text-white text-opacity-80 transition-colors duration-300 hover:text-white">
@@ -43,7 +44,8 @@
     <img 
       src="assets/images/logo2.png" 
       alt="AgPro International" 
-      class="logo-img h-20 w-auto transition-transform duration-300 hover:scale-105">
+      class="logo-img h-20 w-auto transition-transform duration-300 hover:scale-105"
+      (click)="scrollToTop()">
   </div>
   
   <!-- Main Navigation -->

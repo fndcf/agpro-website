@@ -94,4 +94,14 @@ export class HeaderComponent implements OnInit {
       flagUrl: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1e7-1f1f7.svg'
     }
   ];
+
+  // Método para scroll suave para o topo
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+
 }
