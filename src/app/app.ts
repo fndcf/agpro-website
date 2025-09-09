@@ -1,4 +1,3 @@
-// 📁 src/app/app.ts
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';

@@ -1,4 +1,3 @@
-// 📁 src/app/pages/sitemap/sitemap.ts (FINAL - INTERNACIONALIZADO)
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';

@@ -1,4 +1,3 @@
-// 📁 src/app/components/header/header.ts
 import { Component, OnInit, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';

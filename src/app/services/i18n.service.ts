@@ -1,4 +1,3 @@
-// 📁 src/app/services/i18n.service.ts (COMPLETO COM PRIVACY POLICY E TERMS OF SERVICE)
 import { Injectable, signal, computed } from '@angular/core';
 
 export type Language = 'en' | 'pt' | 'es';

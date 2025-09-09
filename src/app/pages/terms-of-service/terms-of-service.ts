@@ -1,4 +1,3 @@
-// 📁 src/app/pages/terms-of-service/terms-of-service.ts (ATUALIZADO COM I18N)
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../../services/i18n.service';

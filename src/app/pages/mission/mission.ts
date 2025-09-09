@@ -1,4 +1,3 @@
-// 📁 src/app/pages/mission/mission.ts - INTERNACIONALIZADO
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero';

@@ -1,4 +1,3 @@
-// 📁 src/app/pages/contact/contact.ts (INTERNACIONALIZADO)
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

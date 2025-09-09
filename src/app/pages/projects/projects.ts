@@ -1,4 +1,3 @@
-// 📁 src/app/pages/projects/projects.ts (INTERNACIONALIZADO)
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';

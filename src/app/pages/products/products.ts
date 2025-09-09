@@ -1,4 +1,3 @@
-// 📁 src/app/pages/products/products.ts (INTERNACIONALIZADO)
 import { Component, computed, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero';

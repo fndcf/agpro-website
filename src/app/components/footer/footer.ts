@@ -1,4 +1,3 @@
-// 📁 src/app/components/footer/footer.ts
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';

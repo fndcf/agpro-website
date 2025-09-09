@@ -1,4 +1,3 @@
-// 📁 src/app/pages/under-construction/under-construction.ts (INTERNACIONALIZADO)
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';

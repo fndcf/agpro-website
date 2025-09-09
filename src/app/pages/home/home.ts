@@ -1,4 +1,3 @@
-// 📁 src/app/pages/home/home.ts
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';

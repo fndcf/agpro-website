@@ -1,4 +1,3 @@
-// 📁 src/app/components/stats/stats.ts
 import { Component, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';

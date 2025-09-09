@@ -1,4 +1,3 @@
-// 📁 src/app/services/data.service.ts
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { Stat, TabItem } from '../models/service.model';
 import { HomeService } from '../models/home.model';

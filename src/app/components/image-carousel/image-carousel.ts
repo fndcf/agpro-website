@@ -1,4 +1,3 @@
-// 📁 src/app/components/image-carousel/image-carousel.ts
 import { Component, Input, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
