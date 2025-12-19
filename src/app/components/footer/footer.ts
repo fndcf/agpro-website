@@ -1,77 +1,43 @@
-import { Component, computed } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { I18nService } from '../../services/i18n.service';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, TranslocoModule],
   templateUrl: './footer.html',
-  styleUrls: ['./footer.scss']
+  styleUrls: ['./footer.scss'],
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
-  
-  // Computed signal para traduções
-  translations = computed(() => this.i18nService.currentTranslations());
 
-  constructor(private i18nService: I18nService) {}
-  
-  // Footer links agora usando computed para serem reativos
-  footerLinks = computed(() => ({
-    products: [
-      { 
-        label: this.translations().footer.buildings, 
-        route: '/products', 
-        fragment: 'buildings' 
-      },
-      { 
-        label: this.translations().footer.equipments, 
-        route: '/products', 
-        fragment: 'equipments' 
-      },
-      { 
-        label: this.translations().footer.grainStorage, 
-        route: '/products', 
-        fragment: 'grain-storage' 
-      },
-      { 
-        label: this.translations().footer.feedTransportation, 
-        route: '/products', 
-        fragment: 'feed-transport' 
-      }
-    ],
-    company: [
-      { 
-        label: this.translations().footer.ourMission, 
-        route: '/mission', 
-        fragment: null 
-      },
-      { 
-        label: this.translations().footer.projects, 
-        route: '/projects', 
-        fragment: null 
-      },
-      { 
-        label: this.translations().footer.contacts, 
-        route: '/contact', 
-        fragment: null 
-      }
-    ]
-  }));
+  // Footer links - usando chaves de tradução
+  productLinks = [
+    { labelKey: 'footer.buildings', route: '/products', fragment: 'buildings' },
+    { labelKey: 'footer.equipments', route: '/products', fragment: 'equipments' },
+    { labelKey: 'footer.grainStorage', route: '/products', fragment: 'grain-storage' },
+    { labelKey: 'footer.feedTransportation', route: '/products', fragment: 'feed-transport' },
+  ];
+
+  companyLinks = [
+    { labelKey: 'footer.ourMission', route: '/mission' },
+    { labelKey: 'footer.projects', route: '/projects' },
+    { labelKey: 'footer.contacts', route: '/contact' },
+  ];
 
   socialLinks = [
-    { 
-      icon: 'assets/icons/facebook.svg', 
-      title: 'Facebook', 
-      url: 'https://www.facebook.com/AgproInternational' 
+    {
+      icon: 'assets/icons/facebook.svg',
+      title: 'Facebook',
+      url: 'https://www.facebook.com/AgproInternational',
     },
-    { 
-      icon: 'assets/icons/instagram.svg', 
-      title: 'Instagram', 
-      url: 'https://www.instagram.com/agpro_international' 
-    }
+    {
+      icon: 'assets/icons/instagram.svg',
+      title: 'Instagram',
+      url: 'https://www.instagram.com/agpro_international',
+    },
   ];
 
   // Método para scroll suave para o topo
@@ -79,7 +45,7 @@ export class FooterComponent {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
 }

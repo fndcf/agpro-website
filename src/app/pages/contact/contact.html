@@ -1,199 +1,201 @@
-<!-- Hero Section -->
-<app-hero 
-  [title]="translations().contact.hero.title"
-  [subtitle]="translations().contact.hero.subtitle">
-</app-hero>
+<ng-container *transloco="let t">
+  <!-- Hero Section -->
+  <app-hero
+    [title]="t('contact.hero.title')"
+    [subtitle]="t('contact.hero.subtitle')">
+  </app-hero>
 
-<!-- Content Section -->
-<section class="content-section py-16 bg-white">
-  <div class="container mx-auto px-6">
-    <div class="section-content max-w-7xl mx-auto">
-      
-      <!-- Two Column Layout -->
-      <div class="two-column grid grid-cols-1 lg:grid-cols-2 gap-16">
-        
-        <!-- Contact Form -->
-        <div class="contact-form bg-gray-50 p-8 md:p-12 rounded-lg shadow-lg">
-          <h3 class="text-2xl md:text-3xl text-gold font-light mb-8">
-            {{ translations().contact.form.title }}
-          </h3>
-          
-          <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="space-y-6">
-            
-            <!-- Name and Company Row -->
-            <div class="form-row grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="form-group">
-                <label for="fullName" class="block mb-2 text-gray-700 font-medium font-sans">
-                  {{ translations().contact.form.fullNameRequired }}
-                </label>
-                <input 
-                  type="text" 
-                  id="fullName" 
-                  name="fullName"
-                  [(ngModel)]="contactForm.fullName"
-                  required
-                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
-                         transition-colors duration-300 focus:outline-none focus:border-gold">
-              </div>
-              
-              <div class="form-group">
-                <label for="company" class="block mb-2 text-gray-700 font-medium font-sans">
-                  {{ translations().contact.form.company }}
-                </label>
-                <input 
-                  type="text" 
-                  id="company" 
-                  name="company"
-                  [(ngModel)]="contactForm.company"
-                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
-                         transition-colors duration-300 focus:outline-none focus:border-gold">
-              </div>
-            </div>
-            
-            <!-- Email and Phone Row -->
-            <div class="form-row grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="form-group">
-                <label for="email" class="block mb-2 text-gray-700 font-medium font-sans">
-                  {{ translations().contact.form.emailRequired }}
-                </label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email"
-                  [(ngModel)]="contactForm.email"
-                  required
-                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
-                         transition-colors duration-300 focus:outline-none focus:border-gold">
-              </div>
-              
-              <div class="form-group">
-                <label for="phone" class="block mb-2 text-gray-700 font-medium font-sans">
-                  {{ translations().contact.form.phone }}
-                </label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone"
-                  [(ngModel)]="contactForm.phone"
-                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
-                         transition-colors duration-300 focus:outline-none focus:border-gold">
-              </div>
-            </div>
+  <!-- Content Section -->
+  <section class="content-section py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="section-content max-w-7xl mx-auto">
 
-            <!-- Timeline -->
-            <div class="form-group">
-              <label for="timeline" class="block mb-2 text-gray-700 font-medium font-sans">
-                {{ translations().contact.form.timeline }}
-              </label>
-              <select 
-                id="timeline" 
-                name="timeline"
-                [(ngModel)]="contactForm.timeline"
-                class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
-                       transition-colors duration-300 focus:outline-none focus:border-gold">
-                <option *ngFor="let option of timelineOptions()" [value]="option.value">
-                  {{ option.label }}
-                </option>
-              </select>
-            </div>
+        <!-- Two Column Layout -->
+        <div class="two-column grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-            <!-- Location -->
-            <div class="form-group">
-              <label for="location" class="block mb-2 text-gray-700 font-medium font-sans">
-                {{ translations().contact.form.location }}
-              </label>
-              <input 
-                type="text" 
-                id="location" 
-                name="location"
-                [(ngModel)]="contactForm.location"
-                [placeholder]="translations().contact.form.locationPlaceholder"
-                class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
-                       transition-colors duration-300 focus:outline-none focus:border-gold">
-            </div>
-
-            <!-- Description -->
-            <div class="form-group">
-              <label for="description" class="block mb-2 text-gray-700 font-medium font-sans">
-                {{ translations().contact.form.descriptionRequired }}
-              </label>
-              <textarea 
-                id="description" 
-                name="description"
-                [(ngModel)]="contactForm.description"
-                rows="5"
-                required
-                [placeholder]="translations().contact.form.descriptionPlaceholder"
-                class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
-                       transition-colors duration-300 focus:outline-none focus:border-gold resize-vertical">
-              </textarea>
-            </div>
-
-            <!-- How did you hear about us -->
-            <div class="form-group">
-              <label for="source" class="block mb-2 text-gray-700 font-medium font-sans">
-                {{ translations().contact.form.source }}
-              </label>
-              <select 
-                id="source" 
-                name="source"
-                [(ngModel)]="contactForm.source"
-                class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans 
-                       transition-colors duration-300 focus:outline-none focus:border-gold">
-                <option *ngFor="let option of sourceOptions()" [value]="option.value">
-                  {{ option.label }}
-                </option>
-              </select>
-            </div>
-
-            <!-- Submit Button -->
-            <button 
-              type="submit" 
-              class="btn-submit bg-primary text-white px-8 py-4 rounded-md text-lg font-medium 
-                     cursor-pointer transition-all duration-300 hover:bg-primary-dark hover:shadow-lg 
-                     font-sans w-full md:w-auto">
-              {{ translations().contact.form.submitButton }}
-            </button>
-          </form>
-        </div>
-
-        <!-- Employment Info -->
-        <div class="contact-info space-y-8">
-          <div class="mt-12 lg:mt-0">
+          <!-- Contact Form -->
+          <div class="contact-form bg-gray-50 p-8 md:p-12 rounded-lg shadow-lg">
             <h3 class="text-2xl md:text-3xl text-gold font-light mb-8">
-              {{ translations().contact.employment.title }}
+              {{ t('contact.form.title') }}
             </h3>
-            
-            <div class="space-y-4 text-gray-600 font-sans leading-relaxed">
-              <p>{{ translations().contact.employment.description }}</p>
-              <p>{{ translations().contact.employment.description2 }}</p>
-              <p>{{ translations().contact.employment.description3 }}</p>
-              <p>{{ translations().contact.employment.description4 }}</p>
-              <p>{{ translations().contact.employment.qualitiesTitle }}</p>
-            </div>
-            
-            <!-- Employment Qualities List -->
-            <ul class="service-list mt-6 space-y-3">
-              <li *ngFor="let quality of employmentQualities()" 
-                  class="flex items-start gap-3 text-gray-600 font-sans">
-                <span class="text-gold font-bold text-sm mt-1">✓</span>
-                <span>{{ quality }}</span>
-              </li>
-            </ul>
-            
-            <!-- Employment CTA -->
-            <div class="mt-8">
-              <button 
-                disabled
-                class="bg-gray-300 text-gray-500 px-6 py-3 rounded-md font-medium 
-                       cursor-not-allowed font-sans relative">
-                {{ translations().contact.employment.viewJobsButton }}
+
+            <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="space-y-6">
+
+              <!-- Name and Company Row -->
+              <div class="form-row grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                  <label for="fullName" class="block mb-2 text-gray-700 font-medium font-sans">
+                    {{ t('contact.form.fullNameRequired') }}
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    [(ngModel)]="contactForm.fullName"
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans
+                           transition-colors duration-300 focus:outline-none focus:border-gold">
+                </div>
+
+                <div class="form-group">
+                  <label for="company" class="block mb-2 text-gray-700 font-medium font-sans">
+                    {{ t('contact.form.company') }}
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    [(ngModel)]="contactForm.company"
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans
+                           transition-colors duration-300 focus:outline-none focus:border-gold">
+                </div>
+              </div>
+
+              <!-- Email and Phone Row -->
+              <div class="form-row grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                  <label for="email" class="block mb-2 text-gray-700 font-medium font-sans">
+                    {{ t('contact.form.emailRequired') }}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="contactForm.email"
+                    required
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans
+                           transition-colors duration-300 focus:outline-none focus:border-gold">
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="block mb-2 text-gray-700 font-medium font-sans">
+                    {{ t('contact.form.phone') }}
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    [(ngModel)]="contactForm.phone"
+                    class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans
+                           transition-colors duration-300 focus:outline-none focus:border-gold">
+                </div>
+              </div>
+
+              <!-- Timeline -->
+              <div class="form-group">
+                <label for="timeline" class="block mb-2 text-gray-700 font-medium font-sans">
+                  {{ t('contact.form.timeline') }}
+                </label>
+                <select
+                  id="timeline"
+                  name="timeline"
+                  [(ngModel)]="contactForm.timeline"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans
+                         transition-colors duration-300 focus:outline-none focus:border-gold">
+                  <option *ngFor="let option of timelineOptions" [value]="option.value">
+                    {{ t(option.labelKey) }}
+                  </option>
+                </select>
+              </div>
+
+              <!-- Location -->
+              <div class="form-group">
+                <label for="location" class="block mb-2 text-gray-700 font-medium font-sans">
+                  {{ t('contact.form.location') }}
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  [(ngModel)]="contactForm.location"
+                  [placeholder]="t('contact.form.locationPlaceholder')"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans
+                         transition-colors duration-300 focus:outline-none focus:border-gold">
+              </div>
+
+              <!-- Description -->
+              <div class="form-group">
+                <label for="description" class="block mb-2 text-gray-700 font-medium font-sans">
+                  {{ t('contact.form.descriptionRequired') }}
+                </label>
+                <textarea
+                  id="description"
+                  name="description"
+                  [(ngModel)]="contactForm.description"
+                  rows="5"
+                  required
+                  [placeholder]="t('contact.form.descriptionPlaceholder')"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans
+                         transition-colors duration-300 focus:outline-none focus:border-gold resize-vertical">
+                </textarea>
+              </div>
+
+              <!-- How did you hear about us -->
+              <div class="form-group">
+                <label for="source" class="block mb-2 text-gray-700 font-medium font-sans">
+                  {{ t('contact.form.source') }}
+                </label>
+                <select
+                  id="source"
+                  name="source"
+                  [(ngModel)]="contactForm.source"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-md font-sans
+                         transition-colors duration-300 focus:outline-none focus:border-gold">
+                  <option *ngFor="let option of sourceOptions" [value]="option.value">
+                    {{ t(option.labelKey) }}
+                  </option>
+                </select>
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="btn-submit bg-primary text-white px-8 py-4 rounded-md text-lg font-medium
+                       cursor-pointer transition-all duration-300 hover:bg-primary-dark hover:shadow-lg
+                       font-sans w-full md:w-auto">
+                {{ t('contact.form.submitButton') }}
               </button>
+            </form>
+          </div>
+
+          <!-- Employment Info -->
+          <div class="contact-info space-y-8">
+            <div class="mt-12 lg:mt-0">
+              <h3 class="text-2xl md:text-3xl text-gold font-light mb-8">
+                {{ t('contact.employment.title') }}
+              </h3>
+
+              <div class="space-y-4 text-gray-600 font-sans leading-relaxed">
+                <p>{{ t('contact.employment.description') }}</p>
+                <p>{{ t('contact.employment.description2') }}</p>
+                <p>{{ t('contact.employment.description3') }}</p>
+                <p>{{ t('contact.employment.description4') }}</p>
+                <p>{{ t('contact.employment.qualitiesTitle') }}</p>
+              </div>
+
+              <!-- Employment Qualities List -->
+              <ul class="service-list mt-6 space-y-3">
+                <li *ngFor="let quality of getQualities()"
+                    class="flex items-start gap-3 text-gray-600 font-sans">
+                  <span class="text-gold font-bold text-sm mt-1">✓</span>
+                  <span>{{ quality }}</span>
+                </li>
+              </ul>
+
+              <!-- Employment CTA -->
+              <div class="mt-8">
+                <button
+                  disabled
+                  class="bg-gray-300 text-gray-500 px-6 py-3 rounded-md font-medium
+                         cursor-not-allowed font-sans relative">
+                  {{ t('contact.employment.viewJobsButton') }}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</ng-container>

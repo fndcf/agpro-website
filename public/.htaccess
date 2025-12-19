@@ -1,0 +1,153 @@
+# =============================================================================
+# AgPro International - .htaccess para Angular SPA
+# Compatível com HostGator e servidores Apache
+# =============================================================================
+
+# Habilitar módulo de rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirecionar HTTP para HTTPS (descomente em produção se tiver SSL)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Redirecionar www para non-www (ou vice-versa - escolha um)
+  # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # Se o arquivo ou diretório existe, sirva-o diretamente
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Senão, redirecione para index.html (necessário para SPA routing)
+  RewriteRule ^.*$ /index.html [L]
+</IfModule>
+
+# =============================================================================
+# Cache de Assets Estáticos
+# =============================================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Imagens - cache longo (1 ano)
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fontes - cache longo (1 ano)
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+
+  # CSS e JavaScript - cache médio (1 mês)
+  # Angular usa hash nos nomes dos arquivos, então cache longo é seguro
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # HTML - cache curto (sem cache ou muito curto)
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # JSON - cache curto (traduções podem mudar)
+  ExpiresByType application/json "access plus 1 hour"
+</IfModule>
+
+# =============================================================================
+# Cache-Control Headers
+# =============================================================================
+<IfModule mod_headers.c>
+  # Arquivos com hash no nome (gerados pelo Angular) - cache agressivo
+  <FilesMatch "\.[0-9a-f]{16,}\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # index.html - sempre revalidar
+  <FilesMatch "index\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # Arquivos de tradução - cache curto
+  <FilesMatch "\.json$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
+
+# =============================================================================
+# Compressão GZIP
+# =============================================================================
+<IfModule mod_deflate.c>
+  # Comprimir texto, HTML, JavaScript, CSS, XML e JSON
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+
+  # Não comprimir imagens já comprimidas
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp)$ no-gzip
+</IfModule>
+
+# =============================================================================
+# Segurança
+# =============================================================================
+<IfModule mod_headers.c>
+  # Prevenir clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Prevenir MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Habilitar proteção XSS do navegador
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions Policy (substitui Feature-Policy)
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# =============================================================================
+# Prevenir acesso a arquivos sensíveis
+# =============================================================================
+<FilesMatch "(^\.htaccess|\.git|\.env|\.gitignore|package\.json|angular\.json|tsconfig\.json)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# =============================================================================
+# Tipos MIME corretos
+# =============================================================================
+<IfModule mod_mime.c>
+  AddType application/javascript js mjs
+  AddType text/css css
+  AddType image/svg+xml svg svgz
+  AddType image/webp webp
+  AddType font/woff woff
+  AddType font/woff2 woff2
+  AddType application/json json
+</IfModule>
+
+# =============================================================================
+# Desabilitar listagem de diretórios
+# =============================================================================
+Options -Indexes
+
+# =============================================================================
+# Charset UTF-8
+# =============================================================================
+AddDefaultCharset UTF-8

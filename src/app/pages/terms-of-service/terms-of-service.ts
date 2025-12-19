@@ -1,17 +1,12 @@
-import { Component, computed } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { I18nService } from '../../services/i18n.service';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-terms-of-service',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './terms-of-service.html',
-  styleUrls: ['./terms-of-service.scss']
+  styleUrls: ['./terms-of-service.scss'],
 })
-export class TermsOfService {
-  // Computed signal para traduções
-  translations = computed(() => this.i18nService.currentTranslations());
-
-  constructor(private i18nService: I18nService) {}
-}
+export class TermsOfService {}

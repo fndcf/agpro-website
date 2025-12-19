@@ -1,41 +1,43 @@
-<!-- Hero Section -->
-<app-hero 
-  [title]="translations().homepage.hero.title"
-  [subtitle]="translations().homepage.hero.subtitle"
-  [buttonText]="translations().homepage.hero.buttonText"
-  buttonRoute="/products"
-  [showButton]="true">
-</app-hero>
+<ng-container *transloco="let t">
+  <!-- Hero Section -->
+  <app-hero
+    [title]="t('homepage.hero.title')"
+    [subtitle]="t('homepage.hero.subtitle')"
+    [buttonText]="t('homepage.hero.buttonText')"
+    buttonRoute="/products"
+    [showButton]="true">
+  </app-hero>
 
-<!-- Main Content Section -->
-<section class="content-section py-16 bg-white">
-  <div class="container mx-auto px-6">
-    <!-- Section Header -->
-    <div class="section-content max-w-6xl mx-auto">
-      <h2 class="section-title text-4xl md:text-5xl text-gold font-light text-center mb-8">
-        {{ translations().homepage.experience.title }}
-      </h2>
-      <p class="section-subtitle text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-        {{ translations().homepage.experience.subtitle }}
-      </p>
-      
-      <!-- Section Separator -->
-      <div class="page-separator my-16"></div>
-      
-      <!-- Stats Section -->
-      <app-stats></app-stats>
+  <!-- Main Content Section -->
+  <section class="content-section py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <!-- Section Header -->
+      <div class="section-content max-w-6xl mx-auto">
+        <h2 class="section-title text-4xl md:text-5xl text-gold font-light text-center mb-8">
+          {{ t('homepage.experience.title') }}
+        </h2>
+        <p class="section-subtitle text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+          {{ t('homepage.experience.subtitle') }}
+        </p>
 
-      <!-- Page Separator -->
-      <div class="page-separator my-16"></div>
+        <!-- Section Separator -->
+        <div class="page-separator my-16"></div>
 
-      <!-- Services Grid -->
-      <div class="services-grid space-y-16 mt-16">
-        <app-home-card 
-          *ngFor="let homeservice of services(); let i = index" 
-          [homeservice]="homeservice"
-          [class]="i % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'">
-        </app-home-card>
+        <!-- Stats Section -->
+        <app-stats></app-stats>
+
+        <!-- Page Separator -->
+        <div class="page-separator my-16"></div>
+
+        <!-- Services Grid -->
+        <div class="services-grid space-y-16 mt-16">
+          <app-home-card
+            *ngFor="let homeservice of services(); let i = index"
+            [homeservice]="homeservice"
+            [class]="i % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'">
+          </app-home-card>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</ng-container>

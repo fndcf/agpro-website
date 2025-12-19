@@ -1,154 +1,156 @@
-<!-- Terms of Service Page -->
-<div class="legal-page bg-white min-h-screen py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    
-    <!-- Header -->
-    <div class="page-header text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-light text-gold mb-4">
-        {{ translations().termsOfService.pageTitle }}
-      </h1>
-      <p class="text-gray-600 text-lg">
-        {{ translations().termsOfService.lastUpdated }}
-      </p>
-    </div>
+<ng-container *transloco="let t">
+  <!-- Terms of Service Page -->
+  <div class="legal-page bg-white min-h-screen py-16">
+    <div class="container mx-auto px-6 max-w-4xl">
 
-    <!-- Content -->
-    <div class="legal-content prose prose-lg max-w-none">
-      
-      <!-- Agreement to Terms -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.agreementToTerms.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().termsOfService.agreementToTerms.paragraph1 }}
+      <!-- Header -->
+      <div class="page-header text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-light text-gold mb-4">
+          {{ t('termsOfService.pageTitle') }}
+        </h1>
+        <p class="text-gray-600 text-lg">
+          {{ t('termsOfService.lastUpdated') }}
         </p>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().termsOfService.agreementToTerms.paragraph2 }}
-        </p>
-      </section>
+      </div>
 
-      <!-- Our Services -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.ourServices.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().termsOfService.ourServices.description }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li *ngFor="let service of translations().termsOfService.ourServices.servicesList">
-            {{ service }}
-          </li>
-        </ul>
-      </section>
+      <!-- Content -->
+      <div class="legal-content prose prose-lg max-w-none">
 
-      <!-- Use of Website -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.useOfWebsite.title }}
-        </h2>
-        
-        <h3 class="text-xl font-medium text-gray-800 mb-3">
-          {{ translations().termsOfService.useOfWebsite.permittedUse.title }}
-        </h3>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().termsOfService.useOfWebsite.permittedUse.description }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
-          <li *ngFor="let prohibition of translations().termsOfService.useOfWebsite.permittedUse.prohibitions">
-            {{ prohibition }}
-          </li>
-        </ul>
+        <!-- Agreement to Terms -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.agreementToTerms.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('termsOfService.agreementToTerms.paragraph1') }}
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('termsOfService.agreementToTerms.paragraph2') }}
+          </p>
+        </section>
 
-        <h3 class="text-xl font-medium text-gray-800 mb-3">
-          {{ translations().termsOfService.useOfWebsite.intellectualProperty.title }}
-        </h3>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().termsOfService.useOfWebsite.intellectualProperty.description }}
-        </p>
-      </section>
+        <!-- Our Services -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.ourServices.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('termsOfService.ourServices.description') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+            <li *ngFor="let service of t('termsOfService.ourServices.servicesList')">
+              {{ service }}
+            </li>
+          </ul>
+        </section>
 
-      <!-- Information Accuracy -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.informationAccuracy.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().termsOfService.informationAccuracy.description }}
-        </p>
-      </section>
+        <!-- Use of Website -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.useOfWebsite.title') }}
+          </h2>
 
-      <!-- User Content -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.userContent.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().termsOfService.userContent.description }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li *ngFor="let purpose of translations().termsOfService.userContent.purposes">
-            {{ purpose }}
-          </li>
-        </ul>
-      </section>
+          <h3 class="text-xl font-medium text-gray-800 mb-3">
+            {{ t('termsOfService.useOfWebsite.permittedUse.title') }}
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('termsOfService.useOfWebsite.permittedUse.description') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+            <li *ngFor="let prohibition of t('termsOfService.useOfWebsite.permittedUse.prohibitions')">
+              {{ prohibition }}
+            </li>
+          </ul>
 
-      <!-- Privacy -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.privacy.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().termsOfService.privacy.description }}
-        </p>
-      </section>
+          <h3 class="text-xl font-medium text-gray-800 mb-3">
+            {{ t('termsOfService.useOfWebsite.intellectualProperty.title') }}
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('termsOfService.useOfWebsite.intellectualProperty.description') }}
+          </p>
+        </section>
 
-      <!-- Disclaimers -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.disclaimers.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().termsOfService.disclaimers.description }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li *ngFor="let warranty of translations().termsOfService.disclaimers.warranties">
-            {{ warranty }}
-          </li>
-        </ul>
-      </section>
+        <!-- Information Accuracy -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.informationAccuracy.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('termsOfService.informationAccuracy.description') }}
+          </p>
+        </section>
 
-      <!-- Limitation of Liability -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.limitationOfLiability.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().termsOfService.limitationOfLiability.description }}
-        </p>
-      </section>
+        <!-- User Content -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.userContent.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('termsOfService.userContent.description') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+            <li *ngFor="let purpose of t('termsOfService.userContent.purposes')">
+              {{ purpose }}
+            </li>
+          </ul>
+        </section>
 
-      <!-- Governing Law -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.governingLaw.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().termsOfService.governingLaw.description }}
-        </p>
-      </section>
+        <!-- Privacy -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.privacy.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('termsOfService.privacy.description') }}
+          </p>
+        </section>
 
-      <!-- Changes to Terms -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().termsOfService.changesToTerms.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().termsOfService.changesToTerms.description }}
-        </p>
-      </section>
+        <!-- Disclaimers -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.disclaimers.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('termsOfService.disclaimers.description') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+            <li *ngFor="let warranty of t('termsOfService.disclaimers.warranties')">
+              {{ warranty }}
+            </li>
+          </ul>
+        </section>
 
+        <!-- Limitation of Liability -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.limitationOfLiability.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('termsOfService.limitationOfLiability.description') }}
+          </p>
+        </section>
+
+        <!-- Governing Law -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.governingLaw.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('termsOfService.governingLaw.description') }}
+          </p>
+        </section>
+
+        <!-- Changes to Terms -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('termsOfService.changesToTerms.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('termsOfService.changesToTerms.description') }}
+          </p>
+        </section>
+
+      </div>
     </div>
   </div>
-</div>
+</ng-container>

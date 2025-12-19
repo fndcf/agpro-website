@@ -1,143 +1,145 @@
-<!-- Privacy Policy Page -->
-<div class="legal-page bg-white min-h-screen py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    
-    <!-- Header -->
-    <div class="page-header text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-light text-gold mb-4">
-        {{ translations().privacyPolicy.pageTitle }}
-      </h1>
-      <p class="text-gray-600 text-lg">
-        {{ translations().privacyPolicy.lastUpdated }}
-      </p>
-    </div>
+<ng-container *transloco="let t">
+  <!-- Privacy Policy Page -->
+  <div class="legal-page bg-white min-h-screen py-16">
+    <div class="container mx-auto px-6 max-w-4xl">
 
-    <!-- Content -->
-    <div class="legal-content prose prose-lg max-w-none">
-      
-      <!-- Introduction -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().privacyPolicy.introduction.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().privacyPolicy.introduction.paragraph1 }}
+      <!-- Header -->
+      <div class="page-header text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-light text-gold mb-4">
+          {{ t('privacyPolicy.pageTitle') }}
+        </h1>
+        <p class="text-gray-600 text-lg">
+          {{ t('privacyPolicy.lastUpdated') }}
         </p>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().privacyPolicy.introduction.paragraph2 }}
-        </p>
-      </section>
+      </div>
 
-      <!-- Information We Collect -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().privacyPolicy.informationWeCollect.title }}
-        </h2>
-        
-        <h3 class="text-xl font-medium text-gray-800 mb-3">
-          {{ translations().privacyPolicy.informationWeCollect.personalInfo.title }}
-        </h3>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().privacyPolicy.informationWeCollect.personalInfo.description }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li *ngFor="let situation of translations().privacyPolicy.informationWeCollect.personalInfo.situations">
-            {{ situation }}
-          </li>
-        </ul>
+      <!-- Content -->
+      <div class="legal-content prose prose-lg max-w-none">
 
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().privacyPolicy.informationWeCollect.personalInfo.dataTypesIntro }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
-          <li *ngFor="let dataType of translations().privacyPolicy.informationWeCollect.personalInfo.dataTypes">
-            {{ dataType }}
-          </li>
-        </ul>
+        <!-- Introduction -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('privacyPolicy.introduction.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('privacyPolicy.introduction.paragraph1') }}
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('privacyPolicy.introduction.paragraph2') }}
+          </p>
+        </section>
 
-        <h3 class="text-xl font-medium text-gray-800 mb-3">
-          {{ translations().privacyPolicy.informationWeCollect.automaticInfo.title }}
-        </h3>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().privacyPolicy.informationWeCollect.automaticInfo.description }}
-        </p>
-      </section>
+        <!-- Information We Collect -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('privacyPolicy.informationWeCollect.title') }}
+          </h2>
 
-      <!-- How We Use Information -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().privacyPolicy.howWeUseInfo.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().privacyPolicy.howWeUseInfo.description }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li *ngFor="let purpose of translations().privacyPolicy.howWeUseInfo.purposes">
-            {{ purpose }}
-          </li>
-        </ul>
-      </section>
+          <h3 class="text-xl font-medium text-gray-800 mb-3">
+            {{ t('privacyPolicy.informationWeCollect.personalInfo.title') }}
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('privacyPolicy.informationWeCollect.personalInfo.description') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+            <li *ngFor="let situation of t('privacyPolicy.informationWeCollect.personalInfo.situations')">
+              {{ situation }}
+            </li>
+          </ul>
 
-      <!-- Information Sharing -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().privacyPolicy.informationSharing.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().privacyPolicy.informationSharing.description }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li *ngFor="let circumstance of translations().privacyPolicy.informationSharing.circumstances">
-            {{ circumstance }}
-          </li>
-        </ul>
-      </section>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('privacyPolicy.informationWeCollect.personalInfo.dataTypesIntro') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-6 space-y-2">
+            <li *ngFor="let dataType of t('privacyPolicy.informationWeCollect.personalInfo.dataTypes')">
+              {{ dataType }}
+            </li>
+          </ul>
 
-      <!-- Data Security -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().privacyPolicy.dataSecurity.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().privacyPolicy.dataSecurity.description }}
-        </p>
-      </section>
+          <h3 class="text-xl font-medium text-gray-800 mb-3">
+            {{ t('privacyPolicy.informationWeCollect.automaticInfo.title') }}
+          </h3>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('privacyPolicy.informationWeCollect.automaticInfo.description') }}
+          </p>
+        </section>
 
-      <!-- Your Rights -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().privacyPolicy.yourRights.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-          {{ translations().privacyPolicy.yourRights.description }}
-        </p>
-        <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
-          <li *ngFor="let right of translations().privacyPolicy.yourRights.rights">
-            {{ right }}
-          </li>
-        </ul>
-      </section>
+        <!-- How We Use Information -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('privacyPolicy.howWeUseInfo.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('privacyPolicy.howWeUseInfo.description') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+            <li *ngFor="let purpose of t('privacyPolicy.howWeUseInfo.purposes')">
+              {{ purpose }}
+            </li>
+          </ul>
+        </section>
 
-      <!-- Cookies -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().privacyPolicy.cookies.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().privacyPolicy.cookies.description }}
-        </p>
-      </section>
+        <!-- Information Sharing -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('privacyPolicy.informationSharing.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('privacyPolicy.informationSharing.description') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+            <li *ngFor="let circumstance of t('privacyPolicy.informationSharing.circumstances')">
+              {{ circumstance }}
+            </li>
+          </ul>
+        </section>
 
-      <!-- Updates -->
-      <section class="mb-8">
-        <h2 class="text-2xl font-medium text-gray-900 mb-4">
-          {{ translations().privacyPolicy.policyUpdates.title }}
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          {{ translations().privacyPolicy.policyUpdates.description }}
-        </p>
-      </section>
+        <!-- Data Security -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('privacyPolicy.dataSecurity.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('privacyPolicy.dataSecurity.description') }}
+          </p>
+        </section>
 
+        <!-- Your Rights -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('privacyPolicy.yourRights.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            {{ t('privacyPolicy.yourRights.description') }}
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 mb-4 space-y-2">
+            <li *ngFor="let right of t('privacyPolicy.yourRights.rights')">
+              {{ right }}
+            </li>
+          </ul>
+        </section>
+
+        <!-- Cookies -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('privacyPolicy.cookies.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('privacyPolicy.cookies.description') }}
+          </p>
+        </section>
+
+        <!-- Updates -->
+        <section class="mb-8">
+          <h2 class="text-2xl font-medium text-gray-900 mb-4">
+            {{ t('privacyPolicy.policyUpdates.title') }}
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            {{ t('privacyPolicy.policyUpdates.description') }}
+          </p>
+        </section>
+
+      </div>
     </div>
   </div>
-</div>
+</ng-container>

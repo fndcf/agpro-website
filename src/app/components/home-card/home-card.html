@@ -1,14 +1,16 @@
-<div class="service-card bg-white border border-gray-200 p-8 md:p-12 text-center 
-            transition-all duration-300 hover:-translate-y-3 hover:shadow-xl group"
-     [id]="homeservice.id">
-  
-  <!-- Service Title -->
-  <h3 class="text-2xl md:text-3xl text-gold font-light mb-6">
-    {{ homeservice.title }}
-  </h3>
-  
-  <!-- Service Description -->
-  <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6 font-sans">
-    {{ homeservice.description }}
-  </p>
-</div>
+<ng-container *transloco="let t">
+  <div class="service-card bg-white border border-gray-200 p-8 md:p-12 text-center
+              transition-all duration-300 hover:-translate-y-3 hover:shadow-xl group"
+       [id]="homeservice.id">
+
+    <!-- Service Title -->
+    <h3 class="text-2xl md:text-3xl text-gold font-light mb-6">
+      {{ t(homeservice.titleKey) }}
+    </h3>
+
+    <!-- Service Description -->
+    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6 font-sans">
+      {{ t(homeservice.descriptionKey) }}
+    </p>
+  </div>
+</ng-container>

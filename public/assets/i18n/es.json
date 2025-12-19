@@ -1,0 +1,535 @@
+{
+  "header": {
+    "home": "Inicio",
+    "mission": "Nuestra Misión",
+    "products": "Productos y Servicios",
+    "projects": "Proyectos",
+    "contact": "Contactos"
+  },
+  "homepage": {
+    "hero": {
+      "title": "Excelencia en vivienda y equipos para ganado",
+      "subtitle": "Durante décadas, AgPro International ha entregado soluciones premium para los proyectos de agronegocios más exigentes del mundo.",
+      "buttonText": "Productos y Servicios"
+    },
+    "experience": {
+      "title": "Nuestra Experiencia",
+      "subtitle": "Décadas de excelencia en el desarrollo de proyectos a gran escala para el agronegocio internacional."
+    },
+    "stats": {
+      "yearsExperience": "30+ Años de Experiencia",
+      "yearsExperienceDesc": "Décadas sirviendo a la industria del agronegocio",
+      "projectsCompleted": "500+ Proyectos Completados",
+      "projectsCompletedDesc": "Implementaciones exitosas a nivel mundial",
+      "countriesServed": "25+ Países Atendidos",
+      "countriesServedDesc": "Presencia internacional y experiencia"
+    },
+    "services": {
+      "swine": {
+        "title": "Porcinos",
+        "description": "Consultoría, desarrollo y gestión de proyectos porcinos, planificación y supervisión de construcción, proveedores de equipos para sistemas de alimentación, sistemas de ventilación, enfriamiento evaporativo, controles ambientales, cortinas laterales, calefacción, bebederos, corrales de engorde, corrales de destete, celdas de gestación, celdas de maternidad."
+      },
+      "poultry": {
+        "title": "Aves",
+        "description": "Consultoría, desarrollo y gestión de proyectos avícolas, planificación y supervisión de construcción, proveedores de equipos para sistemas de alimentación, sistemas de ventilación, enfriamiento evaporativo, controles ambientales, cortinas laterales, calefacción, bebederos, sistemas de nidos."
+      },
+      "grainStorage": {
+        "title": "Almacenamiento de Granos",
+        "description": "Consultoría, desarrollo y gestión de proyectos de almacenamiento de granos, planificación y supervisión de construcción, proveedores de equipos para Silos de Granos, Tanques de Descarga, elevadores de cangilones, transportadores de cadena, transportadores de correa, transportadores helicoidales, distribuidores."
+      }
+    }
+  },
+  "mission": {
+    "hero": {
+      "title": "Nuestra Misión"
+    },
+    "content": {
+      "title": "Consultoría Especializada",
+      "description": "Utilizar nuestra experiencia para brindar a nuestros clientes excelentes productos, servicio y precio, contribuyendo a la mejora de sus resultados financieros, sabiendo que su éxito se convertirá en nuestro éxito.",
+      "imageAlt": "AgPro International - Consultoría Especializada"
+    }
+  },
+  "privacyPolicy": {
+    "pageTitle": "Política de Privacidad",
+    "lastUpdated": "Última actualización: Enero de 2025",
+    "introduction": {
+      "title": "Introducción",
+      "paragraph1": "AgPro International (\"nosotros\", \"nuestra\", \"nos\") está comprometida en proteger su privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información cuando visita nuestro sitio web o usa nuestros servicios.",
+      "paragraph2": "Por favor, lea esta política de privacidad cuidadosamente. Si no está de acuerdo con los términos de esta política de privacidad, por favor no acceda a nuestro sitio web o use nuestros servicios."
+    },
+    "informationWeCollect": {
+      "title": "Información que Recopilamos",
+      "personalInfo": {
+        "title": "Información Personal",
+        "description": "Podemos recopilar información personal que usted proporciona voluntariamente cuando:",
+        "dataTypesIntro": "Esta información puede incluir:",
+        "situations": [
+          "Se pone en contacto con nosotros a través de nuestros formularios",
+          "Solicita información sobre nuestros servicios",
+          "Se suscribe a nuestras comunicaciones",
+          "Solicita empleo con nosotros"
+        ],
+        "dataTypes": [
+          "Nombre completo",
+          "Dirección de correo electrónico",
+          "Número de teléfono",
+          "Nombre de la empresa",
+          "Cargo",
+          "Detalles y requisitos del proyecto"
+        ]
+      },
+      "automaticInfo": {
+        "title": "Información Automática",
+        "description": "Cuando visita nuestro sitio web, podemos recopilar automáticamente cierta información sobre su dispositivo, incluyendo información sobre su navegador web, dirección IP, zona horaria y algunas cookies instaladas en su dispositivo."
+      }
+    },
+    "howWeUseInfo": {
+      "title": "Cómo Usamos Su Información",
+      "description": "Usamos la información que recopilamos para:",
+      "purposes": [
+        "Responder a sus consultas y brindar servicio al cliente",
+        "Procesar sus solicitudes de información o cotizaciones",
+        "Comunicarnos con usted sobre nuestros servicios",
+        "Mejorar nuestro sitio web y servicios",
+        "Cumplir con obligaciones legales",
+        "Proteger nuestros derechos e intereses"
+      ]
+    },
+    "informationSharing": {
+      "title": "Compartir Información",
+      "description": "No vendemos, intercambiamos o transferimos su información personal a terceros sin su consentimiento, excepto en las siguientes circunstancias:",
+      "circumstances": [
+        "Para cumplir con requisitos legales",
+        "Para proteger nuestros derechos, propiedad o seguridad",
+        "A terceros de confianza que nos ayudan en la operación de nuestro sitio web o en la conducción de nuestro negocio",
+        "En conexión con una fusión, adquisición o venta de activos"
+      ]
+    },
+    "dataSecurity": {
+      "title": "Seguridad de Datos",
+      "description": "Implementamos medidas de seguridad técnicas y organizacionales apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción. Sin embargo, tenga en cuenta que ningún método de transmisión por internet o almacenamiento electrónico es 100% seguro."
+    },
+    "yourRights": {
+      "title": "Sus Derechos",
+      "description": "Dependiendo de su ubicación, puede tener los siguientes derechos con respecto a su información personal:",
+      "rights": [
+        "El derecho a acceder a su información personal",
+        "El derecho a rectificar información inexacta",
+        "El derecho a borrar su información personal",
+        "El derecho a restringir el procesamiento",
+        "El derecho a la portabilidad de datos",
+        "El derecho a oponerse al procesamiento"
+      ]
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "Nuestro sitio web puede usar cookies para mejorar su experiencia de navegación. Las cookies son pequeños archivos de texto almacenados en su dispositivo que nos ayudan a analizar el tráfico web y recordar sus preferencias. Puede elegir aceptar o rechazar cookies a través de la configuración de su navegador."
+    },
+    "policyUpdates": {
+      "title": "Actualizaciones de la Política",
+      "description": "Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos sobre cualquier cambio publicando la nueva Política de Privacidad en esta página y actualizando la fecha de \"Última actualización\" en la parte superior de esta política."
+    }
+  },
+  "termsOfService": {
+    "pageTitle": "Términos de Servicio",
+    "lastUpdated": "Última actualización: Enero de 2025",
+    "agreementToTerms": {
+      "title": "Acuerdo con los Términos",
+      "paragraph1": "Estos Términos de Servicio (\"Términos\") constituyen un acuerdo legalmente vinculante entre usted y AgPro International (\"nosotros\", \"nuestra\", \"nos\") con respecto al uso de nuestro sitio web y servicios.",
+      "paragraph2": "Al acceder o usar nuestro sitio web, usted acepta estar sujeto a estos Términos. Si no está de acuerdo con cualquier parte de estos términos, no puede acceder a nuestro sitio web o usar nuestros servicios."
+    },
+    "ourServices": {
+      "title": "Nuestros Servicios",
+      "description": "AgPro International proporciona servicios de consultoría, desarrollo y gestión para proyectos de agronegocios, incluyendo pero no limitado a:",
+      "servicesList": [
+        "Consultoría en proyectos porcinos y avícolas",
+        "Planificación y supervisión de construcción",
+        "Suministro e instalación de equipos",
+        "Sistemas de almacenamiento y manejo de granos",
+        "Servicios arquitectónicos y de ingeniería"
+      ]
+    },
+    "useOfWebsite": {
+      "title": "Uso de Nuestro Sitio Web",
+      "permittedUse": {
+        "title": "Uso Permitido",
+        "description": "Puede usar nuestro sitio web solo para fines legales. Usted acepta no usar el sitio web:",
+        "prohibitions": [
+          "De cualquier manera que viole las leyes o reglamentos aplicables",
+          "Para transmitir publicidad o material promocional no autorizado",
+          "Para hacerse pasar por cualquier persona o entidad",
+          "Para recopilar información sobre otros sin consentimiento",
+          "Para interferir con la operación de nuestro sitio web"
+        ]
+      },
+      "intellectualProperty": {
+        "title": "Propiedad Intelectual",
+        "description": "Todo el contenido en nuestro sitio web, incluyendo texto, gráficos, logotipos, imágenes y software, es propiedad de AgPro International y está protegido por derechos de autor y otras leyes de propiedad intelectual."
+      }
+    },
+    "informationAccuracy": {
+      "title": "Precisión de la Información",
+      "description": "Aunque nos esforzamos por proporcionar información precisa y actualizada en nuestro sitio web, no hacemos representaciones o garantías sobre la integridad, precisión o confiabilidad de cualquier información. Cualquier dependencia que coloque en dicha información es bajo su propio riesgo."
+    },
+    "userContent": {
+      "title": "Contenido del Usuario",
+      "description": "Cuando envía información a través de nuestros formularios de contacto u otros medios, nos otorga el derecho de usar, almacenar y procesar esa información para fines comerciales, incluyendo:",
+      "purposes": [
+        "Responder a sus consultas",
+        "Proporcionar servicios solicitados",
+        "Mejorar nuestros servicios",
+        "Cumplir con requisitos legales"
+      ]
+    },
+    "privacy": {
+      "title": "Privacidad",
+      "description": "Su privacidad es importante para nosotros. Por favor revise nuestra Política de Privacidad, que explica cómo recopilamos, usamos y protegemos su información cuando usa nuestros servicios."
+    },
+    "disclaimers": {
+      "title": "Descargos de Responsabilidad",
+      "description": "Nuestro sitio web y servicios se proporcionan \"tal como están\" sin garantías de ningún tipo, ya sean expresas o implícitas. Renunciamos a todas las garantías, incluyendo pero no limitado a:",
+      "warranties": [
+        "Garantías de comerciabilidad",
+        "Idoneidad para un propósito particular",
+        "No infracción",
+        "Precisión o integridad de la información"
+      ]
+    },
+    "limitationOfLiability": {
+      "title": "Limitación de Responsabilidad",
+      "description": "En la máxima medida permitida por la ley, AgPro International no será responsable de ningún daño indirecto, incidental, especial, consecuencial o punitivo, incluyendo pero no limitado a la pérdida de ganancias, datos u oportunidades comerciales, que surjan del uso de nuestro sitio web o servicios."
+    },
+    "governingLaw": {
+      "title": "Ley Aplicable",
+      "description": "Estos Términos se regirán e interpretarán de acuerdo con las leyes del Estado de Illinois, Estados Unidos, sin consideración a los principios de conflicto de leyes."
+    },
+    "changesToTerms": {
+      "title": "Cambios en los Términos",
+      "description": "Nos reservamos el derecho de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, proporcionaremos al menos 30 días de aviso antes de que entren en vigor los nuevos términos. Su uso continuado de nuestro sitio web después de tales modificaciones constituye la aceptación de los Términos actualizados."
+    }
+  },
+  "sitemap": {
+    "pageTitle": "Mapa del Sitio",
+    "pageSubtitle": "Guía completa de navegación de nuestro sitio web",
+    "quickNavigation": "Navegación Rápida",
+    "needHelp": "¿Necesita Ayuda para Encontrar Algo?",
+    "helpDescription": "Si no puede encontrar lo que busca en nuestro mapa del sitio, no dude en contactarnos. Nuestro equipo está aquí para ayudarle a navegar por nuestros servicios y encontrar la solución perfecta para su proyecto.",
+    "contactTeam": "Contacte Nuestro Equipo",
+    "sections": "secciones",
+    "totalPages": "páginas totales",
+    "mainPages": {
+      "title": "Páginas Principales",
+      "homepage": {
+        "label": "Página de Inicio",
+        "description": "Bienvenido a AgPro International - Excelencia en vivienda y equipos para ganado"
+      },
+      "mission": {
+        "label": "Nuestra Misión",
+        "description": "Conozca nuestra consultoría especializada y valores de la empresa"
+      },
+      "projects": {
+        "label": "Proyectos",
+        "description": "Mostrando décadas de excelencia en soluciones de agronegocios a nivel mundial"
+      },
+      "contact": {
+        "label": "Contáctanos",
+        "description": "Póngase en contacto con nuestros expertos para su próximo proyecto"
+      }
+    },
+    "productsServices": {
+      "title": "Productos y Servicios",
+      "allProducts": {
+        "label": "Todos los Productos y Servicios",
+        "description": "Visión general completa de nuestras soluciones de agronegocios"
+      },
+      "buildings": {
+        "label": "Construcciones",
+        "description": "Planificación y supervisión de construcciones porcinas y avícolas"
+      },
+      "equipments": {
+        "label": "Equipos",
+        "description": "Gama completa de equipos y sistemas agrícolas"
+      },
+      "grainStorage": {
+        "label": "Almacenamiento y Manejo de Granos",
+        "description": "Silos de granos, elevadores y soluciones de almacenamiento"
+      },
+      "feedTransportation": {
+        "label": "Transporte de Alimentos",
+        "description": "Sistemas avanzados de distribución de alimentos y transportadores"
+      },
+      "ventilation": {
+        "label": "Equipos de Ventilación",
+        "description": "Control climático y soluciones de ventilación"
+      },
+      "confinement": {
+        "label": "Sistemas de Confinamiento",
+        "description": "Vivienda para animales y soluciones de confinamiento"
+      },
+      "flooring": {
+        "label": "Soluciones de Pisos",
+        "description": "Pisos especializados para aplicaciones ganaderas"
+      },
+      "blueprints": {
+        "label": "Planos y Diseño",
+        "description": "Servicios profesionales de arquitectura e ingeniería"
+      }
+    },
+    "projectCategories": {
+      "title": "Categorías de Proyectos",
+      "allProjects": {
+        "label": "Todos los Proyectos",
+        "description": "Portafolio completo de nuestros proyectos de agronegocios"
+      },
+      "swineProjects": {
+        "label": "Proyectos Porcinos",
+        "description": "Proyectos de instalaciones porcinas a gran escala a nivel mundial"
+      },
+      "poultryProjects": {
+        "label": "Proyectos Avícolas",
+        "description": "Complejos avícolas modernos y soluciones de vivienda"
+      },
+      "grainProjects": {
+        "label": "Proyectos de Almacenamiento de Granos",
+        "description": "Instalaciones de almacenamiento y manejo de granos de alta capacidad"
+      },
+      "integratedSolutions": {
+        "label": "Soluciones Integradas",
+        "description": "Operaciones ganaderas integradas completas"
+      }
+    },
+    "legalInfo": {
+      "title": "Legal e Información",
+      "privacyPolicy": {
+        "label": "Política de Privacidad",
+        "description": "Cómo recopilamos, usamos y protegemos su información"
+      },
+      "termsOfService": {
+        "label": "Términos de Servicio",
+        "description": "Términos y condiciones para usar nuestro sitio web y servicios"
+      },
+      "sitemap": {
+        "label": "Mapa del Sitio",
+        "description": "Guía completa de navegación de nuestro sitio web"
+      }
+    },
+    "utilityPages": {
+      "title": "Páginas Utilitarias",
+      "underConstruction": {
+        "label": "En Construcción",
+        "description": "Plantilla de página para secciones en desarrollo"
+      }
+    }
+  },
+  "underConstruction": {
+    "pageTitle": "En Construcción",
+    "subtitle": "Estamos trabajando duro para traerte algo increíble. ¡Esta página estará disponible pronto!",
+    "workingHard": "Estamos trabajando duro para traerte algo increíble.",
+    "progressComplete": "75% Completado",
+    "goHome": "Ir a Página Principal",
+    "contactUs": "Contáctanos"
+  },
+  "contact": {
+    "hero": {
+      "title": "Contáctanos",
+      "subtitle": "Estamos listos para desarrollar la solución ideal para su proyecto. Hable con nuestros expertos."
+    },
+    "form": {
+      "title": "Solicite una Cotización Personalizada",
+      "fullName": "Nombre Completo",
+      "fullNameRequired": "Nombre Completo *",
+      "company": "Empresa",
+      "email": "Correo Electrónico",
+      "emailRequired": "Correo Electrónico *",
+      "phone": "Teléfono",
+      "timeline": "Urgencia/Cronograma",
+      "location": "País/Región",
+      "locationPlaceholder": "País/Región",
+      "description": "Tipo de Servicio Necesario / Descripción del Proyecto",
+      "descriptionRequired": "Tipo de Servicio Necesario / Descripción del Proyecto *",
+      "descriptionPlaceholder": "Por favor, describa detalladamente los objetivos y requisitos de su proyecto",
+      "source": "¿Cómo se enteró de nosotros?",
+      "submitButton": "Obtenga Su Cotización Gratuita",
+      "successMessage": "¡Gracias por su consulta! Nos pondremos en contacto pronto.",
+      "errorMessage": "Por favor, complete todos los campos obligatorios.",
+      "timelineOptions": {
+        "select": "Seleccione el cronograma deseado",
+        "urgent": "Urgente (dentro de 30 días)",
+        "short": "Corto plazo (1-3 meses)",
+        "medium": "Mediano plazo (3-6 meses)",
+        "long": "Largo plazo (6+ meses)"
+      },
+      "sourceOptions": {
+        "select": "Seleccione una opción",
+        "google": "Búsqueda en Google",
+        "referral": "Referencia de cliente",
+        "tradeShow": "Feria de la industria",
+        "website": "Sitio web de la empresa",
+        "socialMedia": "Redes sociales",
+        "advertisement": "Publicidad",
+        "other": "Otro"
+      }
+    },
+    "employment": {
+      "title": "Empleo",
+      "description": "Si está interesado en trabajar con nosotros, por favor envíenos su currículum completo.",
+      "description2": "La clave del éxito de AGPRO son las personas que trabajan con nosotros y que se esfuerzan diariamente para alcanzar los objetivos de nuestros clientes.",
+      "description3": "Es nuestra política traer a los mejores profesionales de la industria a nuestro equipo.",
+      "description4": "Cada proyecto es una nueva oportunidad de mostrar a nuestros clientes la actitud altamente profesional que buscamos en AGPRO INTERNATIONAL. Valoramos mucho a nuestros asociados.",
+      "qualitiesTitle": "Si tiene las siguientes cualidades, haga clic en el botón de abajo y complete el formulario:",
+      "qualities": [
+        "Capacidad de trabajar en un entorno muy exigente",
+        "Capacidad para superar dificultades",
+        "Eficiencia",
+        "Flexibilidad",
+        "Deseo de superarse"
+      ],
+      "viewJobsButton": "Ver Trabajos Disponibles"
+    }
+  },
+  "projects": {
+    "hero": {
+      "title": "Nuestros Proyectos",
+      "subtitle": "Mostrando décadas de excelencia en soluciones de agronegocios a nivel mundial"
+    },
+    "tabs": {
+      "allProjects": "Todos los Proyectos",
+      "swine": "Porcinos",
+      "poultry": "Aves",
+      "grainStorage": "Almacenamiento de Granos",
+      "integratedSolutions": "Soluciones Integradas"
+    },
+    "featuredProjects": {
+      "title": "Proyectos Destacados",
+      "subtitle": "Desde instalaciones porcinas a gran escala hasta complejos agrícolas integrados, nuestros proyectos representan la cúspide de la innovación en agronegocios."
+    },
+    "projectDetails": {
+      "keyFeatures": "Características Clave:",
+      "location": "Ubicación"
+    },
+    "noProjects": {
+      "title": "No se encontraron proyectos",
+      "message": "No se encontraron proyectos para esta categoría",
+      "tryDifferent": "Intente seleccionar una categoría diferente"
+    },
+    "cta": {
+      "title": "¿Listo para Comenzar su Próximo Proyecto?",
+      "subtitle": "Permita que nuestro equipo experimentado le ayude a desarrollar la solución ideal para sus necesidades de agronegocios.",
+      "buttonText": "Contacte Nuestros Expertos"
+    },
+    "projectsData": {
+      "swineProject": {
+        "title": "Instalación Porcina a Gran Escala",
+        "description": "Instalación completa de producción porcina con capacidad para 5,000 cabezas, con sistemas de ventilación de última generación, alimentación automatizada y gestión avanzada de residuos.",
+        "features": [
+          "Capacidad para 5,000 cabezas",
+          "Sistemas de alimentación automatizados",
+          "Ambiente con clima controlado",
+          "Sistemas de gestión de residuos",
+          "Protocolos de bioseguridad"
+        ]
+      },
+      "poultryProject": {
+        "title": "Complejo Avícola Moderno",
+        "description": "Complejo de producción avícola integrado con múltiples naves, con controles ambientales avanzados y sistemas automatizados de recolección de huevos.",
+        "features": [
+          "10 naves de producción",
+          "Recolección automatizada de huevos",
+          "Sistemas de control ambiental",
+          "Medidas de bioseguridad",
+          "Diseño energéticamente eficiente"
+        ]
+      },
+      "grainProject": {
+        "title": "Instalación de Almacenamiento de Granos",
+        "description": "Instalación de almacenamiento de granos de alta capacidad con sistemas avanzados de aireación y monitoreo para la preservación óptima del grano.",
+        "features": [
+          "Capacidad de 50,000 toneladas",
+          "Sistemas avanzados de aireación",
+          "Monitoreo de temperatura",
+          "Equipos automatizados de manejo",
+          "Sistemas de preservación de calidad"
+        ]
+      },
+      "integratedProject": {
+        "title": "Granja Ganadera Integrada",
+        "description": "Operación ganadera integrada completa que combina producción porcina y avícola con fábrica de alimentos y almacenamiento de granos.",
+        "features": [
+          "Instalación multi-especies",
+          "Fábrica de alimentos en el sitio",
+          "Gestión integrada de residuos",
+          "Sistemas de energía renovable",
+          "Automatización integral"
+        ]
+      }
+    }
+  },
+  "products": {
+    "hero": {
+      "title": "Productos y Servicios",
+      "subtitle": "Durante décadas, AgPro International ha entregado soluciones premium para los proyectos de agronegocios más exigentes del mundo."
+    },
+    "tabs": {
+      "buildings": "Construcciones",
+      "equipments": "Equipos",
+      "grainStorage": "Almacenamiento y Manejo de Granos",
+      "feedTransportation": "Transporte de Alimentos",
+      "ventilation": "Equipos de Ventilación",
+      "confinement": "Confinamiento",
+      "flooring": "Pisos",
+      "blueprints": "Planos"
+    },
+    "services": {
+      "buildings": {
+        "title": "Construcciones",
+        "description": "Consultoría, desarrollo y gestión de proyectos porcinos, planificación y supervisión de construcción, proveedores de equipos para sistemas de alimentación, sistemas de ventilación, enfriamiento evaporativo, controles ambientales, cortinas laterales, calefacción, bebederos, corrales de engorde, corrales de destete, celdas de gestación, celdas de maternidad, rejillas de concreto, pisos plásticos para destetes y celdas de maternidad."
+      },
+      "equipments": {
+        "title": "Equipos",
+        "description": "Gama completa de equipos agrícolas incluyendo sistemas de alimentación, sistemas de ventilación, enfriamiento evaporativo, controles ambientales, cortinas laterales, sistemas de calefacción, sistemas de gestión de agua y equipos especializados para alojamiento de animales."
+      },
+      "grainStorage": {
+        "title": "Almacenamiento y Manejo de Granos",
+        "description": "Consultoría, desarrollo y gestión de proyectos de almacenamiento de granos, proveedores de equipos para Silos de Granos, Tanques de Descarga, elevadores de cangilones, transportadores de cadena, transportadores de correa, transportadores helicoidales, distribuidores, sistemas de control automático e instalaciones eléctricas."
+      },
+      "feedTransportation": {
+        "title": "Sistemas de Transporte de Alimentos",
+        "description": "Sistemas avanzados de transporte y distribución de alimentos incluyendo equipos de alimentación automatizada, sistemas de transportadores, fábricas de alimentos y soluciones completas de alimentación llave en mano para operaciones ganaderas."
+      },
+      "ventilation": {
+        "title": "Equipos de Ventilación",
+        "description": "Sistemas de ventilación de última generación incluyendo ventiladores de extracción, sistemas de entrada, controles ambientales, almohadillas de enfriamiento, sistemas de calefacción y soluciones completas de control climático."
+      },
+      "confinement": {
+        "title": "Confinamiento",
+        "description": "Sistemas de confinamiento especializados incluyendo celdas de gestación, celdas de maternidad, corrales de destete, corrales de engorde y soluciones completas de alojamiento diseñadas para el bienestar animal óptimo y productividad."
+      },
+      "flooring": {
+        "title": "Pisos",
+        "description": "Soluciones integrales de pisos incluyendo rejillas de concreto, pisos plásticos para destetes y celdas de maternidad, sistemas de drenaje y pisos especializados para diferentes aplicaciones ganaderas."
+      },
+      "blueprints": {
+        "title": "Planos",
+        "description": "Servicios profesionales de arquitectura e ingeniería incluyendo diseño de proyectos, planos, planificación de construcción, dibujos técnicos y documentación completa de proyectos y supervisión."
+      }
+    }
+  },
+  "footer": {
+    "productsServices": "Productos y Servicios",
+    "company": "Empresa",
+    "backToTop": "Volver Arriba",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "sitemap": "Mapa del Sitio",
+    "allRightsReserved": "AgPro International Todos los Derechos Reservados.",
+    "description": "Décadas de excelencia en el desarrollo de proyectos a gran escala para el agronegocio internacional.",
+    "location": "Springfield, IL - Estados Unidos",
+    "buildings": "Construcciones",
+    "equipments": "Equipos",
+    "grainStorage": "Almacenamiento de Granos",
+    "feedTransportation": "Transporte de Alimentos",
+    "ourMission": "Nuestra Misión",
+    "projects": "Proyectos",
+    "contacts": "Contactos"
+  }
+}

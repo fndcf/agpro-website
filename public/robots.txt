@@ -1,0 +1,15 @@
+# robots.txt - AgPro International
+# https://www.agprointernational.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.agprointernational.com/sitemap.xml
+
+# Bloquear caminhos de assets desnecessários para indexação
+Disallow: /assets/i18n/
+
+# Permitir crawlers de imagens
+User-agent: Googlebot-Image
+Allow: /assets/images/

@@ -1,14 +1,18 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeService } from '../../models/home.model';
+import { TranslocoModule } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-home-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoModule],
   templateUrl: './home-card.html',
-  styleUrls: ['./home-card.scss']
+  styleUrls: ['./home-card.scss'],
 })
 export class HomeCardComponent {
-  @Input() homeservice!: HomeService;
+  @Input() homeservice!: {
+    id: string;
+    titleKey: string;
+    descriptionKey: string;
+  };
 }
