@@ -24,7 +24,7 @@ export class FooterComponent {
 
   companyLinks = [
     { labelKey: 'footer.ourMission', route: '/mission' },
-    { labelKey: 'footer.projects', route: '/projects' },
+    // { labelKey: 'footer.projects', route: '/projects' },
     { labelKey: 'footer.contacts', route: '/contact' },
   ];
 

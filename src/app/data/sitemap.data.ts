@@ -24,11 +24,11 @@ export const SITE_STRUCTURE: SiteMapSection[] = [
         route: '/mission',
         descriptionKey: 'sitemap.mainPages.mission.description',
       },
-      {
-        labelKey: 'sitemap.mainPages.projects.label',
-        route: '/projects',
-        descriptionKey: 'sitemap.mainPages.projects.description',
-      },
+      // {
+      //   labelKey: 'sitemap.mainPages.projects.label',
+      //   route: '/projects',
+      //   descriptionKey: 'sitemap.mainPages.projects.description',
+      // },
       {
         labelKey: 'sitemap.mainPages.contact.label',
         route: '/contact',
@@ -94,36 +94,36 @@ export const SITE_STRUCTURE: SiteMapSection[] = [
       },
     ],
   },
-  {
-    titleKey: 'sitemap.projectCategories.title',
-    links: [
-      {
-        labelKey: 'sitemap.projectCategories.allProjects.label',
-        route: '/projects',
-        descriptionKey: 'sitemap.projectCategories.allProjects.description',
-      },
-      {
-        labelKey: 'sitemap.projectCategories.swineProjects.label',
-        route: '/projects',
-        descriptionKey: 'sitemap.projectCategories.swineProjects.description',
-      },
-      {
-        labelKey: 'sitemap.projectCategories.poultryProjects.label',
-        route: '/projects',
-        descriptionKey: 'sitemap.projectCategories.poultryProjects.description',
-      },
-      {
-        labelKey: 'sitemap.projectCategories.grainProjects.label',
-        route: '/projects',
-        descriptionKey: 'sitemap.projectCategories.grainProjects.description',
-      },
-      {
-        labelKey: 'sitemap.projectCategories.integratedSolutions.label',
-        route: '/projects',
-        descriptionKey: 'sitemap.projectCategories.integratedSolutions.description',
-      },
-    ],
-  },
+  // {
+  //   titleKey: 'sitemap.projectCategories.title',
+  //   links: [
+  //     {
+  //       labelKey: 'sitemap.projectCategories.allProjects.label',
+  //       route: '/projects',
+  //       descriptionKey: 'sitemap.projectCategories.allProjects.description',
+  //     },
+  //     {
+  //       labelKey: 'sitemap.projectCategories.swineProjects.label',
+  //       route: '/projects',
+  //       descriptionKey: 'sitemap.projectCategories.swineProjects.description',
+  //     },
+  //     {
+  //       labelKey: 'sitemap.projectCategories.poultryProjects.label',
+  //       route: '/projects',
+  //       descriptionKey: 'sitemap.projectCategories.poultryProjects.description',
+  //     },
+  //     {
+  //       labelKey: 'sitemap.projectCategories.grainProjects.label',
+  //       route: '/projects',
+  //       descriptionKey: 'sitemap.projectCategories.grainProjects.description',
+  //     },
+  //     {
+  //       labelKey: 'sitemap.projectCategories.integratedSolutions.label',
+  //       route: '/projects',
+  //       descriptionKey: 'sitemap.projectCategories.integratedSolutions.description',
+  //     },
+  //   ],
+  // },
   {
     titleKey: 'sitemap.legalInfo.title',
     links: [

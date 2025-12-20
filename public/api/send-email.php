@@ -1,9 +1,9 @@
 <?php
 /**
- * AgPro International - Contact Form Email Handler
+ * AgPro International - Contact Form Email Handler (SMTP Version)
  *
- * This script handles contact form submissions and sends emails.
- * It should be deployed to the HostGator server at /api/send-email.php
+ * This script handles contact form submissions and sends emails via SMTP.
+ * More reliable than PHP mail() function on shared hosting.
  */
 
 // CORS headers for Angular app
@@ -32,11 +32,22 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // CONFIGURATION - Update these values
 // ============================================
 $config = [
-    // Email address that will receive the contact form submissions
-    'to_email' => 'contact@agprointernational.com',
+    // SMTP Settings for HostGator
+    'smtp_host' => 'mail.agprointernational.com',  // or 'localhost' on HostGator
+    'smtp_port' => 465,                             // 465 for SSL, 587 for TLS
+    'smtp_secure' => 'ssl',                         // 'ssl' or 'tls'
+    'smtp_auth' => true,
 
-    // Email address shown as the sender (use your domain email)
+    // SMTP Authentication - USE YOUR CPANEL EMAIL CREDENTIALS
+    'smtp_username' => 'noreply@agprointernational.com',
+    'smtp_password' => 'SUA_SENHA_AQUI',  // <-- SUBSTITUA PELA SENHA DO EMAIL
+
+    // Email address that will receive the contact form submissions
+    'to_email' => 'fernando.carvalhof@hotmail.com',  // <-- SEU EMAIL PARA RECEBER
+
+    // Email address shown as the sender
     'from_email' => 'noreply@agprointernational.com',
+    'from_name' => 'AgPro International',
 
     // Company name for email subject
     'company_name' => 'AgPro International',
@@ -50,6 +61,185 @@ $config = [
     // Log file path (optional, set to null to disable)
     'log_file' => __DIR__ . '/contact_log.txt'
 ];
+
+// ============================================
+// SIMPLE SMTP CLASS (No external dependencies)
+// ============================================
+class SimpleSMTP {
+    private $socket;
+    private $host;
+    private $port;
+    private $secure;
+    private $username;
+    private $password;
+    private $timeout = 30;
+    private $debug = false;
+    private $lastError = '';
+
+    public function __construct($host, $port, $secure, $username, $password) {
+        $this->host = $host;
+        $this->port = $port;
+        $this->secure = $secure;
+        $this->username = $username;
+        $this->password = $password;
+    }
+
+    public function getLastError() {
+        return $this->lastError;
+    }
+
+    private function connect() {
+        $context = stream_context_create([
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            ]
+        ]);
+
+        $protocol = ($this->secure === 'ssl') ? 'ssl://' : '';
+        $this->socket = @stream_socket_client(
+            $protocol . $this->host . ':' . $this->port,
+            $errno,
+            $errstr,
+            $this->timeout,
+            STREAM_CLIENT_CONNECT,
+            $context
+        );
+
+        if (!$this->socket) {
+            $this->lastError = "Connection failed: $errstr ($errno)";
+            return false;
+        }
+
+        stream_set_timeout($this->socket, $this->timeout);
+        $response = $this->getResponse();
+
+        if (substr($response, 0, 3) !== '220') {
+            $this->lastError = "Invalid greeting: $response";
+            return false;
+        }
+
+        return true;
+    }
+
+    private function sendCommand($command, $expectedCode = null) {
+        fwrite($this->socket, $command . "\r\n");
+        $response = $this->getResponse();
+
+        if ($expectedCode && substr($response, 0, 3) !== $expectedCode) {
+            $this->lastError = "Command failed: $command -> $response";
+            return false;
+        }
+
+        return $response;
+    }
+
+    private function getResponse() {
+        $response = '';
+        while ($line = fgets($this->socket, 515)) {
+            $response .= $line;
+            if (substr($line, 3, 1) === ' ') break;
+        }
+        return trim($response);
+    }
+
+    public function send($from, $fromName, $to, $subject, $htmlBody, $replyTo = null) {
+        // Connect
+        if (!$this->connect()) {
+            return false;
+        }
+
+        // EHLO
+        $hostname = gethostname() ?: 'localhost';
+        if (!$this->sendCommand("EHLO $hostname", '250')) {
+            $this->close();
+            return false;
+        }
+
+        // STARTTLS if using TLS
+        if ($this->secure === 'tls') {
+            if (!$this->sendCommand("STARTTLS", '220')) {
+                $this->close();
+                return false;
+            }
+            stream_socket_enable_crypto($this->socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+            if (!$this->sendCommand("EHLO $hostname", '250')) {
+                $this->close();
+                return false;
+            }
+        }
+
+        // AUTH LOGIN
+        if (!$this->sendCommand("AUTH LOGIN", '334')) {
+            $this->close();
+            return false;
+        }
+
+        if (!$this->sendCommand(base64_encode($this->username), '334')) {
+            $this->close();
+            return false;
+        }
+
+        if (!$this->sendCommand(base64_encode($this->password), '235')) {
+            $this->close();
+            return false;
+        }
+
+        // MAIL FROM
+        if (!$this->sendCommand("MAIL FROM:<$from>", '250')) {
+            $this->close();
+            return false;
+        }
+
+        // RCPT TO
+        if (!$this->sendCommand("RCPT TO:<$to>", '250')) {
+            $this->close();
+            return false;
+        }
+
+        // DATA
+        if (!$this->sendCommand("DATA", '354')) {
+            $this->close();
+            return false;
+        }
+
+        // Build message
+        $boundary = md5(time());
+        $headers = [
+            "From: $fromName <$from>",
+            "To: $to",
+            "Subject: $subject",
+            "MIME-Version: 1.0",
+            "Content-Type: text/html; charset=UTF-8",
+            "X-Mailer: AgPro-Contact-Form/1.0"
+        ];
+
+        if ($replyTo) {
+            $headers[] = "Reply-To: $replyTo";
+        }
+
+        $message = implode("\r\n", $headers) . "\r\n\r\n" . $htmlBody . "\r\n.";
+
+        if (!$this->sendCommand($message, '250')) {
+            $this->close();
+            return false;
+        }
+
+        // QUIT
+        $this->sendCommand("QUIT");
+        $this->close();
+
+        return true;
+    }
+
+    private function close() {
+        if ($this->socket) {
+            fclose($this->socket);
+            $this->socket = null;
+        }
+    }
+}
 
 // ============================================
 // RATE LIMITING (Simple file-based)
@@ -266,52 +456,34 @@ $emailBody .= "
 </html>
 ";
 
-// Plain text version
-$plainTextBody = "
-{$config['company_name']} - New Contact Form Submission
-" . str_repeat('=', 50) . "
-
-Full Name: {$formData['fullName']}
-Email: {$formData['email']}
-" . (!empty($formData['company']) ? "Company: {$formData['company']}\n" : "") . "
-" . (!empty($formData['phone']) ? "Phone: {$formData['phone']}\n" : "") . "
-" . (!empty($formData['location']) ? "Location: {$formData['location']}\n" : "") . "
-" . (!empty($formData['timeline']) ? "Timeline: " . ($timelineLabels[$formData['timeline']] ?? $formData['timeline']) . "\n" : "") . "
-" . (!empty($formData['source']) ? "Source: " . ($sourceLabels[$formData['source']] ?? $formData['source']) . "\n" : "") . "
-
-Project Description:
-" . str_repeat('-', 30) . "
-{$formData['description']}
-
-" . str_repeat('=', 50) . "
-Submitted on: " . date('F j, Y \a\t g:i A T') . "
-IP Address: {$_SERVER['REMOTE_ADDR']}
-";
-
 // ============================================
-// SEND EMAIL
+// SEND EMAIL VIA SMTP
 // ============================================
-$headers = [
-    'MIME-Version: 1.0',
-    'Content-Type: text/html; charset=UTF-8',
-    "From: {$config['company_name']} <{$config['from_email']}>",
-    "Reply-To: {$formData['fullName']} <{$formData['email']}>",
-    'X-Mailer: PHP/' . phpversion()
-];
-
 $success = false;
 $errorMessage = '';
 
 if ($config['send_email']) {
-    $success = mail(
+    $smtp = new SimpleSMTP(
+        $config['smtp_host'],
+        $config['smtp_port'],
+        $config['smtp_secure'],
+        $config['smtp_username'],
+        $config['smtp_password']
+    );
+
+    $replyTo = "{$formData['fullName']} <{$formData['email']}>";
+
+    $success = $smtp->send(
+        $config['from_email'],
+        $config['from_name'],
         $config['to_email'],
         $subject,
         $emailBody,
-        implode("\r\n", $headers)
+        $replyTo
     );
 
     if (!$success) {
-        $errorMessage = 'Failed to send email. Please try again later.';
+        $errorMessage = 'Failed to send email: ' . $smtp->getLastError();
     }
 } else {
     // Testing mode - simulate success
@@ -326,7 +498,8 @@ if ($config['log_file']) {
                 $_SERVER['REMOTE_ADDR'] . " | " .
                 ($success ? 'SUCCESS' : 'FAILED') . " | " .
                 $formData['email'] . " | " .
-                $formData['fullName'] . "\n";
+                $formData['fullName'] .
+                ($success ? '' : " | Error: $errorMessage") . "\n";
 
     @file_put_contents($config['log_file'], $logEntry, FILE_APPEND | LOCK_EX);
 }
