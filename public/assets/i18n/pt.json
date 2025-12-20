@@ -1,4 +1,15 @@
 {
+  "pageTitle": {
+    "home": "Início",
+    "mission": "Nossa Missão",
+    "products": "Produtos e Serviços",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "sitemap": "Mapa do Site",
+    "underConstruction": "Em Construção"
+  },
   "seo": {
     "home": {
       "title": "AgPro International - Excelência em Habitação e Equipamentos para Pecuária",

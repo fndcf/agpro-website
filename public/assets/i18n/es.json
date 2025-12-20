@@ -1,4 +1,15 @@
 {
+  "pageTitle": {
+    "home": "Inicio",
+    "mission": "Nuestra Misión",
+    "products": "Productos y Servicios",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "sitemap": "Mapa del Sitio",
+    "underConstruction": "En Construcción"
+  },
   "seo": {
     "home": {
       "title": "AgPro International - Excelencia en Vivienda y Equipos para Ganado",

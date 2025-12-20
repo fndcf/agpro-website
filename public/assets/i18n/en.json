@@ -1,4 +1,15 @@
 {
+  "pageTitle": {
+    "home": "Home",
+    "mission": "Our Mission",
+    "products": "Products & Services",
+    "projects": "Projects",
+    "contact": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "sitemap": "Sitemap",
+    "underConstruction": "Under Construction"
+  },
   "seo": {
     "home": {
       "title": "AgPro International - Excellence in Livestock Housing & Equipment",
