@@ -2,7 +2,7 @@
   <ng-container *transloco="let t">
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div *ngFor="let stat of stats"
+        <div *ngFor="let stat of stats; trackBy: trackByStat"
              class="stat text-center p-8 border border-gray-200 transition-all duration-300
                     hover:-translate-y-2 hover:shadow-lg group">
 

@@ -1,32 +1,17 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { HeroComponent } from '../../components/hero/hero';
-
-interface Project {
-  id: string;
-  titleKey: string;
-  location: string;
-  year: string;
-  category: string;
-  descriptionKey: string;
-  image: string;
-  imageAlt: string;
-  featuresKey: string;
-}
-
-interface ProjectCategory {
-  id: string;
-  labelKey: string;
-}
+import { Project, ProjectCategory, PROJECT_CATEGORIES, FEATURED_PROJECTS } from '../../data/projects.data';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [CommonModule, TranslocoModule, HeroComponent],
   templateUrl: './projects.html',
-  styleUrls: ['./projects.scss']
+  styleUrls: ['./projects.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Projects {
   private router = inject(Router);
@@ -36,69 +21,15 @@ export class Projects {
 
   selectedCategory = signal<string>('all');
 
-  projectCategories: ProjectCategory[] = [
-    { id: 'all', labelKey: 'projects.tabs.allProjects' },
-    { id: 'swine', labelKey: 'projects.tabs.swine' },
-    { id: 'poultry', labelKey: 'projects.tabs.poultry' },
-    { id: 'grain', labelKey: 'projects.tabs.grainStorage' },
-    { id: 'integrated', labelKey: 'projects.tabs.integratedSolutions' }
-  ];
-
-  featuredProjects: Project[] = [
-    {
-      id: 'swine-facility-brazil',
-      titleKey: 'projects.projectsData.swineProject.title',
-      location: 'São Paulo, Brazil',
-      year: '2023',
-      category: 'Swine',
-      descriptionKey: 'projects.projectsData.swineProject.description',
-      image: 'assets/images/projects/swine-facility-brazil.jpg',
-      imageAlt: 'Swine Facility in São Paulo, Brazil',
-      featuresKey: 'projects.projectsData.swineProject.features'
-    },
-    {
-      id: 'poultry-complex-mexico',
-      titleKey: 'projects.projectsData.poultryProject.title',
-      location: 'Jalisco, Mexico',
-      year: '2023',
-      category: 'Poultry',
-      descriptionKey: 'projects.projectsData.poultryProject.description',
-      image: 'assets/images/projects/poultry-complex-mexico.jpg',
-      imageAlt: 'Poultry Complex in Jalisco, Mexico',
-      featuresKey: 'projects.projectsData.poultryProject.features'
-    },
-    {
-      id: 'grain-storage-argentina',
-      titleKey: 'projects.projectsData.grainProject.title',
-      location: 'Buenos Aires, Argentina',
-      year: '2022',
-      category: 'Grain Storage',
-      descriptionKey: 'projects.projectsData.grainProject.description',
-      image: 'assets/images/projects/grain-storage-argentina.jpg',
-      imageAlt: 'Grain Storage in Buenos Aires, Argentina',
-      featuresKey: 'projects.projectsData.grainProject.features'
-    },
-    {
-      id: 'integrated-farm-usa',
-      titleKey: 'projects.projectsData.integratedProject.title',
-      location: 'Illinois, USA',
-      year: '2022',
-      category: 'Integrated',
-      descriptionKey: 'projects.projectsData.integratedProject.description',
-      image: 'assets/images/projects/integrated-farm-usa.jpg',
-      imageAlt: 'Integrated Farm in Illinois, USA',
-      featuresKey: 'projects.projectsData.integratedProject.features'
-    }
-  ];
+  projectCategories: ProjectCategory[] = PROJECT_CATEGORIES;
+  featuredProjects: Project[] = FEATURED_PROJECTS;
 
   filteredProjects = computed(() => {
     const category = this.selectedCategory();
     if (category === 'all') {
       return this.featuredProjects;
     }
-    return this.featuredProjects.filter(project =>
-      project.category.toLowerCase() === category
-    );
+    return this.featuredProjects.filter((project) => project.category.toLowerCase() === category);
   });
 
   getProjectFeatures(featuresKey: string): string[] {
@@ -157,7 +88,7 @@ export class Projects {
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
 
@@ -167,5 +98,17 @@ export class Projects {
     setTimeout(() => {
       element.classList.remove('highlight-project');
     }, 2000);
+  }
+
+  trackByCategory(index: number, category: ProjectCategory): string {
+    return category.id;
+  }
+
+  trackByProject(index: number, project: Project): string {
+    return project.id;
+  }
+
+  trackByFeature(index: number, feature: string): string {
+    return feature;
   }
 }

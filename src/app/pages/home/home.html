@@ -32,7 +32,7 @@
         <!-- Services Grid -->
         <div class="services-grid space-y-16 mt-16">
           <app-home-card
-            *ngFor="let homeservice of services(); let i = index"
+            *ngFor="let homeservice of services(); let i = index; trackBy: trackByService"
             [homeservice]="homeservice"
             [class]="i % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'">
           </app-home-card>

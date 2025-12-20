@@ -1,4 +1,42 @@
 {
+  "seo": {
+    "home": {
+      "title": "AgPro International - Excellence in Livestock Housing & Equipment",
+      "description": "30+ years delivering premium agribusiness solutions worldwide. Swine, poultry, and grain storage specialists."
+    },
+    "mission": {
+      "title": "Our Mission - AgPro International",
+      "description": "Specialized consulting utilizing decades of experience to provide excellent products, service, and value to agribusiness projects."
+    },
+    "products": {
+      "title": "Products & Services - AgPro International",
+      "description": "Buildings, equipment, grain storage, ventilation, confinement systems, flooring, and blueprints for livestock operations."
+    },
+    "projects": {
+      "title": "Projects - AgPro International",
+      "description": "Showcasing decades of excellence in swine, poultry, and grain storage projects worldwide."
+    },
+    "contact": {
+      "title": "Contact Us - AgPro International",
+      "description": "Get in touch with our experts for your next agribusiness project. Request a custom quote today."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy - AgPro International",
+      "description": "Learn how AgPro International collects, uses, and protects your personal information."
+    },
+    "termsOfService": {
+      "title": "Terms of Service - AgPro International",
+      "description": "Terms and conditions for using AgPro International website and services."
+    },
+    "sitemap": {
+      "title": "Sitemap - AgPro International",
+      "description": "Complete navigation guide to AgPro International website."
+    },
+    "underConstruction": {
+      "title": "Under Construction - AgPro International",
+      "description": "This page is currently under development. Please check back soon."
+    }
+  },
   "header": {
     "home": "Home",
     "mission": "Our Mission",
@@ -350,8 +388,10 @@
       "descriptionPlaceholder": "Please describe in detail your project goals and requirements",
       "source": "How did you hear about us?",
       "submitButton": "Get Your Free Quote",
+      "submitting": "Sending...",
       "successMessage": "Thank you for your inquiry! We will contact you soon.",
       "errorMessage": "Please fill in all required fields.",
+      "sendErrorMessage": "Failed to send your message. Please try again later.",
       "timelineOptions": {
         "select": "Select desired timeline",
         "urgent": "Urgent (within 30 days)",
@@ -368,6 +408,11 @@
         "socialMedia": "Social media",
         "advertisement": "Advertisement",
         "other": "Other"
+      },
+      "validation": {
+        "required": "This field is required",
+        "invalidEmail": "Please enter a valid email address",
+        "minLength": "Minimum {{min}} characters required"
       }
     },
     "employment": {

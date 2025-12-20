@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 import { HeroComponent } from '../../components/hero/hero';
@@ -9,5 +9,6 @@ import { HeroComponent } from '../../components/hero/hero';
   imports: [CommonModule, TranslocoModule, HeroComponent],
   templateUrl: './mission.html',
   styleUrls: ['./mission.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Mission {}

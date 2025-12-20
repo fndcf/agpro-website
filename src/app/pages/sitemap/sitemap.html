@@ -33,7 +33,7 @@
           {{ t('sitemap.quickNavigation') }}
         </h2>
         <div class="nav-buttons flex flex-wrap justify-center gap-3">
-          <button *ngFor="let section of siteStructure"
+          <button *ngFor="let section of siteStructure; trackBy: trackBySection"
                   (click)="scrollToSection(section.titleKey)"
                   class="nav-btn bg-gray-100 hover:bg-primary hover:text-white text-gray-700 px-4 py-2 rounded-md
                          text-sm font-medium transition-all duration-300 flex items-center gap-2">
@@ -45,7 +45,7 @@
       <!-- Site Structure -->
       <div class="site-structure space-y-10">
 
-        <div *ngFor="let section of siteStructure; let i = index"
+        <div *ngFor="let section of siteStructure; let i = index; trackBy: trackBySection"
              class="sitemap-section"
              [id]="getSectionId(section.titleKey)">
 
@@ -61,7 +61,7 @@
 
           <!-- Section Links -->
           <div class="section-links grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div *ngFor="let link of section.links; let j = index"
+            <div *ngFor="let link of section.links; let j = index; trackBy: trackByLink"
                  class="sitemap-link group">
 
               <a [routerLink]="link.route"

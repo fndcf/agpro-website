@@ -5,7 +5,7 @@
       <!-- Social Media Links -->
       <div class="social-links flex gap-3 items-center">
         <a
-          *ngFor="let social of socialLinks"
+          *ngFor="let social of socialLinks; trackBy: trackBySocialLink"
           target="_blank"
           [href]="social.url"
           [title]="social.title"
@@ -20,7 +20,7 @@
       <!-- Language Selector -->
       <div class="language-selector flex gap-2 items-center">
         <button
-          *ngFor="let language of languages"
+          *ngFor="let language of languages; trackBy: trackByLanguage"
           [title]="language.title"
           (click)="changeLanguage(language.code)"
           class="lang-flag cursor-pointer transition-all duration-300 hover:opacity-80
@@ -61,7 +61,7 @@
       <!-- Desktop Navigation (apenas xl+) -->
       <nav class="hidden xl:flex gap-8">
         <a
-          *ngFor="let item of navItems"
+          *ngFor="let item of navItems; trackBy: trackByNavItem"
           [routerLink]="item.route"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: item.exact }"
@@ -87,7 +87,7 @@
       [class.hidden]="!isMenuOpen">
       <div class="flex flex-col space-y-2">
         <a
-          *ngFor="let item of navItems"
+          *ngFor="let item of navItems; trackBy: trackByNavItem"
           [routerLink]="item.route"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: item.exact }"

@@ -1,4 +1,4 @@
-import { Component, OnInit, computed } from '@angular/core';
+import { Component, OnInit, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
@@ -10,6 +10,7 @@ import { I18nService, Language } from '../../services/i18n.service';
   imports: [CommonModule, RouterLink, RouterLinkActive, TranslocoModule],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
   isMenuOpen = false;
@@ -82,5 +83,18 @@ export class HeaderComponent implements OnInit {
       left: 0,
       behavior: 'smooth',
     });
+  }
+
+  // TrackBy functions para otimização de ngFor
+  trackBySocialLink(index: number, social: { url: string }): string {
+    return social.url;
+  }
+
+  trackByLanguage(index: number, lang: { code: Language }): string {
+    return lang.code;
+  }
+
+  trackByNavItem(index: number, item: { route: string }): string {
+    return item.route;
   }
 }

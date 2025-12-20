@@ -9,7 +9,7 @@
   <div class="tabs-container sticky top-0 z-40 bg-white border-b border-gray-200 py-4 px-6 shadow-md">
     <nav class="tabs-nav max-w-6xl mx-auto">
       <div class="flex flex-wrap justify-center gap-2">
-        <a *ngFor="let tab of tabs"
+        <a *ngFor="let tab of tabs; trackBy: trackByTab"
            [href]="tab.href"
            (click)="setActiveTab(tab.id); $event.preventDefault()"
            class="tab-item px-4 py-3 text-gray-600 font-medium text-sm transition-all duration-300
@@ -30,7 +30,7 @@
       <!-- Two Column Layout for larger screens -->
       <div class="services-container grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
 
-        <div *ngFor="let service of productServices; let i = index"
+        <div *ngFor="let service of productServices; let i = index; trackBy: trackByService"
              class="services-section flex flex-col"
              [id]="service.id">
 

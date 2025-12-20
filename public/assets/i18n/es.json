@@ -1,4 +1,42 @@
 {
+  "seo": {
+    "home": {
+      "title": "AgPro International - Excelencia en Vivienda y Equipos para Ganado",
+      "description": "30+ años entregando soluciones premium de agronegocios mundialmente. Especialistas en porcicultura, avicultura y almacenamiento de granos."
+    },
+    "mission": {
+      "title": "Nuestra Misión - AgPro International",
+      "description": "Consultoría especializada utilizando décadas de experiencia para proporcionar excelentes productos, servicio y valor para proyectos de agronegocios."
+    },
+    "products": {
+      "title": "Productos y Servicios - AgPro International",
+      "description": "Construcciones, equipos, almacenamiento de granos, ventilación, sistemas de confinamiento, pisos y proyectos para operaciones ganaderas."
+    },
+    "projects": {
+      "title": "Proyectos - AgPro International",
+      "description": "Presentando décadas de excelencia en proyectos de porcicultura, avicultura y almacenamiento de granos mundialmente."
+    },
+    "contact": {
+      "title": "Contacto - AgPro International",
+      "description": "Contacte a nuestros expertos para su próximo proyecto de agronegocios. Solicite una cotización personalizada hoy."
+    },
+    "privacyPolicy": {
+      "title": "Política de Privacidad - AgPro International",
+      "description": "Conozca cómo AgPro International recopila, usa y protege su información personal."
+    },
+    "termsOfService": {
+      "title": "Términos de Servicio - AgPro International",
+      "description": "Términos y condiciones para el uso del sitio web y servicios de AgPro International."
+    },
+    "sitemap": {
+      "title": "Mapa del Sitio - AgPro International",
+      "description": "Guía completa de navegación del sitio web de AgPro International."
+    },
+    "underConstruction": {
+      "title": "En Construcción - AgPro International",
+      "description": "Esta página está actualmente en desarrollo. Por favor, vuelva pronto."
+    }
+  },
   "header": {
     "home": "Inicio",
     "mission": "Nuestra Misión",
@@ -350,8 +388,10 @@
       "descriptionPlaceholder": "Por favor, describa detalladamente los objetivos y requisitos de su proyecto",
       "source": "¿Cómo se enteró de nosotros?",
       "submitButton": "Obtenga Su Cotización Gratuita",
+      "submitting": "Enviando...",
       "successMessage": "¡Gracias por su consulta! Nos pondremos en contacto pronto.",
       "errorMessage": "Por favor, complete todos los campos obligatorios.",
+      "sendErrorMessage": "Error al enviar su mensaje. Por favor, inténtelo de nuevo más tarde.",
       "timelineOptions": {
         "select": "Seleccione el cronograma deseado",
         "urgent": "Urgente (dentro de 30 días)",
@@ -368,6 +408,11 @@
         "socialMedia": "Redes sociales",
         "advertisement": "Publicidad",
         "other": "Otro"
+      },
+      "validation": {
+        "required": "Este campo es obligatorio",
+        "invalidEmail": "Por favor, ingrese un correo electrónico válido",
+        "minLength": "Mínimo de {{min}} caracteres"
       }
     },
     "employment": {

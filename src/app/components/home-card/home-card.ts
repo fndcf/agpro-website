@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslocoModule } from '@jsverse/transloco';
 
@@ -8,11 +8,12 @@ import { TranslocoModule } from '@jsverse/transloco';
   imports: [CommonModule, TranslocoModule],
   templateUrl: './home-card.html',
   styleUrls: ['./home-card.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeCardComponent {
-  @Input() homeservice!: {
-    id: string;
-    titleKey: string;
-    descriptionKey: string;
+  @Input({ required: true }) homeservice!: {
+    readonly id: string;
+    readonly titleKey: string;
+    readonly descriptionKey: string;
   };
 }

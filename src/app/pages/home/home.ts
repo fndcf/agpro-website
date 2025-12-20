@@ -1,4 +1,4 @@
-import { Component, computed } from '@angular/core';
+import { Component, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
@@ -19,6 +19,7 @@ import { DataService } from '../../services/data.service';
   ],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Home {
   services = computed(() => this.dataService.homeServices());
@@ -30,5 +31,10 @@ export class Home {
 
   navigateToProducts() {
     this.router.navigate(['/products']);
+  }
+
+  // TrackBy function para otimização de ngFor
+  trackByService(index: number, service: { id: string }): string {
+    return service.id;
   }
 }

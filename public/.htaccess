@@ -8,13 +8,13 @@
   RewriteEngine On
   RewriteBase /
 
-  # Redirecionar HTTP para HTTPS (descomente em produção se tiver SSL)
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Redirecionar HTTP para HTTPS (produção com SSL)
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # Redirecionar www para non-www (ou vice-versa - escolha um)
-  # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-  # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+  # Redirecionar www para non-www (canonical URL)
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
   # Se o arquivo ou diretório existe, sirva-o diretamente
   RewriteCond %{REQUEST_FILENAME} !-f

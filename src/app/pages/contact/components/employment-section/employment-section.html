@@ -1,0 +1,36 @@
+<ng-container *transloco="let t">
+  <div class="contact-info space-y-8">
+    <div class="mt-12 lg:mt-0">
+      <h3 class="text-2xl md:text-3xl text-gold font-light mb-8">
+        {{ t('contact.employment.title') }}
+      </h3>
+
+      <div class="space-y-4 text-gray-600 font-sans leading-relaxed">
+        <p>{{ t('contact.employment.description') }}</p>
+        <p>{{ t('contact.employment.description2') }}</p>
+        <p>{{ t('contact.employment.description3') }}</p>
+        <p>{{ t('contact.employment.description4') }}</p>
+        <p>{{ t('contact.employment.qualitiesTitle') }}</p>
+      </div>
+
+      <!-- Employment Qualities List -->
+      <ul class="service-list mt-6 space-y-3">
+        @for (quality of qualities(); track trackByQuality($index, quality)) {
+          <li class="flex items-start gap-3 text-gray-600 font-sans">
+            <span class="text-gold font-bold text-sm mt-1">✓</span>
+            <span>{{ quality }}</span>
+          </li>
+        }
+      </ul>
+
+      <!-- Employment CTA -->
+      <div class="mt-8">
+        <button
+          disabled
+          class="bg-gray-300 text-gray-500 px-6 py-3 rounded-md font-medium cursor-not-allowed font-sans relative">
+          {{ t('contact.employment.viewJobsButton') }}
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>

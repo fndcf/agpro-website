@@ -1,4 +1,42 @@
 {
+  "seo": {
+    "home": {
+      "title": "AgPro International - Excelência em Habitação e Equipamentos para Pecuária",
+      "description": "30+ anos entregando soluções premium de agronegócio mundialmente. Especialistas em suinocultura, avicultura e armazenamento de grãos."
+    },
+    "mission": {
+      "title": "Nossa Missão - AgPro International",
+      "description": "Consultoria especializada utilizando décadas de experiência para fornecer excelentes produtos, serviço e valor para projetos de agronegócio."
+    },
+    "products": {
+      "title": "Produtos e Serviços - AgPro International",
+      "description": "Construções, equipamentos, armazenamento de grãos, ventilação, sistemas de confinamento, pisos e projetos para operações pecuárias."
+    },
+    "projects": {
+      "title": "Projetos - AgPro International",
+      "description": "Apresentando décadas de excelência em projetos de suinocultura, avicultura e armazenamento de grãos mundialmente."
+    },
+    "contact": {
+      "title": "Contato - AgPro International",
+      "description": "Entre em contato com nossos especialistas para seu próximo projeto de agronegócio. Solicite um orçamento personalizado hoje."
+    },
+    "privacyPolicy": {
+      "title": "Política de Privacidade - AgPro International",
+      "description": "Saiba como a AgPro International coleta, usa e protege suas informações pessoais."
+    },
+    "termsOfService": {
+      "title": "Termos de Serviço - AgPro International",
+      "description": "Termos e condições para uso do site e serviços da AgPro International."
+    },
+    "sitemap": {
+      "title": "Mapa do Site - AgPro International",
+      "description": "Guia completo de navegação do site da AgPro International."
+    },
+    "underConstruction": {
+      "title": "Em Construção - AgPro International",
+      "description": "Esta página está atualmente em desenvolvimento. Por favor, volte em breve."
+    }
+  },
   "header": {
     "home": "Início",
     "mission": "Nossa Missão",
@@ -350,8 +388,10 @@
       "descriptionPlaceholder": "Por favor, descreva detalhadamente os objetivos e requisitos do seu projeto",
       "source": "Como você soube sobre nós?",
       "submitButton": "Obter Seu Orçamento Gratuito",
+      "submitting": "Enviando...",
       "successMessage": "Obrigado por sua consulta! Entraremos em contato em breve.",
       "errorMessage": "Por favor, preencha todos os campos obrigatórios.",
+      "sendErrorMessage": "Falha ao enviar sua mensagem. Por favor, tente novamente mais tarde.",
       "timelineOptions": {
         "select": "Selecione o cronograma desejado",
         "urgent": "Urgente (dentro de 30 dias)",
@@ -368,6 +408,11 @@
         "socialMedia": "Redes sociais",
         "advertisement": "Publicidade",
         "other": "Outro"
+      },
+      "validation": {
+        "required": "Este campo é obrigatório",
+        "invalidEmail": "Por favor, insira um email válido",
+        "minLength": "Mínimo de {{min}} caracteres"
       }
     },
     "employment": {

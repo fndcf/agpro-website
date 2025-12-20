@@ -29,7 +29,7 @@
           <!-- Social Media Links -->
           <div class="social-links flex gap-3 items-center">
             <a
-              *ngFor="let social of socialLinks"
+              *ngFor="let social of socialLinks; trackBy: trackBySocialLink"
               target="_blank"
               [href]="social.url"
               [title]="social.title"
@@ -62,7 +62,7 @@
             {{ t('footer.productsServices') }}
           </h4>
           <div class="space-y-2">
-            <a *ngFor="let link of productLinks"
+            <a *ngFor="let link of productLinks; trackBy: trackByProductLink"
                [routerLink]="link.route"
                [fragment]="link.fragment"
                class="block text-green-100 hover:text-gold transition-colors duration-300
@@ -78,7 +78,7 @@
             {{ t('footer.company') }}
           </h4>
           <div class="space-y-2">
-            <a *ngFor="let link of companyLinks"
+            <a *ngFor="let link of companyLinks; trackBy: trackByCompanyLink"
                [routerLink]="link.route"
                class="block text-green-100 hover:text-gold transition-colors duration-300
                       font-sans text-lg">

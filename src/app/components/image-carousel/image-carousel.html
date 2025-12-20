@@ -8,7 +8,7 @@
     <!-- Images -->
     <div class="carousel-track flex transition-transform duration-500 ease-in-out h-full"
          [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
-      <div *ngFor="let image of images; let i = index" 
+      <div *ngFor="let image of images; let i = index; trackBy: trackByImage"
            class="carousel-slide flex-shrink-0 w-full h-full relative">
         <img 
           [src]="image.src"
@@ -48,7 +48,7 @@
   <!-- Dots Indicator -->
   <div *ngIf="showDots && images.length > 1" 
        class="carousel-dots absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
-    <button *ngFor="let image of images; let i = index"
+    <button *ngFor="let image of images; let i = index; trackBy: trackByImage"
             (click)="goToImage(i)"
             class="carousel-dot w-2 h-2 rounded-full transition-all duration-300"
             [class.bg-white]="i === currentIndex"

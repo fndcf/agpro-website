@@ -1,5 +1,17 @@
-import { Component, Input, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy,
+  DestroyRef,
+  inject,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Subject, interval, merge } from 'rxjs';
+import { filter, switchMap, startWith } from 'rxjs/operators';
 
 export interface CarouselImage {
   src: string;
@@ -11,49 +23,45 @@ export interface CarouselImage {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './image-carousel.html',
-  styleUrls: ['./image-carousel.scss']
+  styleUrls: ['./image-carousel.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ImageCarouselComponent implements OnInit, OnDestroy {
+export class ImageCarouselComponent implements OnInit {
   @Input() images: CarouselImage[] = [];
-  @Input() autoPlayInterval: number = 2000; // 2 segundos
+  @Input() autoPlayInterval: number = 2000;
   @Input() showDots: boolean = true;
   @Input() showArrows: boolean = false;
   @Input() pauseOnHover: boolean = true;
   @Input() fallbackImage: string = 'assets/images/colageagpro.gif';
 
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly cdr = inject(ChangeDetectorRef);
+
+  // Signals para estado reativo
+  private readonly isPaused = signal(false);
+  private readonly restartAutoPlay$ = new Subject<void>();
+
   currentIndex = 0;
   isPlaying = true;
-  private intervalId: any;
-  private isHovered = false;
 
-  constructor(private cdr: ChangeDetectorRef) {}
-
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.images.length > 1) {
-      this.startAutoPlay();
+      this.setupAutoPlay();
     }
   }
 
-  ngOnDestroy() {
-    this.stopAutoPlay();
-  }
-
-  startAutoPlay() {
-    if (this.images.length <= 1) return;
-    
-    this.stopAutoPlay();
-    this.intervalId = setInterval(() => {
-      if (this.isPlaying && !this.isHovered) {
+  private setupAutoPlay(): void {
+    // Reinicia o intervalo quando restartAutoPlay$ emite
+    this.restartAutoPlay$
+      .pipe(
+        startWith(undefined),
+        switchMap(() => interval(this.autoPlayInterval)),
+        filter(() => !this.isPaused()),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe(() => {
         this.nextImage();
-      }
-    }, this.autoPlayInterval);
-  }
-
-  stopAutoPlay() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-      this.intervalId = null;
-    }
+      });
   }
 
   nextImage() {
@@ -71,23 +79,29 @@ export class ImageCarouselComponent implements OnInit, OnDestroy {
     this.cdr.detectChanges();
   }
 
-  onMouseEnter() {
+  onMouseEnter(): void {
     if (this.pauseOnHover) {
-      this.isHovered = true;
+      this.isPaused.set(true);
     }
   }
 
-  onMouseLeave() {
+  onMouseLeave(): void {
     if (this.pauseOnHover) {
-      this.isHovered = false;
+      this.isPaused.set(false);
     }
   }
 
-  onImageError(event: any) {
-    event.target.src = this.fallbackImage;
+  onImageError(event: Event): void {
+    const img = event.target as HTMLImageElement;
+    img.src = this.fallbackImage;
   }
 
   getCurrentImage(): CarouselImage {
     return this.images[this.currentIndex] || { src: this.fallbackImage, alt: 'Service Image' };
+  }
+
+  // TrackBy function para otimização de ngFor
+  trackByImage(index: number, image: CarouselImage): string {
+    return image.src;
   }
 }

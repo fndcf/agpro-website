@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselImage, Service } from '../../models/service.model';
 import { ImageCarouselComponent } from '../image-carousel/image-carousel';
@@ -8,18 +8,19 @@ import { ImageCarouselComponent } from '../image-carousel/image-carousel';
   standalone: true,
   imports: [CommonModule, ImageCarouselComponent],
   templateUrl: './service-card.html',
-  styleUrls: ['./service-card.scss']
+  styleUrls: ['./service-card.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServiceCardComponent {
-  @Input() service!: Service;
+  @Input({ required: true }) service!: Service;
   @Input() showImage: boolean = false;
   @Input() imageUrl: string = '';
   @Input() imageAlt: string = '';
-  @Output() imageError = new EventEmitter<any>();
   @Input() carouselImages: CarouselImage[] = [];
   @Input() fallbackImage: string = 'assets/images/colageagpro.gif';
+  @Output() readonly imageError = new EventEmitter<Event>();
 
-  onImageError(event: any) {
+  onImageError(event: Event): void {
     this.imageError.emit(event);
   }
 }

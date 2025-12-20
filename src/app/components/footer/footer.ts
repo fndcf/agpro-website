@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslocoModule } from '@jsverse/transloco';
@@ -9,6 +9,7 @@ import { TranslocoModule } from '@jsverse/transloco';
   imports: [CommonModule, RouterLink, TranslocoModule],
   templateUrl: './footer.html',
   styleUrls: ['./footer.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
@@ -47,5 +48,18 @@ export class FooterComponent {
       left: 0,
       behavior: 'smooth',
     });
+  }
+
+  // TrackBy functions para otimização de ngFor
+  trackByProductLink(index: number, link: { fragment: string }): string {
+    return link.fragment;
+  }
+
+  trackByCompanyLink(index: number, link: { route: string }): string {
+    return link.route;
+  }
+
+  trackBySocialLink(index: number, social: { url: string }): string {
+    return social.url;
   }
 }

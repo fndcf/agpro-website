@@ -1,82 +1,64 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, viewChild, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { HeroComponent } from '../../components/hero/hero';
+import { ContactFormComponent } from './components/contact-form/contact-form';
+import { EmploymentSectionComponent } from './components/employment-section/employment-section';
+import { NotificationService } from '../../services/notification.service';
+import { EmailService } from '../../services/email.service';
 import { ContactForm } from '../../models/service.model';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslocoModule, HeroComponent],
+  imports: [
+    CommonModule,
+    TranslocoModule,
+    HeroComponent,
+    ContactFormComponent,
+    EmploymentSectionComponent,
+  ],
   templateUrl: './contact.html',
   styleUrls: ['./contact.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Contact {
-  private translocoService = inject(TranslocoService);
+  private readonly translocoService = inject(TranslocoService);
+  private readonly notificationService = inject(NotificationService);
+  private readonly emailService = inject(EmailService);
 
-  contactForm: ContactForm = {
-    fullName: '',
-    company: '',
-    email: '',
-    phone: '',
-    timeline: '',
-    location: '',
-    description: '',
-    source: '',
-  };
+  private readonly contactForm = viewChild(ContactFormComponent);
 
-  // Timeline options - chaves de tradução
-  timelineOptions = [
-    { value: '', labelKey: 'contact.form.timelineOptions.select' },
-    { value: 'urgent', labelKey: 'contact.form.timelineOptions.urgent' },
-    { value: 'short', labelKey: 'contact.form.timelineOptions.short' },
-    { value: 'medium', labelKey: 'contact.form.timelineOptions.medium' },
-    { value: 'long', labelKey: 'contact.form.timelineOptions.long' },
-  ];
+  readonly isSubmitting = signal(false);
 
-  // Source options - chaves de tradução
-  sourceOptions = [
-    { value: '', labelKey: 'contact.form.sourceOptions.select' },
-    { value: 'google', labelKey: 'contact.form.sourceOptions.google' },
-    { value: 'referral', labelKey: 'contact.form.sourceOptions.referral' },
-    { value: 'trade-show', labelKey: 'contact.form.sourceOptions.tradeShow' },
-    { value: 'website', labelKey: 'contact.form.sourceOptions.website' },
-    { value: 'social-media', labelKey: 'contact.form.sourceOptions.socialMedia' },
-    { value: 'advertisement', labelKey: 'contact.form.sourceOptions.advertisement' },
-    { value: 'other', labelKey: 'contact.form.sourceOptions.other' },
-  ];
+  onFormSubmit(formData: ContactForm): void {
+    if (this.isSubmitting()) return;
 
-  // Employment qualities - obtém do Transloco como array
-  getQualities(): string[] {
-    const qualities = this.translocoService.translate('contact.employment.qualities');
-    return Array.isArray(qualities) ? qualities : [];
+    this.isSubmitting.set(true);
+
+    this.emailService.sendContactEmail(formData).subscribe({
+      next: () => {
+        this.notificationService.success(
+          this.translocoService.translate('contact.form.successMessage')
+        );
+        this.contactForm()?.resetForm();
+        this.isSubmitting.set(false);
+      },
+      error: (error: Error) => {
+        console.error('Email send error:', error);
+        this.notificationService.error(
+          this.translocoService.translate('contact.form.sendErrorMessage') ||
+            error.message ||
+            this.translocoService.translate('contact.form.errorMessage')
+        );
+        this.isSubmitting.set(false);
+      },
+    });
   }
 
-  onSubmit() {
-    if (this.isFormValid()) {
-      console.log('Form submitted:', this.contactForm);
-      alert(this.translocoService.translate('contact.form.successMessage'));
-      this.resetForm();
-    } else {
-      alert(this.translocoService.translate('contact.form.errorMessage'));
-    }
-  }
-
-  private isFormValid(): boolean {
-    return !!(this.contactForm.fullName && this.contactForm.email && this.contactForm.description);
-  }
-
-  private resetForm() {
-    this.contactForm = {
-      fullName: '',
-      company: '',
-      email: '',
-      phone: '',
-      timeline: '',
-      location: '',
-      description: '',
-      source: '',
-    };
+  onFormError(): void {
+    this.notificationService.error(
+      this.translocoService.translate('contact.form.errorMessage')
+    );
   }
 }

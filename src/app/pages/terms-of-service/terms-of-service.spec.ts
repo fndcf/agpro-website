@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { getTranslocoModule } from '../../testing/transloco-testing.module';
 
 import { TermsOfService } from './terms-of-service';
 
-describe('Projects', () => {
+describe('TermsOfService', () => {
   let component: TermsOfService;
   let fixture: ComponentFixture<TermsOfService>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TermsOfService]
-    })
-    .compileComponents();
+      imports: [TermsOfService, getTranslocoModule()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TermsOfService);
     component = fixture.componentInstance;

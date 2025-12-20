@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { getTranslocoModule } from '../../testing/transloco-testing.module';
 
 import { PrivacyPolicy } from './privacy-policy';
 
-describe('Projects', () => {
+describe('PrivacyPolicy', () => {
   let component: PrivacyPolicy;
   let fixture: ComponentFixture<PrivacyPolicy>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PrivacyPolicy]
-    })
-    .compileComponents();
+      imports: [PrivacyPolicy, getTranslocoModule()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PrivacyPolicy);
     component = fixture.componentInstance;
