@@ -28,17 +28,18 @@
     <div class="container mx-auto px-6">
 
       <!-- Two Column Layout for larger screens -->
-      <div class="services-container grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+      <div class="services-container grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-stretch">
 
         <div *ngFor="let service of productServices; let i = index; trackBy: trackByService"
              class="services-section flex flex-col"
              [id]="service.id">
 
           <div class="service-card bg-white border border-gray-200 p-8 md:p-10
-                      transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group rounded-lg overflow-hidden">
+                      transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group rounded-lg overflow-hidden
+                      flex flex-col h-full">
 
             <!-- Image Carousel -->
-            <div class="mb-6" *ngIf="service.images.length > 0">
+            <div class="mb-6 flex-shrink-0" *ngIf="service.images.length > 0">
               <app-image-carousel
                 [images]="service.images"
                 [fallbackImage]="fallbackImage"
@@ -50,12 +51,12 @@
             </div>
 
             <!-- Service Title -->
-            <h3 class="text-2xl md:text-3xl text-gold font-light mb-4">
+            <h3 class="text-2xl md:text-3xl text-gold font-light mb-4 flex-shrink-0">
               {{ t(service.titleKey) }}
             </h3>
 
             <!-- Service Description -->
-            <p class="text-gray-600 text-base md:text-lg leading-relaxed font-sans">
+            <p class="text-gray-600 text-base md:text-lg leading-relaxed font-sans flex-grow">
               {{ t(service.descriptionKey) }}
             </p>
           </div>

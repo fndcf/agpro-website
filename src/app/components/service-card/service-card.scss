@@ -1,31 +1,32 @@
 .service-card {
   // Força altura mínima uniforme para todos os cards (APENAS NO DESKTOP)
-  min-height: 600px;
-  
+  min-height: 650px;
+
   // Estrutura flexbox para distribuir conteúdo
   display: flex;
   flex-direction: column;
-  
+
   // Scroll target offset para melhor posicionamento
   scroll-margin-top: 100px;
-  
+
   .service-description {
     // Área da descrição com altura fixa (APENAS NO DESKTOP)
+    // Baseado no maior texto (Buildings) que ocupa ~7 linhas
     p {
-      height: 140px; // Altura FIXA baseada na análise (maior descrição = 120px + 20px margem)
+      height: 200px; // Altura FIXA para acomodar texto de Buildings (maior descrição)
       overflow: hidden; // Esconde texto que ultrapassar
       display: -webkit-box;
-      -webkit-line-clamp: 5; // Máximo 5 linhas
+      -webkit-line-clamp: 8; // Máximo 8 linhas para acomodar Buildings
       -webkit-box-orient: vertical;
       text-overflow: ellipsis;
     }
   }
-  
+
   .service-features {
     // Features sempre na mesma posição
     margin-top: auto;
   }
-  
+
   .service-image-container {
     // Imagem sempre no final
     margin-top: auto;
@@ -76,11 +77,11 @@
 // Tablet - ainda mantém alguma estrutura
 @media (min-width: 769px) and (max-width: 1024px) {
   .service-card {
-    min-height: 500px; // Altura intermediária para tablet
-    
+    min-height: 580px; // Altura intermediária para tablet
+
     .service-description p {
-      height: 120px; // Altura menor para tablet
-      -webkit-line-clamp: 4; // Menos linhas
+      height: 180px; // Altura para acomodar texto maior
+      -webkit-line-clamp: 7; // Linhas suficientes para Buildings
     }
   }
 }

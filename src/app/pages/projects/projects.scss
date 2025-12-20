@@ -38,10 +38,37 @@
   }
 }
 
+// Projects grid - cards com mesma altura
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: stretch;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
 // Project cards com scroll target
 .project-card {
   scroll-margin-top: 120px; // Altura das tabs + margem
-  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  // Conteúdo do card
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    // Features ocupam espaço restante para empurrar linha para baixo
+    .project-features {
+      flex-grow: 1;
+    }
+  }
+
   // Efeito de destaque quando filtrado
   &.highlight-project {
     transform: scale(1.03) translateY(-8px);

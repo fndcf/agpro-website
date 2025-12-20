@@ -39,14 +39,15 @@
         </div>
 
         <!-- Projects Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="projects-grid grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           <div *ngFor="let project of filteredProjects(); trackBy: trackByProject"
                class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden
-                      shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group"
+                      shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group
+                      flex flex-col h-full"
                [id]="'project-' + project.id">
 
             <!-- Project Image -->
-            <div class="project-image h-64 relative overflow-hidden bg-gray-100">
+            <div class="project-image h-64 relative overflow-hidden bg-gray-100 flex-shrink-0">
               <img
                 [src]="project.image"
                 [alt]="project.imageAlt"
@@ -70,9 +71,9 @@
             </div>
 
             <!-- Project Content -->
-            <div class="p-8">
+            <div class="project-content p-8 flex flex-col flex-grow">
               <!-- Project Header -->
-              <div class="mb-6">
+              <div class="mb-6 flex-shrink-0">
                 <h3 class="text-2xl font-light text-gray-900 mb-2 group-hover:text-gold transition-colors duration-300">
                   {{ t(project.titleKey) }}
                 </h3>
@@ -85,12 +86,12 @@
               </div>
 
               <!-- Project Description -->
-              <p class="text-gray-600 leading-relaxed mb-6 font-sans">
+              <p class="text-gray-600 leading-relaxed mb-6 font-sans flex-shrink-0">
                 {{ t(project.descriptionKey) }}
               </p>
 
-              <!-- Project Features -->
-              <div *ngIf="getProjectFeatures(project.featuresKey).length > 0" class="mb-6">
+              <!-- Project Features - flex-grow para ocupar espaço restante -->
+              <div *ngIf="getProjectFeatures(project.featuresKey).length > 0" class="project-features mb-6 flex-grow">
                 <h4 class="text-lg font-medium text-gray-800 mb-3">
                   {{ t('projects.projectDetails.keyFeatures') }}
                 </h4>
@@ -103,8 +104,8 @@
                 </ul>
               </div>
 
-              <!-- Project CTA -->
-              <div class="pt-4 border-t border-gray-100">
+              <!-- Project CTA - sempre no final -->
+              <div class="pt-4 border-t border-gray-100 flex-shrink-0 mt-auto">
               </div>
             </div>
           </div>

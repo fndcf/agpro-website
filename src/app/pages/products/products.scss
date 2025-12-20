@@ -41,23 +41,38 @@
 .services-container {
   // Garante que os cards tenham altura igual na grid
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   align-items: stretch;
-  
+
   .services-section {
     display: flex;
     height: 100%;
-    
+
+    .service-card {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      // Scroll offset ajustado para tabs sticky
+      scroll-margin-top: 100px; // Altura das tabs + margem
+
+      // Descrição ocupa espaço restante para igualar altura dos cards
+      p {
+        flex-grow: 1;
+      }
+    }
+
     app-service-card {
       width: 100%;
       height: 100%;
       display: flex;
-      
+
       .service-card {
         width: 100%;
         height: 100%;
-        
+
         // Scroll offset ajustado para tabs sticky
         scroll-margin-top: 100px; // Altura das tabs + margem
       }
@@ -89,9 +104,16 @@
   .services-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    
-    .services-section app-service-card .service-card {
-      scroll-margin-top: 80px; // Menor no mobile
+
+    .services-section {
+      .service-card {
+        scroll-margin-top: 80px; // Menor no mobile
+        height: auto; // Altura automática no mobile
+      }
+
+      app-service-card .service-card {
+        scroll-margin-top: 80px; // Menor no mobile
+      }
     }
   }
 }
