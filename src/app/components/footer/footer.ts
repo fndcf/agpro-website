@@ -12,7 +12,17 @@ import { TranslocoModule } from '@jsverse/transloco';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
-  currentYear = new Date().getFullYear();
+  // Estado dos acordeões para mobile
+  productsExpanded = false;
+  companyExpanded = false;
+
+  toggleProducts() {
+    this.productsExpanded = !this.productsExpanded;
+  }
+
+  toggleCompany() {
+    this.companyExpanded = !this.companyExpanded;
+  }
 
   // Footer links - usando chaves de tradução
   productLinks = [

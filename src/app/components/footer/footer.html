@@ -1,88 +1,116 @@
 <footer class="footer bg-gradient-to-r from-primary to-primary-dark text-white w-full">
   <ng-container *transloco="let t">
-    <div class="footer-content w-full px-6 py-4">
+    <div class="footer-content w-full px-4 py-3 md:px-6 md:py-4">
 
       <!-- Main Footer Content -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-3">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-2 md:mb-3">
 
-        <!-- Company Info -->
+        <!-- Company Info - sempre visível -->
         <div class="footer-section">
-          <div class="logo mb-3" (click)="scrollToTop()">
-            <img src="assets/images/logo2.png" alt="AgPro International" class="h-12 w-auto logo-img transition-transform duration-300 hover:scale-105">
+          <div class="flex items-center justify-between md:block">
+            <div class="logo mb-2 md:mb-3" (click)="scrollToTop()">
+              <img src="assets/images/logo2.png" alt="AgPro International" class="h-10 md:h-12 w-auto logo-img transition-transform duration-300 hover:scale-105">
+            </div>
+            <!-- Social Media Links - ao lado do logo em mobile -->
+            <div class="social-links flex gap-2 items-center md:hidden">
+              <a *ngFor="let social of socialLinks; trackBy: trackBySocialLink" target="_blank" [href]="social.url" [title]="social.title" class="social-link text-white text-opacity-80 transition-colors duration-300 hover:text-white">
+                <img [src]="social.icon" [alt]="social.title" class="social-icon w-5 h-5">
+              </a>
+            </div>
           </div>
 
-          <p class="text-green-100 text-lg leading-relaxed mb-3 font-sans">
+          <p class="text-green-100 text-sm md:text-lg leading-relaxed mb-2 md:mb-3 font-sans">
             {{ t('footer.description') }}
           </p>
 
-          <div class="contact-info mb-3">
-            <p class="flex items-center gap-2 text-green-100 text-base">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <div class="contact-info mb-2 md:mb-3">
+            <p class="flex items-center gap-2 text-green-100 text-sm md:text-base">
+              <svg class="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
               </svg>
               {{ t('footer.location') }}
             </p>
           </div>
 
-          <!-- Social Media Links -->
-          <div class="social-links flex gap-3 items-center">
+          <!-- Social Media Links - visível apenas em desktop -->
+          <div class="social-links hidden md:flex gap-3 items-center mb-2">
             <a *ngFor="let social of socialLinks; trackBy: trackBySocialLink" target="_blank" [href]="social.url" [title]="social.title" class="social-link text-white text-opacity-80 transition-colors duration-300 hover:text-white">
               <img [src]="social.icon" [alt]="social.title" class="social-icon w-5 h-5">
             </a>
           </div>
 
-          <button (click)="scrollToTop()" class="back-to-top-btn flex items-center gap-2 text-green-100 hover:text-white
+          <button (click)="scrollToTop()" class="back-to-top-btn hidden md:flex items-center gap-2 text-green-100 hover:text-white
                      transition-all duration-300 group cursor-pointer bg-transparent border-none
-                     font-sans text-lg hover:transform hover:translate-y-[-2px]" [title]="t('footer.backToTop')">
-            <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-y-[-2px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     font-sans text-base md:text-lg hover:transform hover:translate-y-[-2px]" [title]="t('footer.backToTop')">
+            <svg class="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-y-[-2px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
             </svg>
             {{ t('footer.backToTop') }}
           </button>
         </div>
 
-        <!-- Products & Services -->
+        <!-- Products & Services - Acordeão em mobile -->
         <div class="footer-section">
-          <h4 class="text-3xl font-medium mb-3 text-white">
-            {{ t('footer.productsServices') }}
-          </h4>
-          <div class="space-y-2">
-            <a *ngFor="let link of productLinks; trackBy: trackByProductLink" [routerLink]="link.route" [fragment]="link.fragment" class="block text-green-100 hover:text-gold transition-colors duration-300
-                      font-sans text-lg">
-              {{ t(link.labelKey) }}
-            </a>
+          <!-- Header clicável em mobile -->
+          <button (click)="toggleProducts()" class="w-full flex items-center justify-between md:cursor-default md:pointer-events-none">
+            <h4 class="text-xl md:text-3xl font-medium text-white">
+              {{ t('footer.productsServices') }}
+            </h4>
+            <svg class="w-4 h-4 md:hidden transition-transform duration-300" [class.rotate-180]="productsExpanded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <!-- Conteúdo colapsável em mobile, sempre visível em desktop -->
+          <div class="accordion-content overflow-hidden transition-all duration-300 md:!max-h-none md:!opacity-100 md:!mt-3" [class.max-h-0]="!productsExpanded" [class.opacity-0]="!productsExpanded" [class.max-h-48]="productsExpanded" [class.opacity-100]="productsExpanded" [class.mt-2]="productsExpanded">
+            <div class="space-y-1 md:space-y-2">
+              <a *ngFor="let link of productLinks; trackBy: trackByProductLink" [routerLink]="link.route" [fragment]="link.fragment" class="block text-green-100 hover:text-gold transition-colors duration-300
+                        font-sans text-sm md:text-lg py-0.5 md:py-0">
+                {{ t(link.labelKey) }}
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Company -->
+        <!-- Company - Acordeão em mobile -->
         <div class="footer-section">
-          <h4 class="text-3xl font-medium mb-3 text-white">
-            {{ t('footer.company') }}
-          </h4>
-          <div class="space-y-2">
-            <a *ngFor="let link of companyLinks; trackBy: trackByCompanyLink" [routerLink]="link.route" class="block text-green-100 hover:text-gold transition-colors duration-300
-                      font-sans text-lg">
-              {{ t(link.labelKey) }}
-            </a>
+          <!-- Header clicável em mobile -->
+          <button (click)="toggleCompany()" class="w-full flex items-center justify-between md:cursor-default md:pointer-events-none">
+            <h4 class="text-xl md:text-3xl font-medium text-white">
+              {{ t('footer.company') }}
+            </h4>
+            <svg class="w-4 h-4 md:hidden transition-transform duration-300" [class.rotate-180]="companyExpanded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <!-- Conteúdo colapsável em mobile, sempre visível em desktop -->
+          <div class="accordion-content overflow-hidden transition-all duration-300 md:!max-h-none md:!opacity-100 md:!mt-3" [class.max-h-0]="!companyExpanded" [class.opacity-0]="!companyExpanded" [class.max-h-24]="companyExpanded" [class.opacity-100]="companyExpanded" [class.mt-2]="companyExpanded">
+            <div class="space-y-1 md:space-y-2">
+              <a *ngFor="let link of companyLinks; trackBy: trackByCompanyLink" [routerLink]="link.route" class="block text-green-100 hover:text-gold transition-colors duration-300
+                        font-sans text-sm md:text-lg py-0.5 md:py-0">
+                {{ t(link.labelKey) }}
+              </a>
+            </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Footer Bottom - Área do Copyright compacta -->
+      <!-- Footer Bottom - Links legais em linha única -->
       <div class="footer-bottom pt-2 border-t border-green-400 border-opacity-30">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <p class="text-green-200 font-sans text-base">
-            &copy; {{ currentYear }} {{ t('footer.allRightsReserved') }}
+        <div class="flex flex-col md:flex-row justify-between items-center gap-1 md:gap-0">
+          <p class="text-green-200 font-sans text-xs md:text-base">
+            &copy; 2012 {{ t('footer.allRightsReserved') }}
           </p>
 
-          <div class="flex gap-4 text-sm mt-1 md:mt-0">
+          <div class="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm">
             <a [routerLink]="['/privacy-policy']" class="text-green-200 hover:text-white transition-colors duration-300">
               {{ t('footer.privacyPolicy') }}
             </a>
+            <span class="text-green-400">|</span>
             <a [routerLink]="['/terms-of-service']" class="text-green-200 hover:text-white transition-colors duration-300">
               {{ t('footer.termsOfService') }}
             </a>
+            <span class="text-green-400">|</span>
             <a [routerLink]="['/sitemap']" class="text-green-200 hover:text-white transition-colors duration-300">
               {{ t('footer.sitemap') }}
             </a>

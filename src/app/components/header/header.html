@@ -1,40 +1,38 @@
 <header class="header bg-gradient-to-r from-primary-dark to-primary text-white relative">
   <!-- Contact Bar (área mais escura) -->
-  <div class="contact-bar bg-black bg-opacity-10 px-4 py-2 flex justify-end items-center text-sm font-sans">
-    <div class="contact-actions flex items-center gap-5">
-      <!-- Social Media Links -->
-      <div class="social-links flex gap-3 items-center">
-        <a
-          *ngFor="let social of socialLinks; trackBy: trackBySocialLink"
-          target="_blank"
-          [href]="social.url"
-          [title]="social.title"
-          class="social-link text-white text-opacity-80 transition-colors duration-300 hover:text-white">
-          <img
-            [src]="social.icon"
-            [alt]="social.title"
-            class="social-icon w-7 h-7">
-        </a>
-      </div>
+  <div class="contact-bar bg-black bg-opacity-10 px-4 py-2 flex justify-between items-center text-sm font-sans">
+    <!-- Social Media Links (esquerda, após o logo) -->
+    <div class="social-links flex gap-3 items-center xl:ml-40">
+      <a
+        *ngFor="let social of socialLinks; trackBy: trackBySocialLink"
+        target="_blank"
+        [href]="social.url"
+        [title]="social.title"
+        class="social-link text-white text-opacity-80 transition-colors duration-300 hover:text-white">
+        <img
+          [src]="social.icon"
+          [alt]="social.title"
+          class="social-icon w-7 h-7">
+      </a>
+    </div>
 
-      <!-- Language Selector -->
-      <div class="language-selector flex gap-2 items-center">
-        <button
-          *ngFor="let language of languages; trackBy: trackByLanguage"
-          [title]="language.title"
-          (click)="changeLanguage(language.code)"
-          class="lang-flag cursor-pointer transition-all duration-300 hover:opacity-80
-                 hover:scale-110 rounded-sm border border-transparent hover:border-white hover:border-opacity-50"
-          [class.active]="currentLanguage() === language.code"
-          [class.border-gold]="currentLanguage() === language.code"
-          [class.bg-white]="currentLanguage() === language.code"
-          [class.bg-opacity-20]="currentLanguage() === language.code">
-          <img
-            [src]="language.flagUrl"
-            [alt]="language.title"
-            class="flag-img w-7 h-5 object-cover rounded-sm">
-        </button>
-      </div>
+    <!-- Language Selector (direita) -->
+    <div class="language-selector flex gap-2 items-center">
+      <button
+        *ngFor="let language of languages; trackBy: trackByLanguage"
+        [title]="language.title"
+        (click)="changeLanguage(language.code)"
+        class="lang-flag cursor-pointer transition-all duration-300 hover:opacity-80
+               hover:scale-110 rounded-sm border border-transparent hover:border-white hover:border-opacity-50"
+        [class.active]="currentLanguage() === language.code"
+        [class.border-gold]="currentLanguage() === language.code"
+        [class.bg-white]="currentLanguage() === language.code"
+        [class.bg-opacity-20]="currentLanguage() === language.code">
+        <img
+          [src]="language.flagUrl"
+          [alt]="language.title"
+          class="flag-img w-7 h-5 object-cover rounded-sm">
+      </button>
     </div>
   </div>
 

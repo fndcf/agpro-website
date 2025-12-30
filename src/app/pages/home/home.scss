@@ -1,0 +1,59 @@
+// Tabs container responsivo
+.tabs-container {
+  @media (max-width: 768px) {
+    padding: 0.5rem 0 !important;
+
+    .tabs-nav {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; // Firefox
+
+      &::-webkit-scrollbar {
+        display: none; // Chrome, Safari
+      }
+    }
+
+    // Tabs em linha horizontal com scroll
+    .flex {
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
+      gap: 0.5rem !important;
+      padding: 0 1rem;
+      width: max-content;
+    }
+
+    // Tabs menores em mobile
+    .tab-item {
+      padding: 0.5rem 0.75rem !important;
+      font-size: 0.75rem !important;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// Ajustes gerais para mobile
+@media (max-width: 768px) {
+  .content-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .services-grid {
+    margin-top: 2rem !important;
+
+    > * {
+      margin-bottom: 2rem !important;
+    }
+  }
+
+  .section-title {
+    font-size: 1.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .page-separator {
+    margin: 1rem 0 !important;
+  }
+}

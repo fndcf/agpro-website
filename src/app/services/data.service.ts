@@ -74,18 +74,18 @@ export class DataService {
     return [
       {
         number: '30+',
-        labelKey: 'homepage.stats.yearsExperience',
-        descriptionKey: 'homepage.stats.yearsExperienceDesc',
+        labelKey: 'mission.stats.yearsExperience',
+        descriptionKey: 'mission.stats.yearsExperienceDesc',
       },
       {
         number: '500+',
-        labelKey: 'homepage.stats.projectsCompleted',
-        descriptionKey: 'homepage.stats.projectsCompletedDesc',
+        labelKey: 'mission.stats.projectsCompleted',
+        descriptionKey: 'mission.stats.projectsCompletedDesc',
       },
       {
         number: '25+',
-        labelKey: 'homepage.stats.countriesServed',
-        descriptionKey: 'homepage.stats.countriesServedDesc',
+        labelKey: 'mission.stats.countriesServed',
+        descriptionKey: 'mission.stats.countriesServedDesc',
       },
     ];
   }
