@@ -4,12 +4,12 @@
   </app-hero>
 
   <!-- Main Content Section -->
-  <section class="content-section py-16 bg-white">
+  <section class="content-section py-8 bg-white">
     <!-- Tabs Navigation - Sticky - Full Width -->
-    <div class="tabs-container sticky top-0 z-40 bg-white border-b border-gray-200 py-4 px-4 lg:px-8 shadow-md">
+    <div class="tabs-container sticky top-0 z-40 bg-white border-b border-gray-200 py-2 px-4 lg:px-8 shadow-md">
       <nav class="tabs-nav w-full">
-        <div class="flex flex-wrap justify-center gap-2">
-          <a *ngFor="let tab of tabs; trackBy: trackByTab" [href]="tab.href" (click)="setActiveTab(tab.id); $event.preventDefault()" class="tab-item px-4 py-3 text-gray-600 font-medium text-sm transition-all duration-300
+        <div class="flex flex-wrap justify-center gap-1 md:gap-2">
+          <a *ngFor="let tab of tabs; trackBy: trackByTab" [href]="tab.href" (click)="setActiveTab(tab.id); $event.preventDefault()" class="tab-item px-3 py-2 text-gray-600 font-medium text-sm transition-all duration-300
               cursor-pointer text-center hover:text-white hover:bg-gold rounded-md font-sans" [class.active]="tab.active" [class.text-white]="tab.active" [class.bg-primary]="tab.active">
             {{ t(tab.labelKey) }}
           </a>
@@ -22,10 +22,10 @@
       <div class="section-content max-w-6xl mx-auto">
 
         <!-- Section Separator -->
-        <div class="page-separator my-8"></div>
+        <div class="page-separator my-4"></div>
 
         <!-- Services Grid -->
-        <div class="services-grid space-y-16 mt-16">
+        <div class="services-grid space-y-16 mt-8">
           <app-home-card *ngFor="let homeservice of services(); let i = index; trackBy: trackByService" [homeservice]="homeservice" [class]="i % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'">
           </app-home-card>
         </div>
