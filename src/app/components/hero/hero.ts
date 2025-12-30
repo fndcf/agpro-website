@@ -13,18 +13,6 @@ import { Router } from '@angular/router';
 export class HeroComponent {
   @Input() title: string = '';
   @Input() subtitle: string = '';
-  @Input() buttonText: string = 'Learn More';
-  @Input() showButton: boolean = false;
-  @Input() buttonRoute: string = '';
-  @Output() readonly buttonClick = new EventEmitter<void>();
 
   constructor(private router: Router) {}
-
-  onButtonClick() {
-    if (this.buttonRoute) {
-      this.router.navigate([this.buttonRoute]);
-    } else {
-      this.buttonClick.emit();
-    }
-  }
 }

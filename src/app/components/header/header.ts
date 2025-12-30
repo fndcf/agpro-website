@@ -49,7 +49,6 @@ export class HeaderComponent implements OnInit {
   navItems = [
     { labelKey: 'header.home', route: '/', exact: true },
     { labelKey: 'header.mission', route: '/mission', exact: false },
-    { labelKey: 'header.products', route: '/products', exact: false },
     // { labelKey: 'header.projects', route: '/projects', exact: false },
     { labelKey: 'header.contact', route: '/contact', exact: false },
   ];

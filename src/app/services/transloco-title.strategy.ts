@@ -14,7 +14,6 @@ export class TranslocoTitleStrategy extends TitleStrategy {
   private readonly titleKeys: Record<string, string> = {
     '/': 'pageTitle.home',
     '/mission': 'pageTitle.mission',
-    '/products': 'pageTitle.products',
     '/projects': 'pageTitle.projects',
     '/contact': 'pageTitle.contact',
     '/under-construction': 'pageTitle.underConstruction',

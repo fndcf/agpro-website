@@ -2,7 +2,6 @@
   "pageTitle": {
     "home": "Inicio",
     "mission": "Nuestra Misión",
-    "products": "Productos y Servicios",
     "projects": "Proyectos",
     "contact": "Contacto",
     "privacyPolicy": "Política de Privacidad",
@@ -18,10 +17,6 @@
     "mission": {
       "title": "Nuestra Misión - AgPro International",
       "description": "Consultoría especializada utilizando décadas de experiencia para proporcionar excelentes productos, servicio y valor para proyectos de agronegocios."
-    },
-    "products": {
-      "title": "Productos y Servicios - AgPro International",
-      "description": "Construcciones, equipos, almacenamiento de granos, ventilación, sistemas de confinamiento, pisos y proyectos para operaciones ganaderas."
     },
     "projects": {
       "title": "Proyectos - AgPro International",
@@ -51,27 +46,16 @@
   "header": {
     "home": "Inicio",
     "mission": "Nuestra Misión",
-    "products": "Productos y Servicios",
     "projects": "Proyectos",
     "contact": "Contactos"
   },
   "homepage": {
     "hero": {
       "title": "Excelencia en vivienda y equipos para ganado",
-      "subtitle": "Durante décadas, AgPro International ha entregado soluciones premium para los proyectos de agronegocios más exigentes del mundo.",
-      "buttonText": "Productos y Servicios"
+      "subtitle": "Durante décadas, AgPro International ha entregado soluciones premium para los proyectos de agronegocios más exigentes del mundo."
     },
-    "experience": {
-      "title": "Nuestra Experiencia",
-      "subtitle": "Décadas de excelencia en el desarrollo de proyectos a gran escala para el agronegocio internacional."
-    },
-    "stats": {
-      "yearsExperience": "30+ Años de Experiencia",
-      "yearsExperienceDesc": "Décadas sirviendo a la industria del agronegocio",
-      "projectsCompleted": "500+ Proyectos Completados",
-      "projectsCompletedDesc": "Implementaciones exitosas a nivel mundial",
-      "countriesServed": "25+ Países Atendidos",
-      "countriesServedDesc": "Presencia internacional y experiencia"
+    "products": {
+      "title": "Productos y Servicios"
     },
     "services": {
       "swine": {
@@ -91,6 +75,14 @@
   "mission": {
     "hero": {
       "title": "Nuestra Misión"
+    },
+    "stats": {
+      "yearsExperience": "30+ Años de Experiencia",
+      "yearsExperienceDesc": "Décadas sirviendo a la industria del agronegocio",
+      "projectsCompleted": "500+ Proyectos Completados",
+      "projectsCompletedDesc": "Implementaciones exitosas a nivel mundial",
+      "countriesServed": "25+ Países Atendidos",
+      "countriesServedDesc": "Presencia internacional y experiencia"
     },
     "content": {
       "title": "Consultoría Especializada",
@@ -286,11 +278,6 @@
       }
     },
     "productsServices": {
-      "title": "Productos y Servicios",
-      "allProducts": {
-        "label": "Todos los Productos y Servicios",
-        "description": "Visión general completa de nuestras soluciones de agronegocios"
-      },
       "buildings": {
         "label": "Construcciones",
         "description": "Planificación y supervisión de construcciones porcinas y avícolas"
@@ -398,9 +385,9 @@
       "descriptionRequired": "Tipo de Servicio Necesario / Descripción del Proyecto *",
       "descriptionPlaceholder": "Por favor, describa detalladamente los objetivos y requisitos de su proyecto",
       "source": "¿Cómo se enteró de nosotros?",
-      "submitButton": "Obtenga Su Cotización Gratuita",
+      "submitButton": "Enviar",
       "submitting": "Enviando...",
-      "successMessage": "¡Gracias por su consulta! Nos pondremos en contacto pronto.",
+      "successMessage": "¡Gracias ! Nos pondremos en contacto pronto.",
       "errorMessage": "Por favor, complete todos los campos obligatorios.",
       "sendErrorMessage": "Error al enviar su mensaje. Por favor, inténtelo de nuevo más tarde.",
       "timelineOptions": {
@@ -521,10 +508,6 @@
     }
   },
   "products": {
-    "hero": {
-      "title": "Productos y Servicios",
-      "subtitle": "Durante décadas, AgPro International ha entregado soluciones premium para los proyectos de agronegocios más exigentes del mundo."
-    },
     "tabs": {
       "buildings": "Construcciones",
       "equipments": "Equipos",
@@ -579,7 +562,7 @@
     "sitemap": "Mapa del Sitio",
     "allRightsReserved": "AgPro International Todos los Derechos Reservados.",
     "description": "Décadas de excelencia en el desarrollo de proyectos a gran escala para el agronegocio internacional.",
-    "location": "Springfield, IL - Estados Unidos",
+    "location": "Mountain Home, Arkansas - Estados Unidos",
     "buildings": "Construcciones",
     "equipments": "Equipos",
     "grainStorage": "Almacenamiento de Granos",

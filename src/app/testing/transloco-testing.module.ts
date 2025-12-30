@@ -7,7 +7,6 @@ export function getTranslocoModule(options: TranslocoTestingOptions = {}) {
         header: {
           home: 'Home',
           mission: 'Mission',
-          products: 'Products',
           projects: 'Projects',
           contact: 'Contact',
         },

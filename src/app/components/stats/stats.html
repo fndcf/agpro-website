@@ -1,9 +1,8 @@
-<section class="stats py-16 bg-white">
+<section class="stats py-8 bg-white">
   <ng-container *transloco="let t">
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div *ngFor="let stat of stats; trackBy: trackByStat"
-             class="stat text-center p-8 border border-gray-200 transition-all duration-300
+        <div *ngFor="let stat of stats; trackBy: trackByStat" class="stat text-center p-8 border border-gray-200 transition-all duration-300
                     hover:-translate-y-2 hover:shadow-lg group">
 
           <span class="number text-4xl md:text-5xl text-gold font-light block mb-4
@@ -15,8 +14,7 @@
             {{ t(stat.labelKey) }}
           </span>
 
-          <p *ngIf="stat.descriptionKey"
-             class="description text-sm text-gray-500 mt-2 opacity-0 group-hover:opacity-100
+          <p *ngIf="stat.descriptionKey" class="description text-sm text-gray-500 mt-2 opacity-0 group-hover:opacity-100
                     transition-opacity duration-300">
             {{ t(stat.descriptionKey) }}
           </p>

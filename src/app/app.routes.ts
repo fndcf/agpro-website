@@ -11,11 +11,6 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/mission/mission').then((m) => m.Mission),
     title: 'Our Mission - AgPro International',
   },
-  {
-    path: 'products',
-    loadComponent: () => import('./pages/products/products').then((m) => m.Products),
-    title: 'Products & Services - AgPro International',
-  },
   // {
   //   path: 'projects',
   //   loadComponent: () => import('./pages/projects/projects').then(m => m.Projects),

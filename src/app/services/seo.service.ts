@@ -29,15 +29,12 @@ export class SeoService {
   private readonly seoConfigs: Record<string, SeoConfig> = {
     '/': {
       descriptionKey: 'seo.home.description',
-      keywords: 'agribusiness, swine, poultry, grain storage, agricultural equipment',
+      keywords:
+        'agribusiness, swine, poultry, grain storage, agricultural equipment, buildings, equipment, grain storage, ventilation, confinement, flooring',
     },
     '/mission': {
       descriptionKey: 'seo.mission.description',
       keywords: 'agpro mission, agricultural solutions, company values',
-    },
-    '/products': {
-      descriptionKey: 'seo.products.description',
-      keywords: 'buildings, equipment, grain storage, ventilation, confinement, flooring',
     },
     '/projects': {
       descriptionKey: 'seo.projects.description',

@@ -2,7 +2,6 @@
   "pageTitle": {
     "home": "Home",
     "mission": "Our Mission",
-    "products": "Products & Services",
     "projects": "Projects",
     "contact": "Contact Us",
     "privacyPolicy": "Privacy Policy",
@@ -18,10 +17,6 @@
     "mission": {
       "title": "Our Mission - AgPro International",
       "description": "Specialized consulting utilizing decades of experience to provide excellent products, service, and value to agribusiness projects."
-    },
-    "products": {
-      "title": "Products & Services - AgPro International",
-      "description": "Buildings, equipment, grain storage, ventilation, confinement systems, flooring, and blueprints for livestock operations."
     },
     "projects": {
       "title": "Projects - AgPro International",
@@ -51,27 +46,16 @@
   "header": {
     "home": "Home",
     "mission": "Our Mission",
-    "products": "Products and Services",
     "projects": "Projects",
     "contact": "Contacts"
   },
   "homepage": {
     "hero": {
       "title": "Excellence in Livestock housing and equipment",
-      "subtitle": "For decades, AgPro International has delivered premium solutions to the world's most demanding agribusiness projects.",
-      "buttonText": "Products and Services"
+      "subtitle": "For decades, AgPro International has delivered premium solutions to the world's most demanding agribusiness projects."
     },
-    "experience": {
-      "title": "Our Experience",
-      "subtitle": "Decades of excellence in developing large-scale projects for international agribusiness."
-    },
-    "stats": {
-      "yearsExperience": "30+ Years of Experience",
-      "yearsExperienceDesc": "Decades serving the agribusiness industry",
-      "projectsCompleted": "500+ Projects Completed",
-      "projectsCompletedDesc": "Successful implementations worldwide",
-      "countriesServed": "25+ Countries Served",
-      "countriesServedDesc": "International presence and expertise"
+    "products": {
+      "title": "Products and Services"
     },
     "services": {
       "swine": {
@@ -91,6 +75,14 @@
   "mission": {
     "hero": {
       "title": "Our Mission"
+    },
+    "stats": {
+      "yearsExperience": "30+ Years of Experience",
+      "yearsExperienceDesc": "Decades serving the agribusiness industry",
+      "projectsCompleted": "500+ Projects Completed",
+      "projectsCompletedDesc": "Successful implementations worldwide",
+      "countriesServed": "25+ Countries Served",
+      "countriesServedDesc": "International presence and expertise"
     },
     "content": {
       "title": "Specialized Consulting",
@@ -286,11 +278,6 @@
       }
     },
     "productsServices": {
-      "title": "Products & Services",
-      "allProducts": {
-        "label": "All Products & Services",
-        "description": "Complete overview of our agribusiness solutions"
-      },
       "buildings": {
         "label": "Buildings",
         "description": "Swine and poultry construction planning and supervision"
@@ -398,9 +385,9 @@
       "descriptionRequired": "Type of Service Needed / Project Description *",
       "descriptionPlaceholder": "Please describe in detail your project goals and requirements",
       "source": "How did you hear about us?",
-      "submitButton": "Get Your Free Quote",
+      "submitButton": "Send",
       "submitting": "Sending...",
-      "successMessage": "Thank you for your inquiry! We will contact you soon.",
+      "successMessage": "Thank you ! We will contact you soon.",
       "errorMessage": "Please fill in all required fields.",
       "sendErrorMessage": "Failed to send your message. Please try again later.",
       "timelineOptions": {
@@ -521,10 +508,6 @@
     }
   },
   "products": {
-    "hero": {
-      "title": "Products and Services",
-      "subtitle": "For decades, AgPro International has delivered premium solutions to the world's most demanding agribusiness projects."
-    },
     "tabs": {
       "buildings": "Buildings",
       "equipments": "Equipments",
@@ -579,7 +562,7 @@
     "sitemap": "Sitemap",
     "allRightsReserved": "AgPro International All Rights Reserved.",
     "description": "Decades of excellence in developing large-scale projects for international agribusiness.",
-    "location": "Springfield, IL - United States",
+    "location": "Mountain Home, Arkansas - United States",
     "buildings": "Buildings",
     "equipments": "Equipments",
     "grainStorage": "Grain Storage",

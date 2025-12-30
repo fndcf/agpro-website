@@ -8,9 +8,7 @@
         <!-- Company Info -->
         <div class="footer-section">
           <div class="logo mb-3" (click)="scrollToTop()">
-            <img src="assets/images/logo2.png"
-                 alt="AgPro International"
-                 class="h-12 w-auto logo-img transition-transform duration-300 hover:scale-105">
+            <img src="assets/images/logo2.png" alt="AgPro International" class="h-12 w-auto logo-img transition-transform duration-300 hover:scale-105">
           </div>
 
           <p class="text-green-100 text-lg leading-relaxed mb-3 font-sans">
@@ -28,31 +26,18 @@
 
           <!-- Social Media Links -->
           <div class="social-links flex gap-3 items-center">
-            <a
-              *ngFor="let social of socialLinks; trackBy: trackBySocialLink"
-              target="_blank"
-              [href]="social.url"
-              [title]="social.title"
-              class="social-link text-white text-opacity-80 transition-colors duration-300 hover:text-white">
-              <img
-                [src]="social.icon"
-                [alt]="social.title"
-                class="social-icon w-5 h-5">
+            <a *ngFor="let social of socialLinks; trackBy: trackBySocialLink" target="_blank" [href]="social.url" [title]="social.title" class="social-link text-white text-opacity-80 transition-colors duration-300 hover:text-white">
+              <img [src]="social.icon" [alt]="social.title" class="social-icon w-5 h-5">
             </a>
           </div>
 
-          <button
-              (click)="scrollToTop()"
-              class="back-to-top-btn flex items-center gap-2 text-green-100 hover:text-white
+          <button (click)="scrollToTop()" class="back-to-top-btn flex items-center gap-2 text-green-100 hover:text-white
                      transition-all duration-300 group cursor-pointer bg-transparent border-none
-                     font-sans text-lg hover:transform hover:translate-y-[-2px]"
-              [title]="t('footer.backToTop')">
-              <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-y-[-2px]"
-                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-              </svg>
-              {{ t('footer.backToTop') }}
+                     font-sans text-lg hover:transform hover:translate-y-[-2px]" [title]="t('footer.backToTop')">
+            <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-y-[-2px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+            </svg>
+            {{ t('footer.backToTop') }}
           </button>
         </div>
 
@@ -62,10 +47,7 @@
             {{ t('footer.productsServices') }}
           </h4>
           <div class="space-y-2">
-            <a *ngFor="let link of productLinks; trackBy: trackByProductLink"
-               [routerLink]="link.route"
-               [fragment]="link.fragment"
-               class="block text-green-100 hover:text-gold transition-colors duration-300
+            <a *ngFor="let link of productLinks; trackBy: trackByProductLink" [routerLink]="link.route" [fragment]="link.fragment" class="block text-green-100 hover:text-gold transition-colors duration-300
                       font-sans text-lg">
               {{ t(link.labelKey) }}
             </a>
@@ -78,9 +60,7 @@
             {{ t('footer.company') }}
           </h4>
           <div class="space-y-2">
-            <a *ngFor="let link of companyLinks; trackBy: trackByCompanyLink"
-               [routerLink]="link.route"
-               class="block text-green-100 hover:text-gold transition-colors duration-300
+            <a *ngFor="let link of companyLinks; trackBy: trackByCompanyLink" [routerLink]="link.route" class="block text-green-100 hover:text-gold transition-colors duration-300
                       font-sans text-lg">
               {{ t(link.labelKey) }}
             </a>

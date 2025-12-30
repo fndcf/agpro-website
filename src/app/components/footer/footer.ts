@@ -16,10 +16,10 @@ export class FooterComponent {
 
   // Footer links - usando chaves de tradução
   productLinks = [
-    { labelKey: 'footer.buildings', route: '/products', fragment: 'buildings' },
-    { labelKey: 'footer.equipments', route: '/products', fragment: 'equipments' },
-    { labelKey: 'footer.grainStorage', route: '/products', fragment: 'grain-storage' },
-    { labelKey: 'footer.feedTransportation', route: '/products', fragment: 'feed-transport' },
+    { labelKey: 'footer.buildings', route: '/', fragment: 'buildings' },
+    { labelKey: 'footer.equipments', route: '/', fragment: 'equipments' },
+    { labelKey: 'footer.grainStorage', route: '/', fragment: 'grain-storage' },
+    { labelKey: 'footer.feedTransportation', route: '/', fragment: 'feed-transport' },
   ];
 
   companyLinks = [
