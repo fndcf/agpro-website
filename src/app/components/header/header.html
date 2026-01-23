@@ -36,18 +36,18 @@
     </div>
   </div>
 
-  <!-- Logo atravessando as duas áreas -->
-  <div class="logo-overlay absolute left-8 top-1/2 transform -translate-y-1/2 z-20 hidden xl:block">
-    <img
-      src="assets/images/logo2.png"
-      alt="AgPro International"
-      class="logo-img h-20 w-auto transition-transform duration-300 hover:scale-105"
-      (click)="scrollToTop()">
-  </div>
-
   <!-- Main Navigation -->
   <ng-container *transloco="let t">
-    <div class="main-nav px-6 py-4 flex justify-center items-center xl:justify-center">
+    <div class="main-nav px-6 py-4 flex items-center">
+      <!-- Logo Desktop (visível em xl+) -->
+      <div class="hidden xl:block xl:absolute xl:left-8">
+        <img
+          src="assets/images/logo2.png"
+          alt="AgPro International"
+          class="logo-img h-14 w-auto transition-transform duration-300 hover:scale-105 cursor-pointer"
+          (click)="scrollToTop()">
+      </div>
+
       <!-- Mobile/Tablet Logo (visível até xl) -->
       <div class="xl:hidden flex-1">
         <img
@@ -56,8 +56,8 @@
           class="h-12 w-auto">
       </div>
 
-      <!-- Desktop Navigation (apenas xl+) -->
-      <nav class="hidden xl:flex gap-8">
+      <!-- Desktop Navigation (apenas xl+) - Centralizado -->
+      <nav class="hidden xl:flex gap-8 xl:mx-auto">
         <a
           *ngFor="let item of navItems; trackBy: trackByNavItem"
           [routerLink]="item.route"

@@ -7,12 +7,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ReactiveFormsModule,
-  FormBuilder,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco';
 import { ContactForm } from '../../../../models/service.model';
 
@@ -39,7 +34,7 @@ export class ContactFormComponent {
     phone: [''],
     timeline: [''],
     location: [''],
-    description: ['', [Validators.required, Validators.minLength(10)]],
+    description: ['', [Validators.required, Validators.minLength(5)]],
     source: [''],
   });
 

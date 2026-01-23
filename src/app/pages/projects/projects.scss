@@ -32,7 +32,7 @@
     }
     
     &.active {
-      box-shadow: 0 4px 8px rgba(52, 199, 89, 0.3);
+      box-shadow: 0 4px 8px rgba(14, 165, 233, 0.3);
       transform: translateY(-1px);
     }
   }
@@ -73,13 +73,13 @@
   &.highlight-project {
     transform: scale(1.03) translateY(-8px);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 0 0 3px rgba(52, 199, 89, 0.3); // Border verde
+                0 0 0 3px rgba(14, 165, 233, 0.3); // Border azul
     transition: all 0.6s ease;
     z-index: 10;
-    
+
     // Destaque no título
     h3 {
-      color: #34C759; // Verde primary
+      color: #0EA5E9; // Azul primary
       transform: scale(1.02);
       transition: all 0.4s ease;
     }
@@ -161,7 +161,7 @@
     &.highlight-project {
       transform: scale(1.01) translateY(-4px);
       box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2),
-                  0 0 0 2px rgba(52, 199, 89, 0.3);
+                  0 0 0 2px rgba(14, 165, 233, 0.3);
     }
   }
   

@@ -45,6 +45,12 @@ export const routes: Routes = [
     title: 'Sitemap - AgPro International',
   },
   {
+    path: 'color-test',
+    loadComponent: () =>
+      import('./pages/color-test/color-test').then((m) => m.ColorTestComponent),
+    title: 'Color Test - AgPro International',
+  },
+  {
     path: '**',
     redirectTo: '',
   },

@@ -1,8 +1,7 @@
 // Header principal
 .header {
   position: relative;
-  background: linear-gradient(135deg, #30D158, #34C759);
-  //background: linear-gradient(#15c240);
+  background: linear-gradient(180deg, #0EA5E9, #0284C7);
   
   // Adiciona uma borda inferior sutil
   border-bottom: 2px solid rgba(204, 170, 119, 0.2);
@@ -26,8 +25,7 @@
 
 // Contact bar com melhor separação
 .contact-bar {
-  background: linear-gradient(135deg, #30D158, #34C759);
-  background: rgba(0, 0, 0, 0.15);
+  background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -39,15 +37,22 @@
 }
 
 .logo-img {
-  height: 5rem; // h-20
+  height: 3.5rem; // h-14
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
 
 // Main navigation com padding melhorado
 .main-nav {
   padding: 1rem 1.5rem;
-  
+  background: rgba(0, 0, 0, 0.15);
+
   @media (max-width: 768px) {
     padding: 0.75rem 1.5rem;
+  }
+
+  // Logo mobile/tablet com sombra
+  img {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
   }
 }
 
