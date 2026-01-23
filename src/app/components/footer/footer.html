@@ -19,12 +19,12 @@
             </div>
           </div>
 
-          <p class="text-green-100 text-sm md:text-lg leading-relaxed mb-2 md:mb-3 font-sans">
+          <p class="text-blue-100 text-sm md:text-lg leading-relaxed mb-2 md:mb-3 font-sans">
             {{ t('footer.description') }}
           </p>
 
           <div class="contact-info mb-2 md:mb-3">
-            <p class="flex items-center gap-2 text-green-100 text-sm md:text-base">
+            <p class="flex items-center gap-2 text-blue-100 text-sm md:text-base">
               <svg class="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
               </svg>
@@ -39,7 +39,7 @@
             </a>
           </div>
 
-          <button (click)="scrollToTop()" class="back-to-top-btn hidden md:flex items-center gap-2 text-green-100 hover:text-white
+          <button (click)="scrollToTop()" class="back-to-top-btn hidden md:flex items-center gap-2 text-blue-100 hover:text-white
                      transition-all duration-300 group cursor-pointer bg-transparent border-none
                      font-sans text-base md:text-lg hover:transform hover:translate-y-[-2px]" [title]="t('footer.backToTop')">
             <svg class="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-y-[-2px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@
           <!-- Conteúdo colapsável em mobile, sempre visível em desktop -->
           <div class="accordion-content overflow-hidden transition-all duration-300 md:!max-h-none md:!opacity-100 md:!mt-3" [class.max-h-0]="!productsExpanded" [class.opacity-0]="!productsExpanded" [class.max-h-48]="productsExpanded" [class.opacity-100]="productsExpanded" [class.mt-2]="productsExpanded">
             <div class="space-y-1 md:space-y-2">
-              <a *ngFor="let link of productLinks; trackBy: trackByProductLink" [routerLink]="link.route" [fragment]="link.fragment" class="block text-green-100 hover:text-gold transition-colors duration-300
+              <a *ngFor="let link of productLinks; trackBy: trackByProductLink" [routerLink]="link.route" [fragment]="link.fragment" class="block text-blue-100 hover:text-gold transition-colors duration-300
                         font-sans text-sm md:text-lg py-0.5 md:py-0">
                 {{ t(link.labelKey) }}
               </a>
@@ -85,7 +85,7 @@
           <!-- Conteúdo colapsável em mobile, sempre visível em desktop -->
           <div class="accordion-content overflow-hidden transition-all duration-300 md:!max-h-none md:!opacity-100 md:!mt-3" [class.max-h-0]="!companyExpanded" [class.opacity-0]="!companyExpanded" [class.max-h-24]="companyExpanded" [class.opacity-100]="companyExpanded" [class.mt-2]="companyExpanded">
             <div class="space-y-1 md:space-y-2">
-              <a *ngFor="let link of companyLinks; trackBy: trackByCompanyLink" [routerLink]="link.route" class="block text-green-100 hover:text-gold transition-colors duration-300
+              <a *ngFor="let link of companyLinks; trackBy: trackByCompanyLink" [routerLink]="link.route" class="block text-blue-100 hover:text-gold transition-colors duration-300
                         font-sans text-sm md:text-lg py-0.5 md:py-0">
                 {{ t(link.labelKey) }}
               </a>
@@ -96,22 +96,22 @@
       </div>
 
       <!-- Footer Bottom - Links legais em linha única -->
-      <div class="footer-bottom pt-2 border-t border-green-400 border-opacity-30">
+      <div class="footer-bottom pt-2 border-t border-blue-400 border-opacity-30">
         <div class="flex flex-col md:flex-row justify-between items-center gap-1 md:gap-0">
-          <p class="text-green-200 font-sans text-xs md:text-base">
+          <p class="text-blue-200 font-sans text-xs md:text-base">
             &copy; 2012 {{ t('footer.allRightsReserved') }}
           </p>
 
           <div class="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm">
-            <a [routerLink]="['/privacy-policy']" class="text-green-200 hover:text-white transition-colors duration-300">
+            <a [routerLink]="['/privacy-policy']" class="text-blue-200 hover:text-white transition-colors duration-300">
               {{ t('footer.privacyPolicy') }}
             </a>
-            <span class="text-green-400">|</span>
-            <a [routerLink]="['/terms-of-service']" class="text-green-200 hover:text-white transition-colors duration-300">
+            <span class="text-blue-400">|</span>
+            <a [routerLink]="['/terms-of-service']" class="text-blue-200 hover:text-white transition-colors duration-300">
               {{ t('footer.termsOfService') }}
             </a>
-            <span class="text-green-400">|</span>
-            <a [routerLink]="['/sitemap']" class="text-green-200 hover:text-white transition-colors duration-300">
+            <span class="text-blue-400">|</span>
+            <a [routerLink]="['/sitemap']" class="text-blue-200 hover:text-white transition-colors duration-300">
               {{ t('footer.sitemap') }}
             </a>
           </div>
