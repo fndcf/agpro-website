@@ -1,7 +1,7 @@
 // Header principal
 .header {
   position: relative;
-  background: linear-gradient(180deg, #0EA5E9, #0284C7);
+  background: linear-gradient(180deg, #152A45, #1E3A5F);
   
   // Adiciona uma borda inferior sutil
   border-bottom: 2px solid rgba(204, 170, 119, 0.2);
@@ -25,7 +25,7 @@
 
 // Contact bar com melhor separação
 .contact-bar {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -44,7 +44,7 @@
 // Main navigation com padding melhorado
 .main-nav {
   padding: 1rem 1.5rem;
-  background: rgba(0, 0, 0, 0.15);
+  background: transparent;
 
   @media (max-width: 768px) {
     padding: 0.75rem 1.5rem;

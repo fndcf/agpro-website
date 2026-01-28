@@ -8,9 +8,9 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0EA5E9',
-          dark: '#0284C7',
-          light: '#38BDF8'
+          DEFAULT: '#1E3A5F',
+          dark: '#152A45',
+          light: '#2A4A73'
         },
         gold: {
           DEFAULT: '#CCAA77',
@@ -27,8 +27,8 @@ module.exports = {
         'sans': ['Segoe UI', 'sans-serif']
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #0284C7, #0EA5E9)',
-        'hero-overlay': 'linear-gradient(rgba(2, 132, 199, 0.8), rgba(14, 165, 233, 0.8))'
+        'hero-gradient': 'linear-gradient(135deg, #152A45, #1E3A5F)',
+        'hero-overlay': 'linear-gradient(rgba(21, 42, 69, 0.8), rgba(30, 58, 95, 0.8))'
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

@@ -38,13 +38,13 @@
   transform: scale(1.02) translateY(-8px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
               0 10px 10px -5px rgba(0, 0, 0, 0.04),
-              0 0 0 3px rgba(14, 165, 233, 0.3); // Border azul
+              0 0 0 3px rgba(30, 58, 95, 0.3); // Border azul
   transition: all 0.5s ease;
   z-index: 10;
 
   // Destaque no título
   h3 {
-    color: #0EA5E9; // Azul primary
+    color: #1E3A5F; // Azul primary
     transform: scale(1.05);
     transition: all 0.3s ease;
   }
@@ -69,7 +69,7 @@
     &.highlight-card {
       transform: scale(1.01) translateY(-4px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-                  0 0 0 2px rgba(14, 165, 233, 0.3);
+                  0 0 0 2px rgba(30, 58, 95, 0.3);
     }
   }
 }
